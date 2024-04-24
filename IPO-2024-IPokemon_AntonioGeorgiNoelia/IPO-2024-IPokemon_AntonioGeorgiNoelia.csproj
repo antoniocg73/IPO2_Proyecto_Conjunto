@@ -129,6 +129,9 @@
     <Compile Include="CombatePage.xaml.cs">
       <DependentUpon>CombatePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="InicioPage.xaml.cs">
+      <DependentUpon>InicioPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="iPokemon.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -164,6 +167,11 @@
     <Content Include="AssetsArticunoACG\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="AssetsArticunoACG\StoreLogo.png" />
     <Content Include="AssetsArticunoACG\Wide310x150Logo.scale-200.png" />
+    <Content Include="Assets\Bienvenido.png" />
+    <Content Include="Assets\Fantina.png" />
+    <Content Include="Assets\fondoMenu.jpg" />
+    <Content Include="Assets\HechoPorSinFondo.png" />
+    <Content Include="Assets\pokemonFondo.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -187,6 +195,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="CombatePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InicioPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

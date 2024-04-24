@@ -6,6 +6,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Core;
+using Windows.UI.Notifications;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -26,51 +27,54 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
         public MainPage()
         {
             this.InitializeComponent();
-            fmMain.BackStack.Add(new PageStackEntry(typeof(MainPage), null, null));
-            miArticuno.verFilaVida(false);
-            miArticuno.verFilaEnergia(false);
-            miArticuno.verFondo(false);
+            fmMain.BackStack.Add(new PageStackEntry(typeof(InicioPage), null, null));
+            SystemNavigationManager.GetForCurrentView().BackRequested += opcionVolver;
+            Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(320, 320));
+            Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().VisibleBoundsChanged += MainPage_VisibleBoundsChanged;
             
             //Botón de volver
             SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
             AppViewBackButtonVisibility.Visible;
             SystemNavigationManager.GetForCurrentView().BackRequested += opcionVolver;
-
             Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(320, 320));
             Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().VisibleBoundsChanged += MainPage_VisibleBoundsChanged;
-            //La primera pagina que existe debe ir en la pila, hay que hacerlo explicitamente
-            // Añadir MainPage al principio de la pila de navegación hacia atrás
-            //Frame rootFrame = Window.Current.Content as Frame;
-            //if (rootFrame.BackStack.Count == 0)
-            //{
-            //    rootFrame.BackStack.Add(new PageStackEntry(typeof(MainPage), null, null));
-            //}
+
         }
 
         private void irMisPokemon(object sender, RoutedEventArgs e)
         {
             fmMain.Navigate(typeof(MisPokemonPage));
+            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+
         }
 
         private void irPokedex(object sender, RoutedEventArgs e)
         {
-            fmMain.Navigate(typeof(PokedexPage));
+            fmMain.Navigate(typeof(PokedexPage), this);
+            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+
         }
 
         private void irCombate(object sender, RoutedEventArgs e)
         {
             fmMain.Navigate(typeof(CombatePage));
+            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+
         }
 
         private void irAcercaDe(object sender, RoutedEventArgs e)
         {
             fmMain.Navigate(typeof(AcercaDePage));
+            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+
         }
 
         private void irInicio(object sender, RoutedEventArgs e)
         {
             //fmMain.Navigate(typeof()); - MainPage no es porque pone toda la ventanaç
-            this.Frame.Navigate(typeof(MainPage)); //Volvemos al frame de MainPage
+            fmMain.Navigate(typeof(InicioPage)); //Volvemos al frame de InicioPage
+            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+
         }
 
         private void opcionVolver(object sender, BackRequestedEventArgs e) //Volver a la página anterior
@@ -78,6 +82,10 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
             if (fmMain.BackStack.Any())
             {
                 fmMain.GoBack();
+                if(!(fmMain.BackStack.Any()))
+                {
+                    SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Collapsed;
+                }
             }
         }
 
