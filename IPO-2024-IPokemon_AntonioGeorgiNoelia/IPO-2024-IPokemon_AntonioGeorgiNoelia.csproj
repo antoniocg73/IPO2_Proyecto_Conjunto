@@ -126,6 +126,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="ArticunoACG.xaml.cs" />
+    <Compile Include="ChandelureNDAA.xaml.cs" />
     <Compile Include="CombatePage.xaml.cs">
       <DependentUpon>CombatePage.xaml</DependentUpon>
     </Compile>
@@ -167,6 +168,19 @@
     <Content Include="AssetsArticunoACG\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="AssetsArticunoACG\StoreLogo.png" />
     <Content Include="AssetsArticunoACG\Wide310x150Logo.scale-200.png" />
+    <Content Include="AssetsChandelureNDAA\AtaqueDebilSonido.mp3" />
+    <Content Include="AssetsChandelureNDAA\AtaqueFuerteSonido.mp4" />
+    <Content Include="AssetsChandelureNDAA\CansadoSonido.mp4" />
+    <Content Include="AssetsChandelureNDAA\corazon.png" />
+    <Content Include="AssetsChandelureNDAA\fondo.jpg" />
+    <Content Include="AssetsChandelureNDAA\HeridoSonido.mp4" />
+    <Content Include="AssetsChandelureNDAA\MuerteSonido.mp4" />
+    <Content Include="AssetsChandelureNDAA\Normal.mp4" />
+    <Content Include="AssetsChandelureNDAA\pocionAmarilla.png" />
+    <Content Include="AssetsChandelureNDAA\pocionMorada.png" />
+    <Content Include="AssetsChandelureNDAA\rayo.png" />
+    <Content Include="AssetsChandelureNDAA\VidaSonidoFeliz.mp4" />
+    <Content Include="AssetsChandelureNDAA\VueloSonido.mp4" />
     <Content Include="Assets\Bienvenido.png" />
     <Content Include="Assets\Fantina.png" />
     <Content Include="Assets\fondoMenu.jpg" />
@@ -191,6 +205,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ArticunoACG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChandelureNDAA.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -223,6 +241,7 @@
       <Version>2.8.6</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
