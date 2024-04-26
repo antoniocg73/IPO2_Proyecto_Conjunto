@@ -342,10 +342,13 @@
     <Content Include="AssetsSnorlaxROC\z.png" />
     <Content Include="AssetsSnorlaxROC\z2b.png" />
     <Content Include="AssetsSnorlaxROC\zb.png" />
+    <Content Include="Assets\Antonio.jpeg" />
     <Content Include="Assets\Bienvenido.png" />
     <Content Include="Assets\Fantina.png" />
     <Content Include="Assets\fondoMenu.jpg" />
+    <Content Include="Assets\Georgi.jpeg" />
     <Content Include="Assets\HechoPorSinFondo.png" />
+    <Content Include="Assets\Noelia.jpeg" />
     <Content Include="Assets\pokemonFondo.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
