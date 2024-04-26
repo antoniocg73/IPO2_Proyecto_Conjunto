@@ -126,17 +126,25 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="ArticunoACG.xaml.cs" />
+    <Compile Include="ButterFreeACC.xaml.cs" />
     <Compile Include="ChandelureNDAA.xaml.cs" />
+    <Compile Include="CharizardASM.xaml.cs" />
     <Compile Include="CombatePage.xaml.cs">
       <DependentUpon>CombatePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GarchompVFJD.xaml.cs" />
+    <Compile Include="GengarJCC.xaml.cs" />
+    <Compile Include="GrookeyJGPMP.xaml.cs" />
     <Compile Include="InicioPage.xaml.cs">
       <DependentUpon>InicioPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="iPokemon.cs" />
+    <Compile Include="LaprasACE.xaml.cs" />
+    <Compile Include="LucarioGAC.xaml.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MakuhitaAPQ.xaml.cs" />
     <Compile Include="MisPokemonPage.xaml.cs">
       <DependentUpon>MisPokemonPage.xaml</DependentUpon>
     </Compile>
@@ -144,6 +152,8 @@
       <DependentUpon>PokedexPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScizorAPJ.xaml.cs" />
+    <Compile Include="SnorlaxROC.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -168,6 +178,22 @@
     <Content Include="AssetsArticunoACG\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="AssetsArticunoACG\StoreLogo.png" />
     <Content Include="AssetsArticunoACG\Wide310x150Logo.scale-200.png" />
+    <Content Include="AssetsButterFreeACC\brillo.png" />
+    <Content Include="AssetsButterFreeACC\capullo.png" />
+    <Content Include="AssetsButterFreeACC\cicatrizGrande.png" />
+    <Content Include="AssetsButterFreeACC\energia.png" />
+    <Content Include="AssetsButterFreeACC\escudo.mp3" />
+    <Content Include="AssetsButterFreeACC\escudo.png" />
+    <Content Include="AssetsButterFreeACC\fondo.jpg" />
+    <Content Include="AssetsButterFreeACC\muerte.mp3" />
+    <Content Include="AssetsButterFreeACC\nube.png" />
+    <Content Include="AssetsButterFreeACC\ojos_muerte.png" />
+    <Content Include="AssetsButterFreeACC\pocima_energia.png" />
+    <Content Include="AssetsButterFreeACC\pocima_vida.png" />
+    <Content Include="AssetsButterFreeACC\tirita.png" />
+    <Content Include="AssetsButterFreeACC\tornado.mp3" />
+    <Content Include="AssetsButterFreeACC\tronado.png" />
+    <Content Include="AssetsButterFreeACC\vida.png" />
     <Content Include="AssetsChandelureNDAA\AtaqueDebilSonido.mp3" />
     <Content Include="AssetsChandelureNDAA\AtaqueFuerteSonido.mp4" />
     <Content Include="AssetsChandelureNDAA\CansadoSonido.mp4" />
@@ -181,6 +207,141 @@
     <Content Include="AssetsChandelureNDAA\rayo.png" />
     <Content Include="AssetsChandelureNDAA\VidaSonidoFeliz.mp4" />
     <Content Include="AssetsChandelureNDAA\VueloSonido.mp4" />
+    <Content Include="AssetsCharizardASM\background.png" />
+    <Content Include="AssetsCharizardASM\background1.png" />
+    <Content Include="AssetsCharizardASM\blue_potion.png" />
+    <Content Include="AssetsCharizardASM\charizard.jpg" />
+    <Content Include="AssetsCharizardASM\espiral.png" />
+    <Content Include="AssetsCharizardASM\evolucion.mp3" />
+    <Content Include="AssetsCharizardASM\garra.mp3" />
+    <Content Include="AssetsCharizardASM\garra.png" />
+    <Content Include="AssetsCharizardASM\green_potion.png" />
+    <Content Include="AssetsCharizardASM\heart.png" />
+    <Content Include="AssetsCharizardASM\lanzallamas.mp3" />
+    <Content Include="AssetsCharizardASM\lanzallamas.png" />
+    <Content Include="AssetsCharizardASM\lanzallamas_azul.png" />
+    <Content Include="AssetsCharizardASM\mano_mewing.png" />
+    <Content Include="AssetsCharizardASM\mano_mewing_black.png" />
+    <Content Include="AssetsCharizardASM\mewing.mp3" />
+    <Content Include="AssetsCharizardASM\mewing.png" />
+    <Content Include="AssetsCharizardASM\mewing_black.png" />
+    <Content Include="AssetsCharizardASM\recuperado.mp3" />
+    <Content Include="AssetsCharizardASM\shield.png" />
+    <Content Include="AssetsGarchompVFJD\445.png" />
+    <Content Include="AssetsGarchompVFJD\bolaescudo.png" />
+    <Content Include="AssetsGarchompVFJD\bolaFuego-removebg-preview.png" />
+    <Content Include="AssetsGarchompVFJD\circuloescudo-removebg-preview.png" />
+    <Content Include="AssetsGarchompVFJD\descarga %282%29.png" />
+    <Content Include="AssetsGarchompVFJD\efectosEnergia.png" />
+    <Content Include="AssetsGarchompVFJD\efectosVida.png" />
+    <Content Include="AssetsGarchompVFJD\escudo.png" />
+    <Content Include="AssetsGarchompVFJD\escudoazul-removebg-preview.png" />
+    <Content Include="AssetsGarchompVFJD\forest.png" />
+    <Content Include="AssetsGarchompVFJD\heart-png.png" />
+    <Content Include="AssetsGarchompVFJD\icono_vida.png" />
+    <Content Include="AssetsGarchompVFJD\zarpazo-removebg-preview.png" />
+    <Content Include="AssetsGengarJCC\corazon.png" />
+    <Content Include="AssetsGengarJCC\energia.png" />
+    <Content Include="AssetsGengarJCC\pocion.png" />
+    <Content Include="AssetsGengarJCC\pocionEnergia.png" />
+    <Content Include="AssetsGengarJCC\z10o_buuk_210129.jpg" />
+    <Content Include="AssetsGrookeyJGPMP\AtaqueDebil.mp3" />
+    <Content Include="AssetsGrookeyJGPMP\AtaqueFuerte.mp3" />
+    <Content Include="AssetsGrookeyJGPMP\Corazon.png" />
+    <Content Include="AssetsGrookeyJGPMP\Derrotado.mp3" />
+    <Content Include="AssetsGrookeyJGPMP\Descanso.mp3" />
+    <Content Include="AssetsGrookeyJGPMP\Escudo.mp4" />
+    <Content Include="AssetsGrookeyJGPMP\imgFondo.jpg" />
+    <Content Include="AssetsGrookeyJGPMP\PocionEnergia.png" />
+    <Content Include="AssetsGrookeyJGPMP\PocionVida.png" />
+    <Content Include="AssetsGrookeyJGPMP\Power.png" />
+    <Content Include="AssetsLaprasACE\almohada2.png" />
+    <Content Include="AssetsLaprasACE\AtaqueDebil.mp3" />
+    <Content Include="AssetsLaprasACE\AtaqueFuerte.mp3" />
+    <Content Include="AssetsLaprasACE\brillo.png" />
+    <Content Include="AssetsLaprasACE\bubble.png" />
+    <Content Include="AssetsLaprasACE\Cansado.mp3" />
+    <Content Include="AssetsLaprasACE\Descanso.mp3" />
+    <Content Include="AssetsLaprasACE\destello.png" />
+    <Content Include="AssetsLaprasACE\Escudo.mp3" />
+    <Content Include="AssetsLaprasACE\escudo.png" />
+    <Content Include="AssetsLaprasACE\forest.jpg" />
+    <Content Include="AssetsLaprasACE\forest2.jpg" />
+    <Content Include="AssetsLaprasACE\heart.png" />
+    <Content Include="AssetsLaprasACE\heart_potion.png" />
+    <Content Include="AssetsLaprasACE\lapras.mp3" />
+    <Content Include="AssetsLaprasACE\moraton.png" />
+    <Content Include="AssetsLaprasACE\Muerte.mp3" />
+    <Content Include="AssetsLaprasACE\PonerEscudo.mp3" />
+    <Content Include="AssetsLaprasACE\PowerDown.mp3" />
+    <Content Include="AssetsLaprasACE\PowerUp.mp3" />
+    <Content Include="AssetsLaprasACE\QuitarCansado.mp3" />
+    <Content Include="AssetsLaprasACE\QuitarEscudo.mp3" />
+    <Content Include="AssetsLaprasACE\shield.png" />
+    <Content Include="AssetsLaprasACE\shield_potion.png" />
+    <Content Include="AssetsLaprasACE\sudor.png" />
+    <Content Include="AssetsLaprasACE\tirita.png" />
+    <Content Include="AssetsLaprasACE\tumba3.png" />
+    <Content Include="AssetsLucarioGAC\AuraSphere.mp3" />
+    <Content Include="AssetsLucarioGAC\AuraSphere.png" />
+    <Content Include="AssetsLucarioGAC\BattleShild.png" />
+    <Content Include="AssetsLucarioGAC\Cansado.mp3" />
+    <Content Include="AssetsLucarioGAC\Defeated.png" />
+    <Content Include="AssetsLucarioGAC\Defeated2.png" />
+    <Content Include="AssetsLucarioGAC\Derrotado.mp3" />
+    <Content Include="AssetsLucarioGAC\Energy.png" />
+    <Content Include="AssetsLucarioGAC\EnergyPotion.png" />
+    <Content Include="AssetsLucarioGAC\Enfadado.mp3" />
+    <Content Include="AssetsLucarioGAC\HealthPotion.png" />
+    <Content Include="AssetsLucarioGAC\Heart.png" />
+    <Content Include="AssetsLucarioGAC\Herrido.mp3" />
+    <Content Include="AssetsLucarioGAC\Hurt.png" />
+    <Content Include="AssetsLucarioGAC\Hurt2.png" />
+    <Content Include="AssetsLucarioGAC\Pokemon.png" />
+    <Content Include="AssetsLucarioGAC\Reversal.png" />
+    <Content Include="AssetsLucarioGAC\Reversal2.png" />
+    <Content Include="AssetsMakuhitaAPQ\Corazon.png" />
+    <Content Include="AssetsMakuhitaAPQ\Energia.png" />
+    <Content Include="AssetsMakuhitaAPQ\fondo.jpg" />
+    <Content Include="AssetsMakuhitaAPQ\PocionEnergia.png" />
+    <Content Include="AssetsMakuhitaAPQ\PocionVida.png" />
+    <Content Include="AssetsScizorAPJ\icoEnergia.png" />
+    <Content Include="AssetsScizorAPJ\icoSalud.png" />
+    <Content Include="AssetsScizorAPJ\paisajePokemon.png" />
+    <Content Include="AssetsScizorAPJ\PocionEnergia.png" />
+    <Content Include="AssetsScizorAPJ\PocionSalud.png" />
+    <Content Include="AssetsSnorlaxROC\1fa78.png" />
+    <Content Include="AssetsSnorlaxROC\aDormir.mp3" />
+    <Content Include="AssetsSnorlaxROC\arabn.png" />
+    <Content Include="AssetsSnorlaxROC\arañazo.jpg" />
+    <Content Include="AssetsSnorlaxROC\arañazoSan2.png" />
+    <Content Include="AssetsSnorlaxROC\arañazoSangre.png" />
+    <Content Include="AssetsSnorlaxROC\baba.png" />
+    <Content Include="AssetsSnorlaxROC\caida.png" />
+    <Content Include="AssetsSnorlaxROC\cama.png" />
+    <Content Include="AssetsSnorlaxROC\cartel-minimo-ilustracion-vector-arbol-coco_969863-6808.png" />
+    <Content Include="AssetsSnorlaxROC\corazon.png" />
+    <Content Include="AssetsSnorlaxROC\derrumbe.mp3" />
+    <Content Include="AssetsSnorlaxROC\energia.png" />
+    <Content Include="AssetsSnorlaxROC\escudo.mp3" />
+    <Content Include="AssetsSnorlaxROC\fondo.jpg" />
+    <Content Include="AssetsSnorlaxROC\heridas.png" />
+    <Content Include="AssetsSnorlaxROC\lapida.png" />
+    <Content Include="AssetsSnorlaxROC\manta.png" />
+    <Content Include="AssetsSnorlaxROC\moraton.png" />
+    <Content Include="AssetsSnorlaxROC\moraton2.png" />
+    <Content Include="AssetsSnorlaxROC\muerte.mp3" />
+    <Content Include="AssetsSnorlaxROC\ojosmuerto.png" />
+    <Content Include="AssetsSnorlaxROC\pocionA.png" />
+    <Content Include="AssetsSnorlaxROC\pocionR.png" />
+    <Content Include="AssetsSnorlaxROC\roncar.mp3" />
+    <Content Include="AssetsSnorlaxROC\tierra.png" />
+    <Content Include="AssetsSnorlaxROC\tierrabn.png" />
+    <Content Include="AssetsSnorlaxROC\uñas.mp3" />
+    <Content Include="AssetsSnorlaxROC\vidaBaja.mp3" />
+    <Content Include="AssetsSnorlaxROC\z.png" />
+    <Content Include="AssetsSnorlaxROC\z2b.png" />
+    <Content Include="AssetsSnorlaxROC\zb.png" />
     <Content Include="Assets\Bienvenido.png" />
     <Content Include="Assets\Fantina.png" />
     <Content Include="Assets\fondoMenu.jpg" />
@@ -208,7 +369,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="ButterFreeACC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="ChandelureNDAA.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CharizardASM.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -216,11 +385,35 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="GarchompVFJD.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GengarJCC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GrookeyJGPMP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="InicioPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="LaprasACE.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LucarioGAC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MakuhitaAPQ.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -232,6 +425,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ScizorAPJ.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SnorlaxROC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
@@ -240,6 +441,9 @@
     <PackageReference Include="Microsoft.UI.Xaml">
       <Version>2.8.6</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AssetsLucarioGAC\Heart" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
