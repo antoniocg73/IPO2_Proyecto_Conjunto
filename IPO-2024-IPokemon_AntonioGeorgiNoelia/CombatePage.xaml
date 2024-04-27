@@ -9,8 +9,6 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Viewbox Height="100" VerticalAlignment="Top">
-            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Combate" VerticalAlignment="Center"/>
-        </Viewbox>
+       
     </Grid>
 </Page>

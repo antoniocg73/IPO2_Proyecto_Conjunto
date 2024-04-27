@@ -57,7 +57,7 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
 
         private void irCombate(object sender, RoutedEventArgs e)
         {
-            fmMain.Navigate(typeof(CombatePage));
+            fmMain.Navigate(typeof(CombateEleccion));
             SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
 
         }
