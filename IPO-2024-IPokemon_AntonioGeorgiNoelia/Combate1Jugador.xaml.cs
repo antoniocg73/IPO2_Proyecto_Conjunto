@@ -52,7 +52,41 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
                     break;
             }
             btnElegirPokemon1.Visibility = Visibility.Collapsed;
-            if (flipJugador1.IsEnabled == false && flipMáquina.IsEnabled == false)
+            //controlesJugador1.Visibility = Visibility.Visible;
+            if (flipJugador1.IsEnabled == false && flipMaquina.IsEnabled == false)
+            {
+                turno = azarTurno();
+                if (turno == 1)
+                {
+                    maquinaNoJuega();
+                }
+                else
+                {
+                    maquinaSiJuega();
+                }
+            }
+        }
+        
+        private void clickJugadorMaquina(object sender, RoutedEventArgs e)
+        {
+            flipMaquina.IsEnabled = false;
+            switch (flipMaquina.SelectedIndex)
+            {
+                case 0:
+                    flipMiArticuno = flipMaquina.SelectedItem as ArticunoACG;
+                    break;
+                case 1:
+                    flipMiChandelure = flipMaquina.SelectedItem as ChandelureNDAA;
+                    break;
+                case 2:
+                    flipMiLucario = flipMaquina.SelectedItem as MyUCLucario;
+                    break;
+                default:
+                    // Caso por defecto (si flipJugador1.SelectedIndex no coincide con ningún caso)
+                    break;
+            }
+            btnElegirPokemonMaquina.Visibility = Visibility.Collapsed;
+            if (flipJugador1.IsEnabled == false && flipMaquina.IsEnabled == false)
             {
                 turno = azarTurno();
                 if (turno == 1)
@@ -80,6 +114,12 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
         public void maquinaSiJuega()
         {
 
+        }
+
+        private void opcionesDeAtaque(object sender, RoutedEventArgs e)
+        {
+            controlesJugador1.Visibility = Visibility.Collapsed;
+            opcionesAtacar.Visibility = Visibility.Visible;
         }
     }
 }

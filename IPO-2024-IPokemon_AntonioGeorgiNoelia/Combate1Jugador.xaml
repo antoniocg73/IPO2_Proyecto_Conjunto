@@ -27,22 +27,46 @@
         <Grid.Background>
             <ImageBrush x:Name="imgFondoCombate" ImageSource="/Assets/fondoCombate.jpg"/>
         </Grid.Background>
-        <TextBlock x:Name="textCombate" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Combate" VerticalAlignment="Center" FontSize="80" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Foreground="White" FontWeight="Bold"/>
+        <TextBlock x:Name="textCombate" Visibility="Visible" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Combate" VerticalAlignment="Center" FontSize="80" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Foreground="White" FontWeight="Bold"/>
         <TextBlock x:Name="textJugador1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Jugador 1" VerticalAlignment="Center" FontSize="80" Grid.Row="2" Grid.Column="1" Foreground="White" FontWeight="Bold"/>
-        <TextBlock x:Name="Máquina" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Máquina" VerticalAlignment="Center" FontSize="80" Grid.Column="3" Grid.Row="2" Foreground="White" FontWeight="Bold"/>
+        <TextBlock x:Name="Máquina" Visibility="Visible" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Máquina" VerticalAlignment="Center" FontSize="80" Grid.Column="3" Grid.Row="2" Foreground="White" FontWeight="Bold"/>
         <FlipView x:Name="flipJugador1" Grid.Row="3" Grid.Column="1" Background="Transparent">
             <my:ArticunoACG />
             <my:ChandelureNDAA />
             <my:MyUCLucario />
         </FlipView>
-        <FlipView x:Name="flipMáquina" Grid.Row="3" Grid.Column="3" Background="Transparent">
+        <FlipView x:Name="flipMaquina" Grid.Row="3" Grid.Column="3" Background="Transparent">
             <my:ArticunoACG />
             <my:ChandelureNDAA />
             <my:MyUCLucario />
         </FlipView>
-        <Button x:Name="btnElegirPokemon1" Grid.Row="4" Grid.Column="1" Content="Elegir este Pokemon" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="40" Foreground="White" FontWeight="Bold" Click="clickJugador1"/>
+        <Button x:Name="btnElegirPokemon1" Visibility="Visible"  Grid.Row="4" Grid.Column="1" Content="Elegir este Pokemon" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="40" Foreground="White" FontWeight="Bold" Click="clickJugador1"/>
         <TextBlock x:Name="textEsperar1" Grid.Row="4" Grid.Column="1" Text="Turno del jugador 2, espera tu turno." VerticalAlignment="Center" HorizontalAlignment="Stretch" Visibility="Collapsed" FontWeight="Bold" FontSize="40" Foreground="White" TextWrapping="Wrap"/>
-        <Button x:Name="btnElegirPokemon2" Grid.Row="4" Grid.Column="3" Content="Elegir este Pokemon" VerticalAlignment="Center" HorizontalAlignment="Stretch"  FontSize="40" Foreground="White" FontWeight="Bold" />
-        <TextBlock x:Name="textEsperar2" Grid.Row="4" Grid.Column="3" Text="Turno del jugador 1, espera tu turno." VerticalAlignment="Center" HorizontalAlignment="Stretch" Visibility="Collapsed" FontWeight="Bold" FontSize="40" Foreground="White" TextWrapping="Wrap"/>
+        <Button x:Name="btnElegirPokemonMaquina" Visibility="Visible" Grid.Row="4" Grid.Column="3" Content="Elegir este Pokemon" VerticalAlignment="Center" HorizontalAlignment="Stretch"  FontSize="40" Foreground="White" FontWeight="Bold" Click="clickJugadorMaquina" />
+        <TextBlock x:Name="textEsperarMaquina" Grid.Row="4" Grid.Column="3" Text="Turno del jugador 1, espera tu turno." VerticalAlignment="Center" HorizontalAlignment="Stretch" Visibility="Collapsed" FontWeight="Bold" FontSize="40" Foreground="White" TextWrapping="Wrap"/>
+
+        <Grid x:Name="controlesJugador1" Grid.Row="4" Grid.Column="1" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="50*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="50*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnAtacar1" Content="Atacar" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="40" Foreground="White" FontWeight="Bold" Grid.Row="0" Grid.Column="0" Click="opcionesDeAtaque"  />
+            <Button x:Name="btnRendirse1" Content="Rendirse" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="40" Foreground="White" FontWeight="Bold" Grid.Row="1" Grid.Column="1" />
+            <Button x:Name="btnCurarse1" Content="Curarse" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="40" Foreground="White" FontWeight="Bold" Grid.Row="0" Grid.Column="1" />
+            <Button x:Name="btnEnergia1" Content="Subir energía" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="40" Foreground="White" FontWeight="Bold" Grid.Row="1" Grid.Column="0" />
+        </Grid>
+        <Grid x:Name="opcionesAtacar" Grid.Row="4" Grid.Column="1" Visibility="Collapsed">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="50*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnAtacarFuerte1" Content="Ataque fuerte" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="30" Foreground="White" FontWeight="Bold" Grid.Row="0" Grid.Column="0" Margin="0,50,0,50" />
+            <Button x:Name="btnAtacarDebil1" Content="Ataque débil" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="30" Foreground="White" FontWeight="Bold" Grid.Row="0" Grid.Column="1" Margin="0,50,0,50" />
+
+        </Grid>
     </Grid>
 </Page>
