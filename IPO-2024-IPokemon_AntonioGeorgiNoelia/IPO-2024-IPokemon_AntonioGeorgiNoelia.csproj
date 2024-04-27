@@ -129,6 +129,9 @@
     <Compile Include="ButterFreeACC.xaml.cs" />
     <Compile Include="ChandelureNDAA.xaml.cs" />
     <Compile Include="CharizardASM.xaml.cs" />
+    <Compile Include="Combate1Jugador.xaml.cs">
+      <DependentUpon>Combate1Jugador.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CombateEleccion.xaml.cs">
       <DependentUpon>CombateEleccion.xaml</DependentUpon>
     </Compile>
@@ -351,6 +354,7 @@
     <Content Include="Assets\Bienvenido.png" />
     <Content Include="Assets\DecidirCombate.jpg" />
     <Content Include="Assets\Fantina.png" />
+    <Content Include="Assets\fondoCombate.jpg" />
     <Content Include="Assets\fondoMenu.jpg" />
     <Content Include="Assets\Georgi.jpeg" />
     <Content Include="Assets\HechoPorSinFondo.png" />
@@ -390,6 +394,10 @@
     <Page Include="CharizardASM.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Combate1Jugador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CombateEleccion.xaml">
       <SubType>Designer</SubType>

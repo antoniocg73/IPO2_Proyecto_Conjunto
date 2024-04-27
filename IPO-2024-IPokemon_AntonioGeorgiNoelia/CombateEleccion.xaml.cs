@@ -29,7 +29,7 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
 
         private void irCombate1J(object sender, RoutedEventArgs e)
         {
-
+            Frame.Navigate(typeof(Combate1Jugador));
         }
 
         private void irCombate2J(object sender, RoutedEventArgs e)

@@ -28,6 +28,7 @@ namespace Pokemon_Antonio_Campallo_Gomez
         DispatcherTimer dtTime2;
         MediaPlayer mpSonidos;
         Storyboard sbaux;
+        Storyboard sbIdle;
 
 
         private void usePotionRed(object sender, PointerRoutedEventArgs e)
@@ -177,6 +178,9 @@ namespace Pokemon_Antonio_Campallo_Gomez
             // Asignar los valores de energía y vida
             this.Energia = 0.8;
             ((iPokemon)this).Vida = 1;
+            sbIdle = (Storyboard)this.Resources["Vuelo"];
+            sbIdle.RepeatBehavior = RepeatBehavior.Forever;
+            sbIdle.Begin();
         }
 
 

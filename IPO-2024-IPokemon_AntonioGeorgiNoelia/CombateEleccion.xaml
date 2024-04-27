@@ -18,7 +18,9 @@
             <ColumnDefinition Width="50*"/>
             <ColumnDefinition Width="50*"/>
         </Grid.ColumnDefinitions>
-        <Image x:Name="imgDecidirComabate" Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="2" Stretch="Fill" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Source="/Assets/DecidirCombate.jpg"/>
+        <Grid.Background>
+            <ImageBrush x:Name="imgDecidirComabate" ImageSource="/Assets/DecidirCombate.jpg"/>
+        </Grid.Background>
         <Image x:Name="stackContexto" Source="/Assets/textConteto.png" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
         <Button x:Name="btn_Jugador1" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Click="irCombate1J">
             <StackPanel>

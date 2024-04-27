@@ -1,0 +1,48 @@
+﻿<Page xmlns:my="using:Pokemon_Antonio_Campallo_Gomez" 
+    x:Class="IPO_2024_IPokemon_AntonioGeorgiNoelia.Combate1Jugador"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:IPO_2024_IPokemon_AntonioGeorgiNoelia"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="120*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="20*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="20*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush x:Name="imgFondoCombate" ImageSource="/Assets/fondoCombate.jpg"/>
+        </Grid.Background>
+        <TextBlock x:Name="textCombate" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Combate" VerticalAlignment="Center" FontSize="80" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Foreground="White" FontWeight="Bold"/>
+        <TextBlock x:Name="textJugador1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Jugador 1" VerticalAlignment="Center" FontSize="80" Grid.Row="2" Grid.Column="1" Foreground="White" FontWeight="Bold"/>
+        <TextBlock x:Name="Máquina" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Máquina" VerticalAlignment="Center" FontSize="80" Grid.Column="3" Grid.Row="2" Foreground="White" FontWeight="Bold"/>
+        <FlipView x:Name="flipJugador1" Grid.Row="3" Grid.Column="1" Background="Transparent">
+            <my:ArticunoACG />
+            <my:ChandelureNDAA />
+            <my:MyUCLucario />
+        </FlipView>
+        <FlipView x:Name="flipMáquina" Grid.Row="3" Grid.Column="3" Background="Transparent">
+            <my:ArticunoACG />
+            <my:ChandelureNDAA />
+            <my:MyUCLucario />
+        </FlipView>
+        <Button x:Name="btnElegirPokemon1" Grid.Row="4" Grid.Column="1" Content="Elegir este Pokemon" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="40" Foreground="White" FontWeight="Bold" Click="clickJugador1"/>
+        <TextBlock x:Name="textEsperar1" Grid.Row="4" Grid.Column="1" Text="Turno del jugador 2, espera tu turno." VerticalAlignment="Center" HorizontalAlignment="Stretch" Visibility="Collapsed" FontWeight="Bold" FontSize="40" Foreground="White" TextWrapping="Wrap"/>
+        <Button x:Name="btnElegirPokemon2" Grid.Row="4" Grid.Column="3" Content="Elegir este Pokemon" VerticalAlignment="Center" HorizontalAlignment="Stretch"  FontSize="40" Foreground="White" FontWeight="Bold" />
+        <TextBlock x:Name="textEsperar2" Grid.Row="4" Grid.Column="3" Text="Turno del jugador 1, espera tu turno." VerticalAlignment="Center" HorizontalAlignment="Stretch" Visibility="Collapsed" FontWeight="Bold" FontSize="40" Foreground="White" TextWrapping="Wrap"/>
+    </Grid>
+</Page>
