@@ -9,15 +9,43 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Viewbox Height="100" VerticalAlignment="Top">
-            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Mis Pokemon" VerticalAlignment="Center"/>
-        </Viewbox>
-        <RelativePanel Margin="0,100,0,0">
-            <my:ArticunoACG x:Name="miArticuno"/>
-            <TextBlock x:Name="tbNombre" TextWrapping="Wrap" Text="Nombre" FontSize="30" RelativePanel.RightOf="miArticuno"/>
-            <TextBlock x:Name="tbCategoria" TextWrapping="Wrap" Text="Categoría" FontSize="30" RelativePanel.RightOf="miArticuno" RelativePanel.Below="tbNombre"/>
-            <TextBlock x:Name="tbDescripcion" TextWrapping="Wrap" Text="Descripción" FontSize="30" RelativePanel.RightOf="miArticuno" RelativePanel.Below="tbCategoria"/>
-        </RelativePanel>
-            
+        <Grid.Background>
+            <ImageBrush x:Name="imMisPokemons" ImageSource="/Assets/mispokemon.png"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="40*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="160*"/>
+            <RowDefinition Height="50*"/>
+        </Grid.RowDefinitions>
+
+        <GridView x:Name="opcionChandelure" Grid.Row="1" Margin="30">
+            <GridView.Background>
+                <ImageBrush ImageSource="/Assets/Chandelure.png" Stretch="Fill"/>
+            </GridView.Background>
+        </GridView>
+        <Image x:Name="imChandelureTexto" Grid.Row="2" Source="/Assets/ChandelureTexto.png" VerticalAlignment="Top"/>
+
+        <GridView x:Name="opcionArticuno" Grid.Row="1" Grid.Column="1" Margin="30">
+            <GridView.Background>
+                <ImageBrush ImageSource="/Assets/Articuno.jpg"/>
+            </GridView.Background>
+
+        </GridView>
+        <Image x:Name="imArticunoTexto" Grid.Row="2" Grid.Column="1" Source="/Assets/ArticunoTexto.png" Margin="30,0" VerticalAlignment="Top"/>
+
+        <GridView x:Name="opcionLucario" Grid.Row="1" Grid.Column="2" Margin="30">
+            <GridView.Background>
+                <ImageBrush ImageSource="/Assets/Lucario.jpg"/>
+            </GridView.Background>
+        </GridView>
+        <Image x:Name="imLucarioTexto" Grid.Row="2" Grid.Column="2" Source="/Assets/LucarioTexto.png" Margin="40,0" VerticalAlignment="Top"/>
+
+
     </Grid>
 </Page>

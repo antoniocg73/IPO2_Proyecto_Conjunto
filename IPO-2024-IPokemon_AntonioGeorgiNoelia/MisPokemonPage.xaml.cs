@@ -26,7 +26,7 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
         public MisPokemonPage()
         {
             this.InitializeComponent();
-
+            /****
             tbNombre.Text = "Nombre: " + miArticuno.Nombre;
             tbCategoria.Text = "Categoría: " + miArticuno.Categoría;
             tbDescripcion.Text = "Descripción: " + miArticuno.Descripcion;
@@ -62,6 +62,7 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
                 RelativePanel.SetBelow(tbDescripcion, tbCategoria);
             }
         }
-
+            **/
+        }
     }
 }
