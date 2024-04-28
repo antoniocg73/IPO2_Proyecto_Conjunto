@@ -6,11 +6,51 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="#c18f52">
+    <Page.Resources>
+        <CollectionViewSource x:Key="GroupedPokemonCollection"
+                              IsSourceGrouped="True"
+                              Source="{Binding PokemonsGrouped}" />
+    </Page.Resources>
 
     <Grid>
-        <Viewbox Height="100" VerticalAlignment="Top">
-            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Pokedex" VerticalAlignment="Center"/>
-        </Viewbox>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <!-- ListView a la izquierda con agrupación -->
+        <ListView Grid.Column="0" Margin="10"
+          IsItemClickEnabled="True"
+          ItemClick="InfoPokemon"
+          ItemsSource="{Binding Source={StaticResource GroupedPokemonCollection}}">
+            <ListView.Background>
+                <ImageBrush ImageSource="/Assets/PokedexBackgroud.jpg" Stretch="UniformToFill"/>
+            </ListView.Background>
+            <ListView.GroupStyle>
+                <GroupStyle HidesIfEmpty="True">
+                    <GroupStyle.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Key}" Foreground="Black" FontSize="22" FontWeight="Bold" Margin="30"/>
+                        </DataTemplate>
+                    </GroupStyle.HeaderTemplate>
+                </GroupStyle>
+            </ListView.GroupStyle>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="{Binding Image}" Width="50" Height="50" Margin="50"/>
+                        <TextBlock Text="{Binding Name}" Foreground="Black" Margin="40,0,0,0" VerticalAlignment="Center" FontWeight="Bold"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <!-- Filtros de búsqueda a la derecha -->
+        <StackPanel Grid.Column="1" Margin="10,10,10,0" VerticalAlignment="Top" Background="#c18f52" Padding="10">
+            <TextBlock Text="Filtrar" FontSize="16" Foreground="SaddleBrown" Margin="0,0,0,10"/>
+            <TextBox Text="{Binding Name}" PlaceholderText="Nombre" Foreground="Black" Margin="0,0,0,0" FontWeight="Bold" TextChanged="SearchBox_TextChanged" Width="200"/>
+        </StackPanel>
     </Grid>
+
 </Page>
