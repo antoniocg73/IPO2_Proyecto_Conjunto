@@ -8,44 +8,35 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    <Page.Resources>
+        <DataTemplate x:Key="myTaskTemplate" x:DataType="local:Pokemon">
+            <StackPanel>
+                <Button Height="500" Width="400">
+                    <Button.Background>
+                        <ImageBrush ImageSource="{x:Bind ImagePath}"/>
+                    </Button.Background>
+                </Button>
+                <Image Source="{x:Bind ImageName}" Height="150" Width="400"/>
+            </StackPanel>
+
+        </DataTemplate>
+
+    </Page.Resources>
+
     <Grid>
         <Grid.Background>
             <ImageBrush x:Name="imMisPokemons" ImageSource="/Assets/mispokemon.png"/>
         </Grid.Background>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="40*"/>
-            <ColumnDefinition Width="40*"/>
-            <ColumnDefinition Width="40*"/>
-        </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="30*"/>
-            <RowDefinition Height="160*"/>
-            <RowDefinition Height="50*"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="700"/>
+            <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
-        <GridView x:Name="opcionChandelure" Grid.Row="1" Margin="30">
-            <GridView.Background>
-                <ImageBrush ImageSource="/Assets/Chandelure.png" Stretch="Fill"/>
-            </GridView.Background>
-        </GridView>
-        <Image x:Name="imChandelureTexto" Grid.Row="2" Source="/Assets/ChandelureTexto.png" VerticalAlignment="Top"/>
-
-        <GridView x:Name="opcionArticuno" Grid.Row="1" Grid.Column="1" Margin="30">
-            <GridView.Background>
-                <ImageBrush ImageSource="/Assets/Articuno.jpg"/>
-            </GridView.Background>
-
-        </GridView>
-        <Image x:Name="imArticunoTexto" Grid.Row="2" Grid.Column="1" Source="/Assets/ArticunoTexto.png" Margin="30,0" VerticalAlignment="Top"/>
-
-        <GridView x:Name="opcionLucario" Grid.Row="1" Grid.Column="2" Margin="30">
-            <GridView.Background>
-                <ImageBrush ImageSource="/Assets/Lucario.jpg"/>
-            </GridView.Background>
-        </GridView>
-        <Image x:Name="imLucarioTexto" Grid.Row="2" Grid.Column="2" Source="/Assets/LucarioTexto.png" Margin="40,0" VerticalAlignment="Top"/>
-
+        <GridView Grid.Row="1" x:Name="GridViewMisPokemons" IsItemClickEnabled="True"
+       ItemClick="MisPokemons_ItemClick" ItemTemplate="{StaticResource myTaskTemplate}"
+       SelectionMode="Single"/>
 
     </Grid>
 </Page>

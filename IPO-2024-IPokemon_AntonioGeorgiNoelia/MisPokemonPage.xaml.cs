@@ -18,51 +18,29 @@ using Windows.UI.Xaml.Navigation;
 
 namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
 {
-    /// <summary>
-    /// Una página vacía que se puede usar de forma independiente o a la que se puede navegar dentro de un objeto Frame.
-    /// </summary>
+    public class Pokemon
+    {
+        public string ImagePath { get; set; }
+        public string ImageName { get; set; }
+    }
+
     public sealed partial class MisPokemonPage : Page
     {
         public MisPokemonPage()
         {
             this.InitializeComponent();
-            /****
-            tbNombre.Text = "Nombre: " + miArticuno.Nombre;
-            tbCategoria.Text = "Categoría: " + miArticuno.Categoría;
-            tbDescripcion.Text = "Descripción: " + miArticuno.Descripcion;
-            miArticuno.verFilaVida(false);
-            miArticuno.verFilaEnergia(false);
-            miArticuno.verFondo(false);
-            miArticuno.verNombre(false);
-
-            ApplicationView.GetForCurrentView().VisibleBoundsChanged += UcRatingText_VisibleBoundsChanged;
-
+            List<Pokemon> pokemons = new List<Pokemon>
+            {
+                new Pokemon { ImagePath = "/Assets/Chandelure.png", ImageName = "/Assets/ChandelureTexto.png" },
+                new Pokemon { ImagePath = "/Assets/Articuno.jpg", ImageName = "/Assets/ArticunoTexto.png"  },
+                new Pokemon { ImagePath = "/Assets/Lucario.jpg", ImageName = "/Assets/LucarioTexto.png" }
+            };
+            GridViewMisPokemons.ItemsSource = pokemons;
         }
 
-        private void UcRatingText_VisibleBoundsChanged(ApplicationView sender, object args)
+        private void MisPokemons_ItemClick(object sender, ItemClickEventArgs e)
         {
-            var Width = ApplicationView.GetForCurrentView().VisibleBounds.Width;
 
-            if (Width >= 1200)
-            {
-                RelativePanel.SetBelow(tbNombre, null);
-                RelativePanel.SetRightOf(tbNombre, miArticuno);
-                RelativePanel.SetRightOf(tbCategoria, miArticuno);
-                RelativePanel.SetRightOf(tbDescripcion, miArticuno);
-                RelativePanel.SetBelow(tbCategoria, tbNombre);
-                RelativePanel.SetBelow(tbDescripcion, tbCategoria);
-            }
-            else
-            {
-                RelativePanel.SetRightOf(tbNombre, null);
-                RelativePanel.SetRightOf(tbCategoria, null);
-                RelativePanel.SetRightOf(tbDescripcion, null);
-                RelativePanel.SetBelow(tbNombre, miArticuno);
-                RelativePanel.SetBelow(tbCategoria, tbNombre);
-                RelativePanel.SetBelow(tbDescripcion, tbCategoria);
-            }
-        }
-            **/
         }
     }
 }
