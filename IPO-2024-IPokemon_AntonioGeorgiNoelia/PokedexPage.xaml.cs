@@ -23,6 +23,36 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
     /// </summary>
     public sealed partial class PokedexPage : Page
     {
+        public class Pokemon
+        {
+            public string Name { get; set; }
+            public string Image { get; set; }
+        }
+
+        public class GroupInfoCollection<T> : ObservableCollection<T>
+        {
+            public char Key { get; set; }
+            public GroupInfoCollection(IEnumerable<T> items) : base(items) { }
+
+        }
+
+        private List<Pokemon> pokemons = new List<Pokemon>
+        {
+            new Pokemon { Name = "Articuno", Image = "Assets/ArticunoPokedex.png" },
+            new Pokemon { Name = "Butterfree", Image = "Assets/ButterFreePokedex.png" },
+            new Pokemon { Name = "Chandelure", Image = "Assets/ChandelurePokedex.png" },
+            new Pokemon { Name = "Charizard", Image = "Assets/CharizardPokedex.png" },
+            new Pokemon { Name = "Garchomp", Image = "Assets/GarchompPokedex.png" },
+            new Pokemon { Name = "Gengar", Image = "Assets/GengarPokedex.png" },
+            new Pokemon { Name = "Grookey", Image = "Assets/GrookeyPokedex.png" },
+            new Pokemon { Name = "Lapras", Image = "Assets/LaprasPokedex.png" },
+            new Pokemon { Name = "Lucario", Image = "Assets/LucarioPokedex.png" },
+            new Pokemon { Name = "Makuhita", Image = "Assets/MakuhitaPokedex.png" },
+            new Pokemon { Name = "Scizor", Image = "Assets/ScizorPokedex.png" },
+            new Pokemon { Name = "Snorlax", Image = "Assets/SnorlaxPokedex.png" },
+        };
+
+        public ObservableCollection<GroupInfoCollection<Pokemon>> PokemonsGrouped { get; set; }
         public PokedexPage()
         {
             this.InitializeComponent();
@@ -63,39 +93,5 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
             }
         }
 
-    }
-
-    public sealed partial class PokedexPage : Page
-    {
-        public class Pokemon
-        {
-            public string Name { get; set; }
-            public string Image { get; set; }
-        }
-        
-        public class GroupInfoCollection<T> : ObservableCollection<T>
-        {
-            public char Key { get; set; }
-            public GroupInfoCollection(IEnumerable<T> items) : base(items) { }
-
-        }
-
-        private List<Pokemon> pokemons = new List<Pokemon>
-        {
-            new Pokemon { Name = "Articuno", Image = "Assets/ArticunoPokedex.png" },
-            new Pokemon { Name = "Butterfree", Image = "Assets/ButterFreePokedex.png" },
-            new Pokemon { Name = "Chandelure", Image = "Assets/ChandelurePokedex.png" },
-            new Pokemon { Name = "Charizard", Image = "Assets/CharizardPokedex.png" },
-            new Pokemon { Name = "Garchomp", Image = "Assets/GarchompPokedex.png" },
-            new Pokemon { Name = "Gengar", Image = "Assets/GengarPokedex.png" },
-            new Pokemon { Name = "Grookey", Image = "Assets/GrookeyPokedex.png" },
-            new Pokemon { Name = "Lapras", Image = "Assets/LaprasPokedex.png" },
-            new Pokemon { Name = "Lucario", Image = "Assets/LucarioPokedex.png" },
-            new Pokemon { Name = "Makuhita", Image = "Assets/MakuhitaPokedex.png" },
-            new Pokemon { Name = "Scizor", Image = "Assets/ScizorPokedex.png" },
-            new Pokemon { Name = "Snorlax", Image = "Assets/SnorlaxPokedex.png" },
-        };
-
-        public ObservableCollection<GroupInfoCollection<Pokemon>> PokemonsGrouped { get; set; }
     }
 }
