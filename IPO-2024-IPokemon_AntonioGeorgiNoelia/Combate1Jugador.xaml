@@ -31,14 +31,14 @@
         <TextBlock x:Name="textJugador1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Jugador 1" VerticalAlignment="Center" FontSize="80" Grid.Row="2" Grid.Column="1" Foreground="White" FontWeight="Bold"/>
         <TextBlock x:Name="Máquina" Visibility="Visible" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Máquina" VerticalAlignment="Center" FontSize="80" Grid.Column="3" Grid.Row="2" Foreground="White" FontWeight="Bold"/>
         <FlipView x:Name="flipJugador1" Grid.Row="3" Grid.Column="1" Background="Transparent">
-            <my:ArticunoACG />
-            <my:ChandelureNDAA />
-            <my:MyUCLucario />
+            <my:ArticunoACG x:Name="articunoCombate1"/>
+            <my:ChandelureNDAA x:Name="chandelureCombate1"/>
+            <my:MyUCLucario x:Name="lucarioCombate1"/>
         </FlipView>
         <FlipView x:Name="flipMaquina" Grid.Row="3" Grid.Column="3" Background="Transparent">
-            <my:ArticunoACG />
-            <my:ChandelureNDAA />
-            <my:MyUCLucario />
+            <my:ArticunoACG x:Name="articunoCombate2"/>
+            <my:ChandelureNDAA x:Name="chandelureCmbate2"/>
+            <my:MyUCLucario x:Name="lucarioCombate2"/>
         </FlipView>
         <Button x:Name="btnElegirPokemon1" Visibility="Visible"  Grid.Row="4" Grid.Column="1" Content="Elegir este Pokemon" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="40" Foreground="White" FontWeight="Bold" Click="clickJugador1"/>
         <TextBlock x:Name="textEsperar1" Grid.Row="4" Grid.Column="1" Text="Turno del jugador 2, espera tu turno." VerticalAlignment="Center" HorizontalAlignment="Stretch" Visibility="Collapsed" FontWeight="Bold" FontSize="40" Foreground="White" TextWrapping="Wrap"/>

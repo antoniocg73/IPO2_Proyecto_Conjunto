@@ -31,6 +31,23 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
         public Combate1Jugador()
         {
             this.InitializeComponent();
+            articunoCombate1.verFondo(false); articunoCombate2.verFondo(false);
+            articunoCombate1.verFilaVida(false); articunoCombate2.verFilaVida(false);
+            articunoCombate1.verFilaEnergia(false); articunoCombate2.verFilaEnergia(false);
+            articunoCombate1.verNombre(false); articunoCombate2.verNombre(false);
+
+            chandelureCombate1.verFondo(false); chandelureCmbate2.verFondo(false);
+            chandelureCombate1.verFilaVida(false); chandelureCmbate2.verFilaVida(false);
+            chandelureCombate1.verFilaEnergia(false); chandelureCmbate2.verFilaEnergia(false);  
+            chandelureCombate1.verNombre(false); chandelureCmbate2.verNombre(false);
+
+            ((iPokemon)lucarioCombate1).verFondo(false); ((iPokemon)lucarioCombate2).verFondo(false);
+            ((iPokemon)lucarioCombate1).verFilaVida(false); ((iPokemon)lucarioCombate2).verFilaVida(false);
+            ((iPokemon)lucarioCombate1).verFilaEnergia(false); ((iPokemon)lucarioCombate2).verFilaEnergia(false);
+            ((iPokemon)lucarioCombate1).verNombre(false); ((iPokemon)lucarioCombate2).verNombre(false);
+            ((iPokemon)lucarioCombate1).verPocionEnergia(false); ((iPokemon)lucarioCombate2).verPocionEnergia(false);
+            ((iPokemon)lucarioCombate1).verPocionVida(false); ((iPokemon)lucarioCombate2).verPocionVida(false);
+
         }
 
         private void clickJugador1(object sender, RoutedEventArgs e)

@@ -339,11 +339,13 @@ namespace Pokemon_Antonio_Campallo_Gomez {
         void iPokemon.verFilaVida(bool ver)
         {
             pbHealth.Visibility = ver ? Visibility.Visible : Visibility.Collapsed;
+            Heart.Visibility = ver ? Visibility.Visible : Visibility.Collapsed;
         }
 
         void iPokemon.verFilaEnergia(bool ver)
         {
             pbEnergy.Visibility = ver ? Visibility.Visible : Visibility.Collapsed;
+            Energy.Visibility = ver ? Visibility.Visible : Visibility.Collapsed;
         }
 
         void iPokemon.verPocionVida(bool ver)
