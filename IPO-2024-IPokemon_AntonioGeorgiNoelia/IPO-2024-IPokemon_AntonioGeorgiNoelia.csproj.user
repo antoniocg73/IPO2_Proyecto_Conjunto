@@ -2,5 +2,6 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ProjectView>ProjectFiles</ProjectView>
+    <AppIconSource>C:\Users\usuario\OneDrive - Universidad de Castilla-La Mancha\Documentos\IPOII-LAB\IPO-2024-IPokemon_AntonioGeorgiNoelia\IPO-2024-IPokemon_AntonioGeorgiNoelia\Assets\LogoPokeball.png</AppIconSource>
   </PropertyGroup>
 </Project>
