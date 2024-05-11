@@ -90,6 +90,8 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
             iPokemon pokemonSeleccionado = flipJugador1.SelectedItem as iPokemon;
             pokemonSeleccionado.verFilaEnergia(true);
             pokemonSeleccionado.verFilaVida(true);
+            pokemonSeleccionado.verPocionEnergia(false);
+            pokemonSeleccionado.verPocionVida(false);
             if (flipJugador1.IsEnabled == false && flipMaquina.IsEnabled == false)
             {
                 turno = azarTurno();
@@ -113,7 +115,8 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
             iPokemon pokemonSeleccionado = flipMaquina.SelectedItem as iPokemon;    
             pokemonSeleccionado.verFilaEnergia(true);
             pokemonSeleccionado.verFilaVida(true);
-            
+            pokemonSeleccionado.verPocionEnergia(false);
+            pokemonSeleccionado.verPocionVida(false);
             if (flipJugador1.IsEnabled == false && flipMaquina.IsEnabled == false)
             {
                 turno = azarTurno();
