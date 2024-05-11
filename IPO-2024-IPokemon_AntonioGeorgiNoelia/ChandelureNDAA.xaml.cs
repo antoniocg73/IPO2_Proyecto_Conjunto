@@ -175,9 +175,7 @@ namespace Pokemon_Antonio_Campallo_Gomez
             this.InitializeComponent();
             this.IsTabStop = true;
             mpSonidos = new MediaPlayer();
-            // Asignar los valores de energía y vida
-            this.Energia = 0.8;
-            ((iPokemon)this).Vida = 1;
+
             sbIdle = (Storyboard)this.Resources["Vuelo"];
             sbIdle.RepeatBehavior = RepeatBehavior.Forever;
             sbIdle.Begin();
