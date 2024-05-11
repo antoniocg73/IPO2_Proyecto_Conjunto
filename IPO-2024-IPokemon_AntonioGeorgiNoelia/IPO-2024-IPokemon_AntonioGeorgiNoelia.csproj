@@ -138,6 +138,9 @@
     <Compile Include="CombatePage.xaml.cs">
       <DependentUpon>CombatePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DetallesPokemon.xaml.cs">
+      <DependentUpon>DetallesPokemon.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GarchompVFJD.xaml.cs" />
     <Compile Include="GengarJCC.xaml.cs" />
     <Compile Include="GrookeyJGPMP.xaml.cs" />
@@ -446,6 +449,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CombatePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DetallesPokemon.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

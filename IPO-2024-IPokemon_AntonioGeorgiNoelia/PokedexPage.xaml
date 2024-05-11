@@ -16,14 +16,13 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="320" />
         </Grid.ColumnDefinitions>
 
-        <!-- ListView a la izquierda con agrupación -->
         <ListView Grid.Column="0" Margin="10"
           IsItemClickEnabled="True"
           ItemClick="InfoPokemon"
-          ItemsSource="{Binding Source={StaticResource GroupedPokemonCollection}}">
+          ItemsSource="{Binding Source={StaticResource GroupedPokemonCollection}}" SelectionChanged="ListView_SelectionChanged">
             <ListView.Background>
                 <ImageBrush ImageSource="/Assets/PokedexBackgroud.jpg" Stretch="UniformToFill"/>
             </ListView.Background>
@@ -31,16 +30,41 @@
                 <GroupStyle HidesIfEmpty="True">
                     <GroupStyle.HeaderTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Key}" Foreground="Black" FontSize="22" FontWeight="Bold" Margin="30"/>
+                            <TextBlock Text="{Binding Key}" Foreground="Black" FontSize="22" FontWeight="Bold" Margin="50"/>
                         </DataTemplate>
                     </GroupStyle.HeaderTemplate>
                 </GroupStyle>
             </ListView.GroupStyle>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="{Binding Image}" Width="50" Height="50" Margin="50"/>
-                        <TextBlock Text="{Binding Name}" Foreground="Black" Margin="40,0,0,0" VerticalAlignment="Center" FontWeight="Bold"/>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <Image Source="{Binding Image}" Width="100" Height="100" Margin="50,5,50,5"/>
+                        <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="15,0,0,0">
+                            <TextBlock Text="{Binding Name}" Foreground="Black" FontWeight="Bold" FontSize="20"/>
+                            <Grid VerticalAlignment="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="3*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <ItemsControl ItemsSource="{Binding Types}" Grid.Column="0">
+                                    <ItemsControl.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <StackPanel Orientation="Horizontal"/>
+                                        </ItemsPanelTemplate>
+                                    </ItemsControl.ItemsPanel>
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Border Background="{Binding Color}" CornerRadius="5" Margin="5">
+                                                <TextBlock Text="{Binding TypeName}" Foreground="White" Margin="10,2" FontWeight="Bold" FontSize="18"/>
+                                            </Border>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                                <Border Background="#ADD8E6" CornerRadius="5" Margin="350,0,0,0" Grid.Column="1">
+                                    <TextBlock Text="{Binding GenderIcon}" Foreground="Black" FontSize="18" FontWeight="Bold" HorizontalAlignment="Right" Margin="10"/>
+                                </Border>
+                            </Grid>
+                        </StackPanel>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
@@ -48,8 +72,10 @@
 
         <!-- Filtros de búsqueda a la derecha -->
         <StackPanel Grid.Column="1" Margin="10,10,10,0" VerticalAlignment="Top" Background="#c18f52" Padding="10">
-            <TextBlock Text="Filtrar" FontSize="16" Foreground="SaddleBrown" Margin="0,0,0,10"/>
-            <TextBox Text="{Binding Name}" PlaceholderText="Nombre" Foreground="Black" Margin="0,0,0,0" FontWeight="Bold" TextChanged="SearchBox_TextChanged" Width="200"/>
+            <TextBlock Text="Filtrar por Nombre:" FontSize="16" Foreground="SaddleBrown" Margin="0,0,0,10"/>
+            <TextBox x:Name="NameSearchBox" PlaceholderText="Nombre" Foreground="Black" Margin="0,0,0,10" FontWeight="Bold" TextChanged="SearchBox_TextChanged" Width="280"/>
+            <TextBlock Text="Filtrar por Tipo:" FontSize="16" Foreground="SaddleBrown" Margin="0,0,0,10"/>
+            <TextBox x:Name="TypeSearchBox" PlaceholderText="Tipo" Foreground="Black" Margin="0,0,0,0" FontWeight="Bold" TextChanged="TypeSearchBox_TextChanged" Width="280"/>
         </StackPanel>
     </Grid>
 
