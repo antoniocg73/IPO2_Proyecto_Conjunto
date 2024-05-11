@@ -361,9 +361,9 @@
     <Content Include="Assets\Bienvenido.png" />
     <Content Include="Assets\butterfreePokedex.png" />
     <Content Include="Assets\Chandelure.png" />
-    <Content Include="Assets\chandelurePokedex.png" />
+    <Content Include="Assets\ChandelurePokedex.png" />
     <Content Include="Assets\ChandelureTexto.png" />
-    <Content Include="Assets\charizardPokedex.png" />
+    <Content Include="Assets\CharizardPokedex.png" />
     <Content Include="Assets\DecidirCombate.jpg" />
     <Content Include="Assets\derrota.jpg" />
     <Content Include="Assets\Fantina.png" />
