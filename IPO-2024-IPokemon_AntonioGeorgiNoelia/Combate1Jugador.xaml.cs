@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -13,6 +14,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Notifications;
+using Windows.UI.Xaml.Media.Imaging;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -23,9 +26,14 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
     /// </summary>
     public sealed partial class Combate1Jugador : Page
     {
-        ArticunoACG flipMiArticuno;
-        ChandelureNDAA flipMiChandelure;
-        MyUCLucario flipMiLucario;
+        ArticunoACG flipMiArticunoJugador1;
+        ChandelureNDAA flipMiChandelureJugador1;
+        MyUCLucario flipMiLucarioJugador1;
+        ArticunoACG flipMiArticunoMaquina;
+        ChandelureNDAA flipMiChandelureMaquina;
+        MyUCLucario flipMiLucarioMaquina;
+
+       // FlipViewItem pokemonSeleccionadoMaquina;
         int turno;
 
         public Combate1Jugador()
@@ -35,11 +43,15 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
             articunoCombate1.verFilaVida(false); articunoCombate2.verFilaVida(false);
             articunoCombate1.verFilaEnergia(false); articunoCombate2.verFilaEnergia(false);
             articunoCombate1.verNombre(false); articunoCombate2.verNombre(false);
+            articunoCombate1.Vida = 100; articunoCombate2.Vida = 100;
+            articunoCombate1.Energia = 100; articunoCombate2.Energia = 100;
 
-            chandelureCombate1.verFondo(false); chandelureCmbate2.verFondo(false);
-            chandelureCombate1.verFilaVida(false); chandelureCmbate2.verFilaVida(false);
-            chandelureCombate1.verFilaEnergia(false); chandelureCmbate2.verFilaEnergia(false);  
-            chandelureCombate1.verNombre(false); chandelureCmbate2.verNombre(false);
+            chandelureCombate1.verFondo(false); chandelureCombate2.verFondo(false);
+            chandelureCombate1.verFilaVida(false); chandelureCombate2.verFilaVida(false);
+            chandelureCombate1.verFilaEnergia(false); chandelureCombate2.verFilaEnergia(false);  
+            chandelureCombate1.verNombre(false); chandelureCombate2.verNombre(false);
+            chandelureCombate1.Vida = 100; chandelureCombate2.Vida = 100;
+            chandelureCombate1.Energia = 100; chandelureCombate2.Energia = 100;
 
             ((iPokemon)lucarioCombate1).verFondo(false); ((iPokemon)lucarioCombate2).verFondo(false);
             ((iPokemon)lucarioCombate1).verFilaVida(false); ((iPokemon)lucarioCombate2).verFilaVida(false);
@@ -47,29 +59,36 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
             ((iPokemon)lucarioCombate1).verNombre(false); ((iPokemon)lucarioCombate2).verNombre(false);
             ((iPokemon)lucarioCombate1).verPocionEnergia(false); ((iPokemon)lucarioCombate2).verPocionEnergia(false);
             ((iPokemon)lucarioCombate1).verPocionVida(false); ((iPokemon)lucarioCombate2).verPocionVida(false);
-
+            ((iPokemon)lucarioCombate1).Vida = 100; ((iPokemon)lucarioCombate2).Vida = 100;
+            ((iPokemon)lucarioCombate1).Energia = 100; ((iPokemon)lucarioCombate2).Energia = 100;
         }
 
-        private void clickJugador1(object sender, RoutedEventArgs e)
+        /*private void flipMaquina_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            flipJugador1.IsEnabled = false;
-            switch (flipJugador1.SelectedIndex)
+            switch (flipMaquina.SelectedIndex)
             {
                 case 0:
-                    flipMiArticuno = flipJugador1.SelectedItem as ArticunoACG;
+                    pokemonSeleccionadoMaquina = flipMaquina.SelectedItem as ArticunoACG;
                     break;
                 case 1:
-                    flipMiChandelure = flipJugador1.SelectedItem as ChandelureNDAA;
+                    pokemonSeleccionadoMaquina = flipMaquina.SelectedItem as ChandelureNDAA;
                     break;
                 case 2:
-                    flipMiLucario = flipJugador1.SelectedItem as MyUCLucario;
+                    pokemonSeleccionadoMaquina = flipMaquina.SelectedItem as MyUCLucario;
                     break;
                 default:
-                    // Caso por defecto (si flipJugador1.SelectedIndex no coincide con ningún caso)
+                    // Caso por defecto (si flipMaquina.SelectedIndex no coincide con ningún caso)
                     break;
             }
+        } */  
+        private async void clickJugador1(object sender, RoutedEventArgs e)
+        {
+            flipJugador1.IsEnabled = false;
             btnElegirPokemon1.Visibility = Visibility.Collapsed;
             //controlesJugador1.Visibility = Visibility.Visible;
+            iPokemon pokemonSeleccionado = flipJugador1.SelectedItem as iPokemon;
+            pokemonSeleccionado.verFilaEnergia(true);
+            pokemonSeleccionado.verFilaVida(true);
             if (flipJugador1.IsEnabled == false && flipMaquina.IsEnabled == false)
             {
                 turno = azarTurno();
@@ -80,29 +99,20 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
                 else
                 {
                     maquinaSiJuega();
+                    turno_maquina_random();
+                    await Task.Delay(3000); // Espera 3 segundos
                 }
             }
         }
         
-        private void clickJugadorMaquina(object sender, RoutedEventArgs e)
+        private async void clickJugadorMaquina(object sender, RoutedEventArgs e)
         {
             flipMaquina.IsEnabled = false;
-            switch (flipMaquina.SelectedIndex)
-            {
-                case 0:
-                    flipMiArticuno = flipMaquina.SelectedItem as ArticunoACG;
-                    break;
-                case 1:
-                    flipMiChandelure = flipMaquina.SelectedItem as ChandelureNDAA;
-                    break;
-                case 2:
-                    flipMiLucario = flipMaquina.SelectedItem as MyUCLucario;
-                    break;
-                default:
-                    // Caso por defecto (si flipJugador1.SelectedIndex no coincide con ningún caso)
-                    break;
-            }
             btnElegirPokemonMaquina.Visibility = Visibility.Collapsed;
+            iPokemon pokemonSeleccionado = flipMaquina.SelectedItem as iPokemon;    
+            pokemonSeleccionado.verFilaEnergia(true);
+            pokemonSeleccionado.verFilaVida(true);
+            
             if (flipJugador1.IsEnabled == false && flipMaquina.IsEnabled == false)
             {
                 turno = azarTurno();
@@ -113,6 +123,8 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
                 else
                 {
                     maquinaSiJuega();
+                    turno_maquina_random();
+                    await Task.Delay(3000); // Espera 3 segundos
                 }
             }
         }
@@ -120,23 +132,180 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
         public int azarTurno()
         {
             Random rnd = new Random();
-            return rnd.Next(1, 2);
+            return rnd.Next(0, 2);
         }   
 
         public void maquinaNoJuega()
         {
-            
+            textEsperarMaquina.Text = "Es el turno del jugador 1.";
+            textEsperarMaquina.Visibility = Visibility.Visible;
+            textEsperar1.Visibility = Visibility.Collapsed;
+            controlesJugador1.Visibility = Visibility.Visible;
         }
 
         public void maquinaSiJuega()
         {
-
+            controlesJugador1.Visibility = Visibility.Collapsed;
+            textEsperarMaquina.Text = "Es el turno de la máquina.";
+            textEsperar1.Visibility = Visibility.Visible;
+            textEsperarMaquina.Visibility = Visibility.Collapsed;
         }
 
-        private void opcionesDeAtaque(object sender, RoutedEventArgs e)
+        public void turno_maquina_random()
         {
-            controlesJugador1.Visibility = Visibility.Collapsed;
-            opcionesAtacar.Visibility = Visibility.Visible;
+            if (flipMaquina.SelectedItem is iPokemon pokemonSeleccionado)
+            {
+                if (pokemonSeleccionado.Vida > 30 && pokemonSeleccionado.Energia > 30)
+                {
+                    ataqueMaquina();
+                }
+                else if (pokemonSeleccionado.Vida <= 30)
+                {
+                    curarMaquina();
+                }
+                else
+                {
+                    subirEnergiaMaquina();
+                }
+            }
+        }
+        private async void ataqueMaquina()
+        {
+            if (flipMaquina.SelectedItem is iPokemon atacante && flipJugador1.SelectedItem is iPokemon defensor)
+            {   
+                
+                if(atacante.Energia > 60)
+                {
+                    atacante.animacionAtaqueFuerte();
+                    defensor.Vida -= calcular_daño_fuerte();
+                }
+                else
+                {
+                    atacante.animacionAtaqueFlojo();
+                    defensor.Vida -= calcular_daño_flojo();
+                }
+                textEsperarMaquina.Text = "La máquina ha decidido atacar.";
+                textEsperarMaquina.Visibility = Visibility.Visible;
+                await Task.Delay(10000); // Espera 10 segundos
+                if (defensor.Vida <= 0)
+                {
+                    imageFinalCombate.Visibility = Visibility.Visible;
+                    txtMensajeVictoria.Text = "¡Ha ganado la máquina!";
+                    txtMensajeVictoria.Visibility = Visibility.Visible;
+                    //METER NOTIFICACION
+                }
+                else
+                {
+                    maquinaNoJuega();
+                }
+            }
+        }
+        public async void curarMaquina()
+        {
+            if (flipMaquina.SelectedItem is iPokemon curable)
+            {
+                if (curable.Vida >75)
+                {
+                    curable.Vida = 100;
+                }
+                else
+                {
+                    curable.Vida += 25;
+                }
+                textEsperarMaquina.Text = "La máquina ha decidido curarse.";
+                textEsperarMaquina.Visibility = Visibility.Visible;
+                await Task.Delay(10000); // Espera 10 segundos
+                maquinaNoJuega();
+            }
+        }
+
+        public async void subirEnergiaMaquina()
+        {
+            if (flipMaquina.SelectedItem is iPokemon pokemonEnergia)
+            {
+                if (pokemonEnergia.Energia > 75)
+                {
+                    pokemonEnergia.Energia = 100;
+                }
+                else
+                {
+                    pokemonEnergia.Energia += 25;
+                }  
+                textEsperarMaquina.Text = "La máquina ha decidido subir su energía.";
+                textEsperarMaquina.Visibility = Visibility.Visible;
+                await Task.Delay(10000); // Espera 10 segundos
+                maquinaNoJuega();
+            }
+        }
+
+        public int calcular_daño_fuerte()
+        {
+            int dañoTotal = 0;
+            Random r = new Random();
+            int random = r.Next(1, 100);
+            if (random < 60)
+            {
+                dañoTotal = 20;
+            }
+            else if (random <= 90)
+            {
+                dañoTotal = (int)Math.Round((double)random / 3);
+            }
+            else
+            {
+                dañoTotal = 40;
+            }
+            return dañoTotal;
+        }
+        
+        public int calcular_daño_flojo()
+        {
+            return 15;
+        }
+
+        private async void btnAtacar1_Click(object sender, RoutedEventArgs e)
+        {
+            if (flipJugador1.SelectedItem is iPokemon atacante && flipMaquina.SelectedItem is iPokemon defensor)
+            {
+                if (atacante.Energia > 60)
+                {
+                    atacante.animacionAtaqueFuerte();
+                    defensor.Vida -= calcular_daño_fuerte();
+                }
+                else
+                {
+                    atacante.animacionAtaqueFlojo();
+                    defensor.Vida -= calcular_daño_flojo();
+                }
+                controlesJugador1.Visibility = Visibility.Collapsed;
+                textEsperar1.Text = "El jugador 1 ha decidido atacar.";
+                textEsperar1.Visibility = Visibility.Visible;
+                await Task.Delay(10000); // Espera 10 segundos
+
+                if (defensor.Vida <= 0)
+                {
+                    imageFinalCombate.Visibility = Visibility.Visible;
+                    txtMensajeVictoria.Text = "¡Ha ganado el jugador 1!";
+                    txtMensajeVictoria.Visibility = Visibility.Visible;
+                    //METER NOTIFICACION
+                }
+                else
+                {
+                    maquinaSiJuega();
+                    turno_maquina_random();
+                    await Task.Delay(10000); // Espera 10 segundos
+                }
+            }
+        }
+
+        private void btnRendirse1_Click(object sender, RoutedEventArgs e)
+        {
+            BitmapImage derrota = new BitmapImage(new Uri("ms-appx:///Assets/derrota.jpg"));
+            imageFinalCombate.Source = derrota;
+            imageFinalCombate.Visibility = Visibility.Visible;
+            txtMensajeVictoria.Text = "¡Ha ganado la máquina!";
+            txtMensajeVictoria.Visibility = Visibility.Visible;
+            //METER NOTIFICACION
         }
     }
 }

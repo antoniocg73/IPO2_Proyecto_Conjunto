@@ -362,6 +362,7 @@
     <Content Include="Assets\ChandelureTexto.png" />
     <Content Include="Assets\charizardPokedex.png" />
     <Content Include="Assets\DecidirCombate.jpg" />
+    <Content Include="Assets\derrota.jpg" />
     <Content Include="Assets\Fantina.png" />
     <Content Include="Assets\fondoCombate.jpg" />
     <Content Include="Assets\fondoMenu.jpg" />
@@ -401,6 +402,7 @@
     <Content Include="Assets\Square44x44Logo.targetsize-32.png" />
     <Content Include="Assets\Square44x44Logo.targetsize-48.png" />
     <Content Include="Assets\textConteto.png" />
+    <Content Include="Assets\victoria.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
