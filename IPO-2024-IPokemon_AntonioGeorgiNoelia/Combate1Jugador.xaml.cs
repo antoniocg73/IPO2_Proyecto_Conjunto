@@ -160,13 +160,17 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
                 {
                     ataqueMaquina();
                 }
-                else if (pokemonSeleccionado.Vida <= 30)
+                else if (pokemonSeleccionado.Vida <= 30 && pokemonSeleccionado.Energia > 30)
                 {
                     curarMaquina();
                 }
-                else
+                else if (pokemonSeleccionado.Vida > 30 && pokemonSeleccionado.Energia <=30)
                 {
                     subirEnergiaMaquina();
+                }
+                else
+                {
+                    curarMaquina();
                 }
             }
         }
@@ -175,7 +179,8 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
             if (flipMaquina.SelectedItem is iPokemon atacante && flipJugador1.SelectedItem is iPokemon defensor)
             {   
                 double vidaActual = defensor.Vida;
-                if(atacante.Energia > 60)
+                double energiaActual = atacante.Energia;
+                if (atacante.Energia > 60)
                 {
                     atacante.animacionAtaqueFuerte();
                     defensor.Vida -= calcular_daño_fuerte();
@@ -185,9 +190,24 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
                     atacante.animacionAtaqueFlojo();
                     defensor.Vida -= calcular_daño_flojo();
                 }
+                if (atacante.Energia > 50)
+                {
+                    atacante.Energia -= 25;
+                }
+                else
+                {
+                    atacante.Energia -= 15;
+                }
                 textEsperarMaquina.Text = "La máquina ha decidido atacar.";
                 textEsperarMaquina.Visibility = Visibility.Visible;
                 await Task.Delay(10000); // Espera 10 segundos
+
+                if (atacante.Energia <= 30 && energiaActual > 30)
+                {
+                    atacante.animacionCansado();
+                    await Task.Delay(5000); // Espera 5 segundos
+                }   
+
                 if (defensor.Vida <= 0)
                 {
                     defensor.animacionDerrota();
@@ -219,7 +239,7 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
             if (flipMaquina.SelectedItem is iPokemon curable)
             {
                 double vidaActual = curable.Vida;
-                curable.Vida += 15;
+                curable.Vida += 10;
                 curable.animacionDescasar();
                 textEsperarMaquina.Text = "La máquina ha decidido curarse.";
                 textEsperarMaquina.Visibility = Visibility.Visible;
@@ -237,17 +257,24 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
         {
             if (flipMaquina.SelectedItem is iPokemon pokemonEnergia)
             {
+                double energiaActual = pokemonEnergia.Energia;
                 if (pokemonEnergia.Energia > 75)
                 {
                     pokemonEnergia.Energia = 100;
                 }
                 else
                 {
-                    pokemonEnergia.Energia += 25;
-                }  
+                    pokemonEnergia.Energia += 10;
+                }
+                pokemonEnergia.animacionDefensa();
                 textEsperarMaquina.Text = "La máquina ha decidido subir su energía.";
                 textEsperarMaquina.Visibility = Visibility.Visible;
                 await Task.Delay(10000); // Espera 10 segundos
+                if (pokemonEnergia.Energia > 30 && energiaActual <= 30)
+                {
+                    pokemonEnergia.animacionNoCansado();
+                    await Task.Delay(5000); // Espera 5 segundos
+                }
                 maquinaNoJuega();
             }
         }
@@ -282,6 +309,7 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
             if (flipJugador1.SelectedItem is iPokemon atacante && flipMaquina.SelectedItem is iPokemon defensor)
             {
                 double vidaActual = defensor.Vida;
+                double energiaActual = atacante.Energia;
                 if (atacante.Energia > 60)
                 {
                     atacante.animacionAtaqueFuerte();
@@ -292,10 +320,25 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
                     atacante.animacionAtaqueFlojo();
                     defensor.Vida -= calcular_daño_flojo();
                 }
+
+                if (atacante.Energia > 50)
+                {
+                    atacante.Energia -= 25;
+                }
+                else
+                {
+                    atacante.Energia -= 15;
+                }
                 controlesJugador1.Visibility = Visibility.Collapsed;
                 textEsperar1.Text = "El jugador 1 ha decidido atacar.";
                 textEsperar1.Visibility = Visibility.Visible;
                 await Task.Delay(10000); // Espera 10 segundos
+
+                if (atacante.Energia <= 30 && energiaActual > 30)
+                {
+                    atacante.animacionCansado();
+                    await Task.Delay(5000); // Espera 5 segundos
+                }
 
                 if (defensor.Vida <= 0)
                 {
@@ -321,6 +364,8 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
                     turno_maquina_random();
                     await Task.Delay(10000); // Espera 10 segundos
                 }
+
+                
             }
         }
 
@@ -372,6 +417,7 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
         {
             controlesJugador1.Visibility = Visibility.Collapsed;
             iPokemon pokemonEnergia = flipJugador1.SelectedItem as iPokemon;
+            double energiaActual = pokemonEnergia.Energia;
             if (pokemonEnergia.Energia > 75)
             {
                 pokemonEnergia.Energia = 100;
@@ -384,6 +430,11 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
             textEsperar1.Text = "El jugador 1 ha decidido subir su energía.";
             textEsperar1.Visibility = Visibility.Visible;
             await Task.Delay(8000); // Espera 8 segundos
+            if (pokemonEnergia.Energia > 30 && energiaActual <= 30)
+            {
+                pokemonEnergia.animacionNoCansado();
+                await Task.Delay(5000); // Espera 5 segundos
+            }
             maquinaSiJuega();
             turno_maquina_random();
             await Task.Delay(10000); // Espera 10 segundos
