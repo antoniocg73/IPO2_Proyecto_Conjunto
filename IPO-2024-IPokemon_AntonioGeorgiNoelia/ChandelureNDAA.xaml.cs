@@ -236,7 +236,7 @@ namespace Pokemon_Antonio_Campallo_Gomez
 
         public void animacionDescasar()
         {
-            sbaux = (Storyboard)this.Resources["Vida"];
+            sbaux = (Storyboard)this.Resources["MovVida"];
             sbaux.Begin();
             mpSonidos.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///AssetsChandelureNDAA/VidaSonidoFeliz.mp4"));
             mpSonidos.Play();

@@ -1084,15 +1084,15 @@
                 <ImageBrush x:Name="imFondo" Stretch="None" ImageSource="/AssetsChandelureNDAA/fondo.jpg"/>
             </Grid.Background>
             <Grid.RowDefinitions>
-                <RowDefinition x:Name="Fila1" Height="50"/>
-                <RowDefinition x:Name="Fila2" Height="50"/>
-                <RowDefinition x:Name="Fila3" Height="200*"/>
-                <RowDefinition x:Name="Fila4" Height="50"/>
+                <RowDefinition x:Name="Fila1" Height="10*"/>
+                <RowDefinition x:Name="Fila2" Height="10*"/>
+                <RowDefinition x:Name="Fila3" Height="70*"/>
+                <RowDefinition x:Name="Fila4" Height="10*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="50"/>
-                <ColumnDefinition Width="200*"/>
-                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="10*"/>
+                <ColumnDefinition Width="80*"/>
+                <ColumnDefinition Width="10*"/>
             </Grid.ColumnDefinitions>
             <Image x:Name="imPocionMorada"  Grid.Row="0" Grid.Column="2" Source="/AssetsChandelureNDAA/pocionMorada.png"  Margin="5,5,5,5" PointerPressed="imRPotion_PointerPressed" />
             <Image x:Name="imCorazon" Source="/AssetsChandelureNDAA/corazon.png" Margin="5,5,5,5"  />

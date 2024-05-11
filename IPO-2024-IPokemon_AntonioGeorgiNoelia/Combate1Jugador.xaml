@@ -56,7 +56,7 @@
             </Grid.ColumnDefinitions>
             <Button x:Name="btnAtacar1" Content="Atacar" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="40" Foreground="White" FontWeight="Bold" Grid.Row="0" Grid.Column="0" Click="btnAtacar1_Click" />
             <Button x:Name="btnRendirse1" Content="Rendirse" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="40" Foreground="White" FontWeight="Bold" Grid.Row="1" Grid.Column="1" Click="btnRendirse1_Click" />
-            <Button x:Name="btnCurarse1" Content="Curarse" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="40" Foreground="White" FontWeight="Bold" Grid.Row="0" Grid.Column="1" />
+            <Button x:Name="btnCurarse1" Content="Curarse" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="40" Foreground="White" FontWeight="Bold" Grid.Row="0" Grid.Column="1" Click="btnCurarse1_Click" />
             <Button x:Name="btnEnergia1" Content="Subir energía" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="40" Foreground="White" FontWeight="Bold" Grid.Row="1" Grid.Column="0" />
         </Grid>
         <Image x:Name="imageFinalCombate" Source="Assets/victoria.jpg" Grid.Row="0" Grid.Column="0" Grid.RowSpan="6" Grid.ColumnSpan="5" VerticalAlignment="Center" HorizontalAlignment="Stretch" Visibility="Collapsed" Stretch="UniformToFill"/>

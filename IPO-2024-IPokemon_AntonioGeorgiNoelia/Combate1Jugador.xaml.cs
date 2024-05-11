@@ -146,7 +146,7 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
         public void maquinaSiJuega()
         {
             controlesJugador1.Visibility = Visibility.Collapsed;
-            textEsperarMaquina.Text = "Es el turno de la máquina.";
+            textEsperar1.Text = "Es el turno de la máquina.";
             textEsperar1.Visibility = Visibility.Visible;
             textEsperarMaquina.Visibility = Visibility.Collapsed;
         }
@@ -189,6 +189,8 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
                 await Task.Delay(10000); // Espera 10 segundos
                 if (defensor.Vida <= 0)
                 {
+                    defensor.animacionDerrota();
+                    await Task.Delay(5000); // Espera 5 segundos
                     imageFinalCombate.Visibility = Visibility.Visible;
                     txtMensajeVictoria.Text = "¡Ha ganado la máquina!";
                     txtMensajeVictoria.Visibility = Visibility.Visible;
@@ -204,14 +206,8 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
         {
             if (flipMaquina.SelectedItem is iPokemon curable)
             {
-                if (curable.Vida >75)
-                {
-                    curable.Vida = 100;
-                }
-                else
-                {
-                    curable.Vida += 25;
-                }
+                curable.Vida += 15;
+                curable.animacionDescasar();
                 textEsperarMaquina.Text = "La máquina ha decidido curarse.";
                 textEsperarMaquina.Visibility = Visibility.Visible;
                 await Task.Delay(10000); // Espera 10 segundos
@@ -284,6 +280,8 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
 
                 if (defensor.Vida <= 0)
                 {
+                    defensor.animacionDerrota();
+                    await Task.Delay(5000); // Espera 5 segundos
                     imageFinalCombate.Visibility = Visibility.Visible;
                     txtMensajeVictoria.Text = "¡Ha ganado el jugador 1!";
                     txtMensajeVictoria.Visibility = Visibility.Visible;
@@ -298,14 +296,39 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
             }
         }
 
-        private void btnRendirse1_Click(object sender, RoutedEventArgs e)
+        private async void btnRendirse1_Click(object sender, RoutedEventArgs e)
         {
+            controlesJugador1.Visibility = Visibility.Collapsed;
             BitmapImage derrota = new BitmapImage(new Uri("ms-appx:///Assets/derrota.jpg"));
             imageFinalCombate.Source = derrota;
+            iPokemon miPokemon = flipJugador1.SelectedItem as iPokemon;
+            miPokemon.animacionDerrota();
+            await Task.Delay(5000); // Espera 5 segundos
             imageFinalCombate.Visibility = Visibility.Visible;
             txtMensajeVictoria.Text = "¡Ha ganado la máquina!";
             txtMensajeVictoria.Visibility = Visibility.Visible;
             //METER NOTIFICACION
+        }
+
+        private async void btnCurarse1_Click(object sender, RoutedEventArgs e)
+        {
+            controlesJugador1.Visibility = Visibility.Collapsed;
+            iPokemon pokemonSeleccionado = flipJugador1.SelectedItem as iPokemon;
+            if (pokemonSeleccionado.Vida > 75)
+            {
+                pokemonSeleccionado.Vida = 100;
+            }
+            else
+            {
+                pokemonSeleccionado.Vida += 20;
+            }
+            pokemonSeleccionado.animacionDescasar();
+            textEsperar1.Text = "El jugador 1 ha decidido curarse.";
+            textEsperar1.Visibility = Visibility.Visible;
+            await Task.Delay(5000); // Espera 5 segundos
+            maquinaSiJuega();
+            turno_maquina_random();
+            await Task.Delay(10000); // Espera 10 segundos
         }
     }
 }
