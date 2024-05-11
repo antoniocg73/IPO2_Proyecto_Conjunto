@@ -43,10 +43,10 @@
                             <TextBlock Text="{Binding Name}" Foreground="Black" FontWeight="Bold" FontSize="20"/>
                             <Grid VerticalAlignment="Center">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="3*"/>
-                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
-                                <ItemsControl ItemsSource="{Binding Types}" Grid.Column="0">
+                                <ItemsControl ItemsSource="{Binding Types}" Grid.Column="0" Width="200">
                                     <ItemsControl.ItemsPanel>
                                         <ItemsPanelTemplate>
                                             <StackPanel Orientation="Horizontal"/>
@@ -54,17 +54,19 @@
                                     </ItemsControl.ItemsPanel>
                                     <ItemsControl.ItemTemplate>
                                         <DataTemplate>
-                                            <Border Background="{Binding Color}" CornerRadius="5" Margin="5">
+                                            <Border Background="{Binding Color}" CornerRadius="5" Margin="0,0,5,0">
                                                 <TextBlock Text="{Binding TypeName}" Foreground="White" Margin="10,2" FontWeight="Bold" FontSize="18"/>
                                             </Border>
                                         </DataTemplate>
                                     </ItemsControl.ItemTemplate>
                                 </ItemsControl>
-                                <Border Background="#ADD8E6" CornerRadius="5" Margin="350,0,0,0" Grid.Column="1">
-                                    <TextBlock Text="{Binding GenderIcon}" Foreground="Black" FontSize="18" FontWeight="Bold" HorizontalAlignment="Right" Margin="10"/>
-                                </Border>
                             </Grid>
                         </StackPanel>
+                        <Grid Margin="300,40,5,40">
+                            <Border Background="#ADD8E6" CornerRadius="5" HorizontalAlignment="Right">
+                                <TextBlock Text="{Binding GenderIcon}" Foreground="Black" FontSize="18" FontWeight="Bold" Margin="10"/>
+                            </Border>
+                        </Grid>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
