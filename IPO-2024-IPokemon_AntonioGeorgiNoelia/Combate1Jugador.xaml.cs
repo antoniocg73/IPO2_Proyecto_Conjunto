@@ -16,6 +16,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Notifications;
 using Windows.UI.Xaml.Media.Imaging;
+using Windows.Devices.PointOfService;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -173,7 +174,7 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
         {
             if (flipMaquina.SelectedItem is iPokemon atacante && flipJugador1.SelectedItem is iPokemon defensor)
             {   
-                
+                double vidaActual = defensor.Vida;
                 if(atacante.Energia > 60)
                 {
                     atacante.animacionAtaqueFuerte();
@@ -190,15 +191,26 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
                 if (defensor.Vida <= 0)
                 {
                     defensor.animacionDerrota();
+                    textEsperar1.Text = "Pokemon debilitado.";
                     await Task.Delay(5000); // Espera 5 segundos
+                    BitmapImage derrota = new BitmapImage(new Uri("ms-appx:///Assets/derrota.jpg"));
+                    imageFinalCombate.Source = derrota;
                     imageFinalCombate.Visibility = Visibility.Visible;
                     txtMensajeVictoria.Text = "¡Ha ganado la máquina!";
                     txtMensajeVictoria.Visibility = Visibility.Visible;
                     //METER NOTIFICACION
                 }
+                else if (defensor.Vida > 0 && defensor.Vida <= 30 && vidaActual > 30)
+                {
+                    defensor.animacionHerido();
+                    await Task.Delay(5000); // Espera 5 segundos
+                    maquinaNoJuega();
+                    await Task.Delay(10000); // Espera 10 segundos
+                }
                 else
                 {
                     maquinaNoJuega();
+                    await Task.Delay(10000); // Espera 10 segundos
                 }
             }
         }
@@ -206,11 +218,17 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
         {
             if (flipMaquina.SelectedItem is iPokemon curable)
             {
+                double vidaActual = curable.Vida;
                 curable.Vida += 15;
                 curable.animacionDescasar();
                 textEsperarMaquina.Text = "La máquina ha decidido curarse.";
                 textEsperarMaquina.Visibility = Visibility.Visible;
                 await Task.Delay(10000); // Espera 10 segundos
+                if (curable.Vida > 30 && vidaActual <= 30)
+                {
+                    curable.animacionNoHerido();
+                    await Task.Delay(5000); // Espera 5 segundos
+                }
                 maquinaNoJuega();
             }
         }
@@ -263,6 +281,7 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
         {
             if (flipJugador1.SelectedItem is iPokemon atacante && flipMaquina.SelectedItem is iPokemon defensor)
             {
+                double vidaActual = defensor.Vida;
                 if (atacante.Energia > 60)
                 {
                     atacante.animacionAtaqueFuerte();
@@ -281,11 +300,20 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
                 if (defensor.Vida <= 0)
                 {
                     defensor.animacionDerrota();
+                    textEsperarMaquina.Text = "Pokemon debilitado.";
                     await Task.Delay(5000); // Espera 5 segundos
                     imageFinalCombate.Visibility = Visibility.Visible;
                     txtMensajeVictoria.Text = "¡Ha ganado el jugador 1!";
                     txtMensajeVictoria.Visibility = Visibility.Visible;
                     //METER NOTIFICACION
+                }
+                else if (defensor.Vida > 0 && defensor.Vida <= 30 && vidaActual >30)
+                {
+                    defensor.animacionHerido();
+                    await Task.Delay(5000); // Espera 5 segundos
+                    maquinaSiJuega();
+                    turno_maquina_random();
+                    await Task.Delay(10000); // Espera 10 segundos
                 }
                 else
                 {
@@ -303,6 +331,8 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
             imageFinalCombate.Source = derrota;
             iPokemon miPokemon = flipJugador1.SelectedItem as iPokemon;
             miPokemon.animacionDerrota();
+            textEsperar1.Text = "El jugador 1 ha decidido rendirse.";
+            textEsperar1.Visibility = Visibility.Visible;
             await Task.Delay(5000); // Espera 5 segundos
             imageFinalCombate.Visibility = Visibility.Visible;
             txtMensajeVictoria.Text = "¡Ha ganado la máquina!";
@@ -314,6 +344,7 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
         {
             controlesJugador1.Visibility = Visibility.Collapsed;
             iPokemon pokemonSeleccionado = flipJugador1.SelectedItem as iPokemon;
+            double vidaActual = pokemonSeleccionado.Vida;
             if (pokemonSeleccionado.Vida > 75)
             {
                 pokemonSeleccionado.Vida = 100;
@@ -322,10 +353,37 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
             {
                 pokemonSeleccionado.Vida += 20;
             }
+
             pokemonSeleccionado.animacionDescasar();
             textEsperar1.Text = "El jugador 1 ha decidido curarse.";
             textEsperar1.Visibility = Visibility.Visible;
             await Task.Delay(5000); // Espera 5 segundos
+            if (pokemonSeleccionado.Vida > 30 && vidaActual <=30)
+            {
+                pokemonSeleccionado.animacionNoHerido();
+                await Task.Delay(5000); // Espera 5 segundos
+            }
+            maquinaSiJuega();
+            turno_maquina_random();
+            await Task.Delay(10000); // Espera 10 segundos
+        }
+
+        private async void btnEnergia1_Click(object sender, RoutedEventArgs e)
+        {
+            controlesJugador1.Visibility = Visibility.Collapsed;
+            iPokemon pokemonEnergia = flipJugador1.SelectedItem as iPokemon;
+            if (pokemonEnergia.Energia > 75)
+            {
+                pokemonEnergia.Energia = 100;
+            }
+            else
+            {
+                pokemonEnergia.Energia += 20;
+            }
+            pokemonEnergia.animacionDefensa();
+            textEsperar1.Text = "El jugador 1 ha decidido subir su energía.";
+            textEsperar1.Visibility = Visibility.Visible;
+            await Task.Delay(8000); // Espera 8 segundos
             maquinaSiJuega();
             turno_maquina_random();
             await Task.Delay(10000); // Espera 10 segundos
