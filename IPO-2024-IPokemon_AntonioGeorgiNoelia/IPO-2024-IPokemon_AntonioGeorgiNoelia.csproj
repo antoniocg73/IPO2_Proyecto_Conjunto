@@ -381,6 +381,7 @@
     <Content Include="Assets\LucarioTexto.png" />
     <Content Include="Assets\makuhitaPokedex.png" />
     <Content Include="Assets\mispokemon.png" />
+    <Content Include="Assets\mispokemondetalles.png" />
     <Content Include="Assets\Noelia.jpeg" />
     <Content Include="Assets\PokedexBackgroud.jpg" />
     <Content Include="Assets\pokemonFondo.png" />

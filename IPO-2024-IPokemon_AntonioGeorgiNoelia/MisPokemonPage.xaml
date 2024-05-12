@@ -8,8 +8,8 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Page.Resources>
-        <DataTemplate x:Key="myTaskTemplate" x:DataType="local:Pokemon">
-            <Button Height="650" Width="400">
+        <DataTemplate x:Key="myTaskTemplate" x:DataType="local:PokemonPokedex">
+            <Button Height="650" Width="400"  Click="MisPokemons_ItemClick" CommandParameter="{x:Bind}">
                 <StackPanel>
                     <Image Source="{x:Bind ImagePath}" Height="500" Width="400" Stretch="Fill"/>
                     <Image Source="{x:Bind ImageName}" />
@@ -18,20 +18,20 @@
         </DataTemplate>
     </Page.Resources>
 
-    <Grid>
-        <Grid.Background>
-            <ImageBrush x:Name="imMisPokemons" ImageSource="/Assets/mispokemon.png"/>
-        </Grid.Background>
+    <Frame x:Name="fmMisPokemon">
+        <Grid>
+            <Grid.Background>
+                <ImageBrush x:Name="imMisPokemons" ImageSource="/Assets/mispokemon.png"/>
+            </Grid.Background>
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="650"/>
-            <RowDefinition Height="50"/>
-        </Grid.RowDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="650"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
 
-        <GridView Grid.Row="1" x:Name="GridViewMisPokemons" IsItemClickEnabled="True"
-      ItemClick="MisPokemons_ItemClick" ItemTemplate="{StaticResource myTaskTemplate}"
-      SelectionMode="Single"/>
+            <GridView Grid.Row="1" x:Name="GridViewMisPokemons" ItemTemplate="{StaticResource myTaskTemplate}"/>
 
-    </Grid>
+        </Grid>
+    </Frame>
 </Page>

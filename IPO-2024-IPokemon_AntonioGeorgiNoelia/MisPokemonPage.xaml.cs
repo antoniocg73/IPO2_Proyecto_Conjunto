@@ -18,29 +18,24 @@ using Windows.UI.Xaml.Navigation;
 
 namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
 {
-    public class Pokemon
-    {
-        public string ImagePath { get; set; }
-        public string ImageName { get; set; }
-    }
 
     public sealed partial class MisPokemonPage : Page
     {
+
         public MisPokemonPage()
         {
             this.InitializeComponent();
-            List<Pokemon> pokemons = new List<Pokemon>
-            {
-                new Pokemon { ImagePath = "/Assets/Chandelure.png", ImageName = "/Assets/ChandelureTexto.png" },
-                new Pokemon { ImagePath = "/Assets/Articuno.jpg", ImageName = "/Assets/ArticunoTexto.png"  },
-                new Pokemon { ImagePath = "/Assets/Lucario.jpg", ImageName = "/Assets/LucarioTexto.png" }
-            };
-            GridViewMisPokemons.ItemsSource = pokemons;
+            List<PokemonPokedex> misPokemons = PokedexPage.pokemons.Where(p => p.Name == "Chandelure" || p.Name == "Lucario" || p.Name == "Articuno").ToList();
+            GridViewMisPokemons.ItemsSource = misPokemons;
         }
 
-        private void MisPokemons_ItemClick(object sender, ItemClickEventArgs e)
+        private void MisPokemons_ItemClick(object sender, RoutedEventArgs e)
         {
-
+            var button = (Button)sender;
+            var pokemon = (PokemonPokedex)button.CommandParameter;
+            fmMisPokemon.Navigate(typeof(DetallesPokemon), pokemon);
         }
+
+
     }
 }

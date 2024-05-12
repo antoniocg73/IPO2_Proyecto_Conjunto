@@ -1,4 +1,4 @@
-﻿<Page
+﻿<Page xmlns:my="using:Pokemon_Antonio_Campallo_Gomez" 
     x:Class="IPO_2024_IPokemon_AntonioGeorgiNoelia.DetallesPokemon"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -9,6 +9,53 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Grid.Background>
+            <ImageBrush x:Name="imMisPokemons" ImageSource="/Assets/mispokemondetalles.png"/>
+        </Grid.Background>
+
+        <Grid x:Name="ContentArea">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="50* "/>
+            </Grid.ColumnDefinitions>
+            <my:ArticunoACG x:Name="articuno" Grid.Column="1" Margin="60" Visibility="Collapsed"/>
+            <my:ButterFreeACC x:Name="butterfree" Grid.Column="1" Margin="60" Visibility="Collapsed"/>
+            <my:ChandelureNDAA x:Name="chandelure" Grid.Column="1" Margin="60" Visibility="Collapsed"/>
+            <my:CharizardASM x:Name="charizard" Grid.Column="1" Margin="60" Visibility="Collapsed"/>
+            <my:GarchompVFJD x:Name="garchomp" Grid.Column="1" Margin="60" Visibility="Collapsed"/>
+            <my:GengarJCC x:Name="gengar" Grid.Column="1" Margin="60" Visibility="Collapsed"/>
+            <my:GrookeyJGPMP x:Name="grookey" Grid.Column="1" Margin="60" Visibility="Collapsed"/>
+            <my:Lapras x:Name="lapras" Grid.Column="1" Margin="60" Visibility="Collapsed"/>
+            <my:MyUCLucario x:Name="lucario" Grid.Column="1" Margin="60" Visibility="Collapsed"/>
+            <my:MakuhitaAPQ2 x:Name="makuhita" Grid.Column="1" Margin="60" Visibility="Collapsed"/>
+            <my:ScizorAPJ x:Name="scizor" Grid.Column="1" Margin="60" Visibility="Collapsed"/>
+            <my:SnorlaxROC x:Name="snorlax" Grid.Column="1" Margin="60" Visibility="Collapsed"/>
+
+            <RelativePanel Margin="40" Opacity="0.9" Background="Black">
+                <Image x:Name="pokemonImagenPokedex" Source="{Binding Image}" Width="280" Height="380" Margin="20,20,0,0"/>
+                <TextBlock x:Name="tbNombrePokedex" TextWrapping="Wrap" Foreground="White" FontSize="18" Margin="15,50,30,0" RelativePanel.RightOf="pokemonImagenPokedex"/>
+                <TextBlock x:Name="tbCategoriaPokedex" TextWrapping="Wrap" Foreground="White" FontSize="18" Margin="15,40,30,0" RelativePanel.RightOf="pokemonImagenPokedex" RelativePanel.Below="tbNombrePokedex"/>
+                <TextBlock x:Name="tbAlturaPokedex" TextWrapping="Wrap" Foreground="White" FontSize="18" Margin="15,40,30,0" RelativePanel.RightOf="pokemonImagenPokedex" RelativePanel.Below="tbCategoriaPokedex"/>
+                <TextBlock x:Name="tbPesoPokedex" TextWrapping="Wrap" Foreground="White" FontSize="18" Margin="15,40,30,0" RelativePanel.RightOf="pokemonImagenPokedex" RelativePanel.Below="tbAlturaPokedex"/>
+                <TextBlock x:Name="tbEvolucionPokedex" TextWrapping="Wrap" Foreground="White" FontSize="18" Margin="15,40,30,0" RelativePanel.RightOf="pokemonImagenPokedex" RelativePanel.Below="tbPesoPokedex"/>
+                <TextBlock x:Name="tbDescripcionPokedex" TextWrapping="Wrap" Foreground="White" FontSize="18" Margin="30,0,30,0" RelativePanel.Below="pokemonImagenPokedex" />
+                <ItemsControl x:Name="tbTipoPokedex" ItemsSource="{Binding Types}" RelativePanel.Below="tbDescripcionPokedex" Margin="15,0,40,0" >
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border Background="{Binding Color}" CornerRadius="5" Margin="15">
+                                <TextBlock Text="{Binding TypeName}" Foreground="White" Margin="15" FontWeight="Bold" FontSize="18"/>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </RelativePanel>
+
+        </Grid>
 
     </Grid>
 </Page>
