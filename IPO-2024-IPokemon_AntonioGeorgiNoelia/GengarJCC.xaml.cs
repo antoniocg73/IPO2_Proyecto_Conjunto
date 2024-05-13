@@ -147,13 +147,13 @@ namespace Pokemon_Antonio_Campallo_Gomez
 
         public void verPocionVida(bool ver)
         {
-           if (!ver) this.imgPocVida.Opacity = 0.5;
+           if (!ver) this.imgPocVida.Opacity = 0;
             else this.imgPocVida.Opacity = 1;
         }
 
         public void verPocionEnergia(bool ver)
         {
-            if (!ver) this.imgPocEnergia.Opacity = 0.5;
+            if (!ver) this.imgPocEnergia.Opacity = 0;
             else this.imgPocEnergia.Opacity = 1;
         }
 

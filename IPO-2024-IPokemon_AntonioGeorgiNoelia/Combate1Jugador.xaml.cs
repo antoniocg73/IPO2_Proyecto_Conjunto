@@ -61,6 +61,15 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
             ((iPokemon)lucarioCombate1).verPocionVida(false); ((iPokemon)lucarioCombate2).verPocionVida(false);
             ((iPokemon)lucarioCombate1).Vida = 100; ((iPokemon)lucarioCombate2).Vida = 100;
             ((iPokemon)lucarioCombate1).Energia = 100; ((iPokemon)lucarioCombate2).Energia = 100;
+
+            gengarCombate1.verFondo(false); gengarCombate2.verFondo(false);
+            gengarCombate1.verFilaVida(false); gengarCombate2.verFilaVida(false);
+            gengarCombate1.verFilaEnergia(false); gengarCombate2.verFilaEnergia(false);
+            gengarCombate1.verNombre(false); gengarCombate2.verNombre(false);
+            gengarCombate1.Vida = 100; gengarCombate2.Vida = 100;
+            gengarCombate1.Energia = 100; gengarCombate2.Energia = 100;
+            gengarCombate1.verPocionEnergia(false); gengarCombate2.verPocionEnergia(false);
+            gengarCombate1.verPocionVida(false); gengarCombate2.verPocionVida(false);
         }
 
         /*private void flipMaquina_SelectionChanged(object sender, SelectionChangedEventArgs e)
