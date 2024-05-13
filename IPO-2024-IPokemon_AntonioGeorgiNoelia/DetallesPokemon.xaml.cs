@@ -39,6 +39,8 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
             {
                 case "Articuno":
                     articuno.Visibility = Visibility.Visible;
+                    articuno.verFilaEnergia(false);
+                    articuno.verFilaVida(false);
                     currentPokemon = articuno;
                     break;
                 case "Butterfree":
@@ -47,6 +49,8 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
                     break;
                 case "Chandelure":
                     chandelure.Visibility = Visibility.Visible;
+                    chandelure.verFilaEnergia(false);
+                    chandelure.verFilaVida(false);
                     currentPokemon = chandelure;
                     break;
                 case "Charizard":
@@ -72,6 +76,10 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
                 case "Lucario":
                     lucario.Visibility = Visibility.Visible;
                     currentPokemon = lucario;
+                    ((iPokemon)lucario).verFilaEnergia(false);
+                    ((iPokemon)lucario).verFilaVida(false);
+                    ((iPokemon)lucario).verPocionEnergia(false);
+                    ((iPokemon)lucario).verPocionVida(false);
                     break;
                 case "Makuhita":
                     makuhita.Visibility = Visibility.Visible;

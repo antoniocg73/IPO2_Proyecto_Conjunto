@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Pokemon_Antonio_Campallo_Gomez;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -11,6 +13,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
@@ -20,11 +23,396 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
     /// <summary>
     /// Una página vacía que se puede usar de forma independiente o a la que se puede navegar dentro de un objeto Frame.
     /// </summary>
+    /// 
+
     public sealed partial class CombatePage : Page
     {
+        int turno;
+
         public CombatePage()
         {
             this.InitializeComponent();
+            articunoCombate1.verFondo(false); articunoCombate2.verFondo(false);
+            articunoCombate1.verFilaVida(false); articunoCombate2.verFilaVida(false);
+            articunoCombate1.verFilaEnergia(false); articunoCombate2.verFilaEnergia(false);
+            articunoCombate1.verNombre(false); articunoCombate2.verNombre(false);
+            articunoCombate1.Vida = 100; articunoCombate2.Vida = 100;
+            articunoCombate1.Energia = 100; articunoCombate2.Energia = 100;
+
+            chandelureCombate1.verFondo(false); chandelureCombate2.verFondo(false);
+            chandelureCombate1.verFilaVida(false); chandelureCombate2.verFilaVida(false);
+            chandelureCombate1.verFilaEnergia(false); chandelureCombate2.verFilaEnergia(false);
+            chandelureCombate1.verNombre(false); chandelureCombate2.verNombre(false);
+            chandelureCombate1.Vida = 100; chandelureCombate2.Vida = 100;
+            chandelureCombate1.Energia = 100; chandelureCombate2.Energia = 100;
+
+            ((iPokemon)lucarioCombate1).verFondo(false); ((iPokemon)lucarioCombate2).verFondo(false);
+            ((iPokemon)lucarioCombate1).verFilaVida(false); ((iPokemon)lucarioCombate2).verFilaVida(false);
+            ((iPokemon)lucarioCombate1).verFilaEnergia(false); ((iPokemon)lucarioCombate2).verFilaEnergia(false);
+            ((iPokemon)lucarioCombate1).verNombre(false); ((iPokemon)lucarioCombate2).verNombre(false);
+            ((iPokemon)lucarioCombate1).verPocionEnergia(false); ((iPokemon)lucarioCombate2).verPocionEnergia(false);
+            ((iPokemon)lucarioCombate1).verPocionVida(false); ((iPokemon)lucarioCombate2).verPocionVida(false);
+            ((iPokemon)lucarioCombate1).Vida = 100; ((iPokemon)lucarioCombate2).Vida = 100;
+            ((iPokemon)lucarioCombate1).Energia = 100; ((iPokemon)lucarioCombate2).Energia = 100;
         }
+
+        public void jugador2NoJuega()
+        {
+            controlesJugador2.Visibility = Visibility.Collapsed;
+            controlesJugador1.Visibility = Visibility.Visible;
+            textEsperar2.Text = "Es el turno del jugador 1.";
+            textEsperar2.Visibility = Visibility.Visible;
+            textEsperar1.Visibility = Visibility.Collapsed;
+        }
+
+        public void jugador2SiJuega()
+        {
+            controlesJugador1.Visibility = Visibility.Collapsed;
+            controlesJugador2.Visibility = Visibility.Visible;
+            textEsperar1.Text = "Es el turno del jugador 2.";
+            textEsperar1.Visibility = Visibility.Visible;
+            textEsperar2.Visibility = Visibility.Collapsed;
+        }
+
+        public int azarTurno()
+        {
+            Random rnd = new Random();
+            return rnd.Next(0, 2);
+        }
+
+        private async void clickJugador1(object sender, RoutedEventArgs e)
+        {
+            flipJugador1.IsEnabled = false;
+            btnElegirPokemon1.Visibility = Visibility.Collapsed;
+            //controlesJugador1.Visibility = Visibility.Visible;
+            iPokemon pokemonSeleccionado = flipJugador1.SelectedItem as iPokemon;
+            pokemonSeleccionado.verFilaEnergia(true);
+            pokemonSeleccionado.verFilaVida(true);
+            pokemonSeleccionado.verPocionEnergia(false);
+            pokemonSeleccionado.verPocionVida(false);
+            if (flipJugador1.IsEnabled == false && flipJugador2.IsEnabled == false)
+            {
+                turno = azarTurno();
+                if (turno == 1)
+                {
+                    jugador2NoJuega();
+                }
+                else
+                {
+                    jugador2SiJuega();
+                    await Task.Delay(3000); // Espera 3 segundos
+                }
+            }
+        }
+
+        public int calcular_daño_fuerte()
+        {
+            int dañoTotal = 0;
+            Random r = new Random();
+            int random = r.Next(1, 100);
+            if (random < 60)
+            {
+                dañoTotal = 20;
+            }
+            else if (random <= 90)
+            {
+                dañoTotal = (int)Math.Round((double)random / 3);
+            }
+            else
+            {
+                dañoTotal = 40;
+            }
+            return dañoTotal;
+        }
+
+        public int calcular_daño_flojo()
+        {
+            return 15;
+        }
+
+        private async void btnAtacar1_Click(object sender, RoutedEventArgs e)
+        {
+            if (flipJugador1.SelectedItem is iPokemon atacante && flipJugador2.SelectedItem is iPokemon defensor)
+            {
+                double vidaActual = defensor.Vida;
+                double energiaActual = atacante.Energia;
+                if (atacante.Energia > 60)
+                {
+                    atacante.animacionAtaqueFuerte();
+                    defensor.Vida -= calcular_daño_fuerte();
+                }
+                else
+                {
+                    atacante.animacionAtaqueFlojo();
+                    defensor.Vida -= calcular_daño_flojo();
+                }
+
+                if (atacante.Energia > 50)
+                {
+                    atacante.Energia -= 25;
+                }
+                else
+                {
+                    atacante.Energia -= 15;
+                }
+                controlesJugador1.Visibility = Visibility.Collapsed;
+                textEsperar1.Text = "El jugador 1 ha decidido atacar.";
+                textEsperar1.Visibility = Visibility.Visible;
+                await Task.Delay(10000); // Espera 10 segundos
+
+                if (atacante.Energia <= 30 && energiaActual > 30)
+                {
+                    atacante.animacionCansado();
+                    await Task.Delay(5000); // Espera 5 segundos
+                }
+
+                if (defensor.Vida <= 0)
+                {
+                    defensor.animacionDerrota();
+                    textEsperar2.Text = "Pokemon debilitado.";
+                    await Task.Delay(5000); // Espera 5 segundos
+                    imageFinalCombate.Visibility = Visibility.Visible;
+                    txtMensajeVictoria.Text = "¡Ha ganado el jugador 1!";
+                    txtMensajeVictoria.Visibility = Visibility.Visible;
+                    //METER NOTIFICACION
+                }
+                else if (defensor.Vida > 0 && defensor.Vida <= 30 && vidaActual > 30)
+                {
+                    defensor.animacionHerido();
+                    await Task.Delay(5000); // Espera 5 segundos
+                    jugador2SiJuega();
+                    await Task.Delay(10000); // Espera 10 segundos
+                }
+                else
+                {
+                    jugador2SiJuega();
+                    await Task.Delay(10000); // Espera 10 segundos
+                }
+
+
+            }
+        }
+
+        private async void btnRendirse1_Click(object sender, RoutedEventArgs e)
+        {
+            controlesJugador1.Visibility = Visibility.Collapsed;
+            iPokemon miPokemon = flipJugador1.SelectedItem as iPokemon;
+            miPokemon.animacionDerrota();
+            textEsperar1.Text = "El jugador 1 ha decidido rendirse.";
+            textEsperar1.Visibility = Visibility.Visible;
+            await Task.Delay(5000); // Espera 5 segundos
+            imageFinalCombate.Visibility = Visibility.Visible;
+            txtMensajeVictoria.Text = "¡Ha ganado el jugador 2!";
+            txtMensajeVictoria.Visibility = Visibility.Visible;
+            //METER NOTIFICACION
+        }
+
+        private async void btnCurarse1_Click(object sender, RoutedEventArgs e)
+        {
+            controlesJugador1.Visibility = Visibility.Collapsed;
+            iPokemon pokemonSeleccionado = flipJugador1.SelectedItem as iPokemon;
+            double vidaActual = pokemonSeleccionado.Vida;
+            if (pokemonSeleccionado.Vida > 75)
+            {
+                pokemonSeleccionado.Vida = 100;
+            }
+            else
+            {
+                pokemonSeleccionado.Vida += 20;
+            }
+
+            pokemonSeleccionado.animacionDescasar();
+            textEsperar1.Text = "El jugador 1 ha decidido curarse.";
+            textEsperar1.Visibility = Visibility.Visible;
+            await Task.Delay(5000); // Espera 5 segundos
+            if (pokemonSeleccionado.Vida > 30 && vidaActual <= 30)
+            {
+                pokemonSeleccionado.animacionNoHerido();
+                await Task.Delay(5000); // Espera 5 segundos
+            }
+            jugador2SiJuega();
+            await Task.Delay(10000); // Espera 10 segundos
+        }
+
+        private async void btnEnergia1_Click(object sender, RoutedEventArgs e)
+        {
+            controlesJugador1.Visibility = Visibility.Collapsed;
+            iPokemon pokemonEnergia = flipJugador1.SelectedItem as iPokemon;
+            double energiaActual = pokemonEnergia.Energia;
+            if (pokemonEnergia.Energia > 75)
+            {
+                pokemonEnergia.Energia = 100;
+            }
+            else
+            {
+                pokemonEnergia.Energia += 20;
+            }
+            pokemonEnergia.animacionDefensa();
+            textEsperar1.Text = "El jugador 1 ha decidido subir su energía.";
+            textEsperar1.Visibility = Visibility.Visible;
+            await Task.Delay(8000); // Espera 8 segundos
+            if (pokemonEnergia.Energia > 30 && energiaActual <= 30)
+            {
+                pokemonEnergia.animacionNoCansado();
+                await Task.Delay(5000); // Espera 5 segundos
+            }
+            jugador2SiJuega();
+            await Task.Delay(10000); // Espera 10 segundos
+        }
+        
+        private async void clickJugador2(object sender, RoutedEventArgs e)
+        {
+            flipJugador2.IsEnabled = false;
+            btnElegirPokemon2.Visibility = Visibility.Collapsed;
+            iPokemon pokemonSeleccionado = flipJugador2.SelectedItem as iPokemon;
+            pokemonSeleccionado.verFilaEnergia(true);
+            pokemonSeleccionado.verFilaVida(true);
+            pokemonSeleccionado.verPocionEnergia(false);
+            pokemonSeleccionado.verPocionVida(false);
+            if (flipJugador1.IsEnabled == false && flipJugador2.IsEnabled == false)
+            {
+                turno = azarTurno();
+                if (turno == 1)
+                {
+                    jugador2NoJuega();
+                }
+                else
+                {
+                    jugador2SiJuega();
+                    await Task.Delay(3000); // Espera 3 segundos
+                }
+            }
+        }
+        
+        private async void btnAtacar2_Click(object sender, RoutedEventArgs e)
+        {
+            if (flipJugador2.SelectedItem is iPokemon atacante && flipJugador1.SelectedItem is iPokemon defensor)
+            {
+                double vidaActual = defensor.Vida;
+                double energiaActual = atacante.Energia;
+                if (atacante.Energia > 60)
+                {
+                    atacante.animacionAtaqueFuerte();
+                    defensor.Vida -= calcular_daño_fuerte();
+                }
+                else
+                {
+                    atacante.animacionAtaqueFlojo();
+                    defensor.Vida -= calcular_daño_flojo();
+                }
+
+                if (atacante.Energia > 50)
+                {
+                    atacante.Energia -= 25;
+                }
+                else
+                {
+                    atacante.Energia -= 15;
+                }
+                controlesJugador2.Visibility = Visibility.Collapsed;
+                textEsperar2.Text = "El jugador 2 ha decidido atacar.";
+                textEsperar2.Visibility = Visibility.Visible;
+                await Task.Delay(10000); // Espera 10 segundos
+
+                if (atacante.Energia <= 30 && energiaActual > 30)
+                {
+                    atacante.animacionCansado();
+                    await Task.Delay(5000); // Espera 5 segundos
+                }
+
+                if (defensor.Vida <= 0)
+                {
+                    defensor.animacionDerrota();
+                    textEsperar1.Text = "Pokemon debilitado.";
+                    await Task.Delay(5000); // Espera 5 segundos
+                    imageFinalCombate.Visibility = Visibility.Visible;
+                    txtMensajeVictoria.Text = "¡Ha ganado el jugador 2!";
+                    txtMensajeVictoria.Visibility = Visibility.Visible;
+                    //METER NOTIFICACION
+                }
+                else if (defensor.Vida > 0 && defensor.Vida <= 30 && vidaActual > 30)
+                {
+                    defensor.animacionHerido();
+                    await Task.Delay(5000); // Espera 5 segundos
+                    jugador2NoJuega();
+                    await Task.Delay(10000); // Espera 10 segundos
+                }
+                else
+                {
+                    jugador2NoJuega();
+                    await Task.Delay(10000); // Espera 10 segundos
+                }
+
+
+            }
+        }
+
+        private async void btnRendirse2_Click(object sender, RoutedEventArgs e)
+        {
+            controlesJugador2.Visibility = Visibility.Collapsed;
+            iPokemon miPokemon = flipJugador2.SelectedItem as iPokemon;
+            miPokemon.animacionDerrota();
+            textEsperar2.Text = "El jugador 2 ha decidido rendirse.";
+            textEsperar2.Visibility = Visibility.Visible;
+            await Task.Delay(5000); // Espera 5 segundos
+            imageFinalCombate.Visibility = Visibility.Visible;
+            txtMensajeVictoria.Text = "¡Ha ganado el jugador 1!";
+            txtMensajeVictoria.Visibility = Visibility.Visible;
+            //METER NOTIFICACION
+        }
+
+        private async void btnCurarse2_Click(object sender, RoutedEventArgs e)
+        {
+            controlesJugador2.Visibility = Visibility.Collapsed;
+            iPokemon pokemonSeleccionado = flipJugador2.SelectedItem as iPokemon;
+            double vidaActual = pokemonSeleccionado.Vida;
+            if (pokemonSeleccionado.Vida > 75)
+            {
+                pokemonSeleccionado.Vida = 100;
+            }
+            else
+            {
+                pokemonSeleccionado.Vida += 20;
+            }
+
+            pokemonSeleccionado.animacionDescasar();
+            textEsperar2.Text = "El jugador 2 ha decidido curarse.";
+            textEsperar2.Visibility = Visibility.Visible;
+            await Task.Delay(5000); // Espera 5 segundos
+            if (pokemonSeleccionado.Vida > 30 && vidaActual <= 30)
+            {
+                pokemonSeleccionado.animacionNoHerido();
+                await Task.Delay(5000); // Espera 5 segundos
+            }
+            jugador2NoJuega();
+            await Task.Delay(10000); // Espera 10 segundos
+        }
+
+        private async void btnEnergia2_Click(object sender, RoutedEventArgs e)
+        {
+            controlesJugador2.Visibility = Visibility.Collapsed;
+            iPokemon pokemonEnergia = flipJugador2.SelectedItem as iPokemon;
+            double energiaActual = pokemonEnergia.Energia;
+            if (pokemonEnergia.Energia > 75)
+            {
+                pokemonEnergia.Energia = 100;
+            }
+            else
+            {
+                pokemonEnergia.Energia += 20;
+            }
+            pokemonEnergia.animacionDefensa();
+            textEsperar2.Text = "El jugador 2 ha decidido subir su energía.";
+            textEsperar2.Visibility = Visibility.Visible;
+            await Task.Delay(8000); // Espera 8 segundos
+            if (pokemonEnergia.Energia > 30 && energiaActual <= 30)
+            {
+                pokemonEnergia.animacionNoCansado();
+                await Task.Delay(5000); // Espera 5 segundos
+            }
+            jugador2NoJuega();
+            await Task.Delay(10000); // Espera 10 segundos
+        }
+        
     }
 }

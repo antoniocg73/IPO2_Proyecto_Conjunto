@@ -34,7 +34,6 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
         ChandelureNDAA flipMiChandelureMaquina;
         MyUCLucario flipMiLucarioMaquina;
 
-       // FlipViewItem pokemonSeleccionadoMaquina;
         int turno;
 
         public Combate1Jugador()

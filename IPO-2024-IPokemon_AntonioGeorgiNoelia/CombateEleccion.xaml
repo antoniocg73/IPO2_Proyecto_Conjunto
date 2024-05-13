@@ -22,17 +22,21 @@
             <ImageBrush x:Name="imgDecidirComabate" ImageSource="/Assets/DecidirCombate.jpg"/>
         </Grid.Background>
         <Image x:Name="stackContexto" Source="/Assets/textConteto.png" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-        <Button x:Name="btn_Jugador1" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Click="irCombate1J">
-            <StackPanel>
-                <Image x:Name="imgBtnJugador1" Source="/Assets/1jugadorCombate.png" HorizontalAlignment="Center" VerticalAlignment="Top" Height="300" />
-                <TextBlock x:Name="textBtnJugador1" Text="UN JUGADOR" TextWrapping="Wrap" FontSize="40" FontWeight="Bold" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            </StackPanel>
-        </Button>
-        <Button x:Name="btn_Jugador2" Grid.Row="1" Grid.Column="1"  HorizontalAlignment="Center" Click="irCombate2J">
-            <StackPanel>
-                <Image x:Name="imgBtnJugador2" Source="/Assets/2JugadoresCombate.png" HorizontalAlignment="Center" VerticalAlignment="Top" Height="300" />
-                <TextBlock x:Name="textBtnJugador2" Text="DOS JUGADORES" TextWrapping="Wrap" FontSize="40" FontWeight="Bold" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-            </StackPanel>
-        </Button>
+        <Viewbox Grid.Row="1" Grid.Column="0">
+            <Button x:Name="btn_Jugador1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="irCombate1J">
+                <StackPanel>
+                    <Image x:Name="imgBtnJugador1" Source="/Assets/1jugadorCombate.png" HorizontalAlignment="Stretch" VerticalAlignment="Top" />
+                    <TextBlock x:Name="textBtnJugador1" Text="UN JUGADOR" TextWrapping="Wrap" FontSize="40" FontWeight="Bold" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Top" Height="60"/>
+                </StackPanel>
+            </Button>
+        </Viewbox>
+        <Viewbox Grid.Row="1" Grid.Column="1">
+            <Button x:Name="btn_Jugador2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="irCombate2J">
+                <StackPanel>
+                    <Image x:Name="imgBtnJugador2" Source="/Assets/2JugadoresCombate.png" HorizontalAlignment="Stretch" VerticalAlignment="Top" />
+                    <TextBlock x:Name="textBtnJugador2" Text="DOS JUGADORES" TextWrapping="Wrap" FontSize="40" FontWeight="Bold" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Top" Height="80"/>
+                </StackPanel>
+            </Button>
+        </Viewbox>
     </Grid>
 </Page>
