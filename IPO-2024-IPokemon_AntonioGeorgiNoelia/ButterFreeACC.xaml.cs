@@ -33,17 +33,11 @@ namespace Pokemon_Antonio_Campallo_Gomez
         }
 
         private string nombre = "Butterfree";
-        private string categoria = "bicho/volador";
-        private double altura = 1.30;
-        private double peso = 8.0;
-        private string evolucion = "Metapod";
-        private string descripcion = "Butterfree es un Pokémon que se asemeja a una mariposa. Su cuerpo está dividido en dos partes: " +
-        "cabeza y tronco. Posee grandes ojos rojos, un cuerpo de color púrpura oscuro, dos pequeñas manos y dos pies de un color azul cielo. " +
-        "Sus alas blancas están cubiertas por un polvo tóxico y son impermeables al agua. Gracias a ellas, puede volar incluso en días de lluvia. " +
-        "En cuanto a sus capacidades de lucha, Butterfree puede defenderse de sus enemigos liberando polvillos tóxicos de sus alas que se dispersan por el aire. " +
-        "Además, en combate, aletea a gran velocidad para lanzar al aire estos tóxicos polvillos. Es un Pokémon de tipo Bicho/Volador y destaca por sus 90 puntos de Ataque especial. " +
-        "Butterfree es conocido por su habilidad para volar hasta 10 kilómetros en busca de miel, polen y néctar de las flores. A pesar de su apariencia delicada, es un Pokémon resistente que puede soportar condiciones climáticas adversas. " +
-        "Su polvo tóxico es una defensa efectiva contra los enemigos, y también puede ser utilizado para debilitar a sus oponentes en batalla. Con su alto Ataque especial, Butterfree puede causar un daño significativo a sus oponentes.";
+        private string categoria = "Mariposa";
+        private double altura = 1.10;
+        private double peso = 32.0;
+        private string evolucion = "No tiene.";
+        private string descripcion = "Adora el néctar de las flores. Una pequeña cantidad de polen le basta para localizar prados floridos.";
 
         public double Energia { get { return this.barra_energia.Value; } set { this.barra_energia.Value = value; } }
         public string Nombre { get { return this.nombre; } set { this.nombre = value; } }
@@ -53,7 +47,7 @@ namespace Pokemon_Antonio_Campallo_Gomez
         public double Peso { get { return this.peso; } set { this.peso = value; } }
         public string Evolucion { get { return this.evolucion; } set { this.evolucion = value; } }
         public string Descripcion { get { return this.descripcion; } set { this.descripcion = value; } }
-        double iPokemon.Vida { get { return barra_vida.Value; } set { barra_vida.Value = value; }  }
+        public double Vida { get => this.barra_vida.Value; set => this.barra_vida.Value = value; }
 
         // Apartado de pocimas -------------------------------------------------------------------------------
 

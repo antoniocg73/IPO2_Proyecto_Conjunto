@@ -33,12 +33,12 @@ namespace Pokemon_Antonio_Campallo_Gomez
         public double Vida { get => this.pbVida.Value; set => this.pbVida.Value = value; }
         public double Energia { get => this.pbEnergia.Value; set => this.pbEnergia.Value = value; }
         public string Nombre { get => "Articuno"; set => throw new NotImplementedException(); }
-        public string Categoría { get => "Hielo"; set => throw new NotImplementedException(); }
+        public string Categoría { get => "Congelar"; set => throw new NotImplementedException(); }
         public string Tipo { get => "Hielo/Volador"; set => throw new NotImplementedException(); }
         public double Altura { get => Convert.ToDouble(1.7); set => throw new NotImplementedException(); }
         public double Peso { get => Convert.ToDouble(55.4); set => throw new NotImplementedException(); }
-        public string Evolucion { get => "No tiene evolución";  set => throw new NotImplementedException(); }
-        public string Descripcion { get => "Articuno es un gran Pokémon legendario aviar con plumaje predominantemente azul y alas que se dice que están hechas de hielo. En su frente hay una cresta que consta de tres plumas azules más oscuras en forma de rombo"; 
+        public string Evolucion { get => "No tiene.";  set => throw new NotImplementedException(); }
+        public string Descripcion { get => "Una de las aves legendarias. Es capaz de generar ventiscas congelando la humedad del aire."; 
                 set => throw new NotImplementedException(); }
 
         public ArticunoACG()

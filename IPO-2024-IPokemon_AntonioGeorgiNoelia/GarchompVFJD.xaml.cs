@@ -31,7 +31,7 @@ namespace Pokemon_Antonio_Campallo_Gomez
             set => this.pbEnergia.Value = value; }
         public string Nombre { get => "Garchomp"; 
             set => throw new NotImplementedException(); }
-        public string Categoría { get => "Dragón"; 
+        public string Categoría { get => "Mach"; 
             set => throw new NotImplementedException(); }
         public string Tipo { get => "Dragón/Tierra"; 
             set => throw new NotImplementedException(); }
@@ -41,7 +41,7 @@ namespace Pokemon_Antonio_Campallo_Gomez
             set => throw new NotImplementedException(); }
         public string Evolucion { get => "No tiene evolución"; 
             set => throw new NotImplementedException(); }
-        public string Descripcion { get => "Garchomp es un Pokémon de tipo Dragón/Tierra introducido en la Cuarta generación.Es de color Azul, pesa 95,0kg y mide 1,9m. Es la forma evolucionada de gabite. Su principal característica son sus 130 puntos de Ataque."; 
+        public string Descripcion { get => "Se dice que, cuando va a velocidad máxima, sus alas crean cuchillas de viento que talan cualquier árbol."; 
             set => throw new NotImplementedException(); }
 
         public GarchompVFJD()

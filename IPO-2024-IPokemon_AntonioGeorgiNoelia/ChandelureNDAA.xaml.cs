@@ -160,15 +160,12 @@ namespace Pokemon_Antonio_Campallo_Gomez
         public double Vida { get => this.barraVida.Value; set => this.barraVida.Value = value; }
         public double Energia { get => this.barraEnergia.Value; set => this.barraEnergia.Value = value; }
         public string Nombre { get => "Chandelure"; set => throw new NotImplementedException(); }
-        public string Categoría { get => "Gas"; set => throw new NotImplementedException(); }
+        public string Categoría { get => "Señuelo"; set => throw new NotImplementedException(); }
         public string Tipo { get => "Fantasma/Fuego"; set => throw new NotImplementedException(); }
         public double Altura { get => 1.0; set => throw new NotImplementedException(); }
         public double Peso { get => 34.3; set => throw new NotImplementedException(); }
-        public string Evolucion { get => "Lampent"; set => throw new NotImplementedException(); }
-        public string Descripcion { get => "Chandelure es un Pokémon misterioso con un cuerpo compuesto por llamas moradas y negras. " +
-                                           "Su aspecto evoca la imagen de un candelabro encantado, con ojos amarillos que brillan con un " +
-                                           "resplandor inquietante. Capaz de absorber la energía vital de sus oponentes, Chandelure es un " +
-                                           "adversario formidable en combate."; set => throw new NotImplementedException(); }
+        public string Evolucion { get => "No tiene."; set => throw new NotImplementedException(); }
+        public string Descripcion { get => "Las almas que han ardido bajo sus inquietantes llamas no tienen adónde ir y vagan sin rumbo por este mundo eternamente."; set => throw new NotImplementedException(); }
 
         public ChandelureNDAA()
         {

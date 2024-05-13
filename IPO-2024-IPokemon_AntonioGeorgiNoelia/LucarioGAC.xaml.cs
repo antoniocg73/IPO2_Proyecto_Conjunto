@@ -88,42 +88,42 @@ namespace Pokemon_Antonio_Campallo_Gomez {
             set => PokemonName.Text = value;
         }
 
-        private string categoria;
+        private string categoria = "Aura";
         string iPokemon.Categoría
         {
             get => categoria;
             set => categoria = value;
         }
 
-        private string tipo;
+        private string tipo = "Lucha/Acero";
         string iPokemon.Tipo
         {
             get => tipo;
             set => tipo = value;
         }
 
-        private double altura;
+        private double altura = 1.2;
         double iPokemon.Altura
         {
             get => altura;
             set => altura = value;
         }
 
-        private double peso;
+        private double peso = 54;
         double iPokemon.Peso
         {
             get => peso;
             set => peso = value;
         }
 
-        private string evolucion;
+        private string evolucion = "No tiene evolución";
         string iPokemon.Evolucion
         {
             get => evolucion;
             set => evolucion = value;
         }
 
-        private string descripcion;
+        private string descripcion = "Dicen que, como es capaz de detectar auras, puede percibir a sus rivales aunque no los vea.";
         string iPokemon.Descripcion
         {
             get => descripcion;

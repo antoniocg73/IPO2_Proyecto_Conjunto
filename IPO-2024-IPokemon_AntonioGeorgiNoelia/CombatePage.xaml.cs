@@ -54,6 +54,22 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
             ((iPokemon)lucarioCombate1).verPocionVida(false); ((iPokemon)lucarioCombate2).verPocionVida(false);
             ((iPokemon)lucarioCombate1).Vida = 100; ((iPokemon)lucarioCombate2).Vida = 100;
             ((iPokemon)lucarioCombate1).Energia = 100; ((iPokemon)lucarioCombate2).Energia = 100;
+
+            /*butterfreeCombate1.verFondo(false); butterfreeCombate2.verFondo(false);
+            butterfreeCombate1.verFilaVida(false); butterfreeCombate2.verFilaVida(false);
+            butterfreeCombate1.verFilaEnergia(false); butterfreeCombate2.verFilaEnergia(false);
+            butterfreeCombate1.verNombre(false); butterfreeCombate2.verNombre(false);
+            butterfreeCombate1.Vida = 100; butterfreeCombate2.Vida = 100;
+            butterfreeCombate1.Energia = 100; butterfreeCombate2.Energia = 100;
+            */
+            gengarCombate1.verFondo(false); gengarCombate2.verFondo(false);
+            gengarCombate1.verFilaVida(false); gengarCombate2.verFilaVida(false);
+            gengarCombate1.verFilaEnergia(false); gengarCombate2.verFilaEnergia(false);
+            gengarCombate1.verNombre(false); gengarCombate2.verNombre(false);
+            gengarCombate1.Vida = 100; gengarCombate2.Vida = 100;
+            gengarCombate1.Energia = 100; gengarCombate2.Energia = 100;
+            gengarCombate1.verPocionEnergia(false); gengarCombate2.verPocionEnergia(false);
+            gengarCombate1.verPocionVida(false); gengarCombate2.verPocionVida(false);
         }
 
         public void jugador2NoJuega()

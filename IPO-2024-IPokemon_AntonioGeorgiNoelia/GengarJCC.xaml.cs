@@ -29,11 +29,11 @@ namespace Pokemon_Antonio_Campallo_Gomez
                                 set => this.pbEnergia.Value = value; }
         public string Nombre { get => "Gengar"; set => throw new NotImplementedException(); }
         public string Categoría { get => "Sombra"; set => throw new NotImplementedException(); }
-        public string Tipo { get => "Veneno"; set => throw new NotImplementedException(); }
+        public string Tipo { get => "Fantasma/Veneno"; set => throw new NotImplementedException(); }
         public double Altura { get => 1.50; set => throw new NotImplementedException(); }
         public double Peso { get => 40.5; set => throw new NotImplementedException(); }
         public string Evolucion { get => "No evoluciona"; set => throw new NotImplementedException(); }
-        public string Descripcion { get => "Gengar es un Pokemon de tipo veneno, es malvado, tiene muchas púas en su espalda, además tiene unos imponentes ojos rojos y una sonrisa larga y burlona."; set => throw new NotImplementedException(); }
+        public string Descripcion { get => "Para quitarle la vida a su presa, se desliza en su sombra y espera su oportunidad en silencio."; set => throw new NotImplementedException(); }
 
         public GengarJCC()
         {
@@ -133,8 +133,8 @@ namespace Pokemon_Antonio_Campallo_Gomez
 
         public void verFilaVida(bool ver)
         {
-            if (!ver) this.gGengar.RowDefinitions[1].Height = new GridLength(0);
-            else this.gGengar.RowDefinitions[1].Height = new GridLength(10,
+            if (!ver) this.gGengar.RowDefinitions[0].Height = new GridLength(0);
+            else this.gGengar.RowDefinitions[0].Height = new GridLength(10,
            GridUnitType.Star);
         }
 
@@ -183,7 +183,7 @@ namespace Pokemon_Antonio_Campallo_Gomez
 
         public void animacionAtaqueFuerte()
         {
-            Storyboard animacion = this.Resources["AnimacionAtaqueFuerte"] as Storyboard;
+            Storyboard animacion = this.Resources["AnimacionAtaqueDebil"] as Storyboard;
             if (animacion != null)
             {
                 animacion.Begin();
@@ -210,7 +210,7 @@ namespace Pokemon_Antonio_Campallo_Gomez
 
         public void animacionCansado()
         {
-            Storyboard animacion = this.Resources["EstadoCansado"] as Storyboard;
+            Storyboard animacion = this.Resources["InicialMoverExtremidades"] as Storyboard;
             if (animacion != null)
             {
                 animacion.Begin();
@@ -228,7 +228,7 @@ namespace Pokemon_Antonio_Campallo_Gomez
 
         public void animacionHerido()
         {
-            Storyboard animacion = this.Resources["EstadoHerido"] as Storyboard;
+            Storyboard animacion = this.Resources["InicialMoverExtremidades"] as Storyboard;
             if (animacion != null)
             {
                 animacion.Begin();

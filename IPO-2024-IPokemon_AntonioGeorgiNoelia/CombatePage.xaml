@@ -40,11 +40,15 @@
             <my:ArticunoACG x:Name="articunoCombate1"/>
             <my:ChandelureNDAA x:Name="chandelureCombate1"/>
             <my:MyUCLucario x:Name="lucarioCombate1" />
+            <my:ButterFreeACC x:Name="butterfreeCombate1"/>
+            <my:GengarJCC x:Name="gengarCombate1"/>
         </FlipView>
         <FlipView x:Name="flipJugador2" Grid.Row="3" Grid.Column="3" Background="Transparent">
             <my:ArticunoACG x:Name="articunoCombate2"/>
             <my:ChandelureNDAA x:Name="chandelureCombate2"/>
             <my:MyUCLucario x:Name="lucarioCombate2"/>
+            <my:ButterFreeACC x:Name="butterfreeCombate2"/>
+            <my:GengarJCC x:Name="gengarCombate2"/>
         </FlipView>
         <Viewbox Grid.Row="4" Grid.Column="1">
             <Button x:Name="btnElegirPokemon1" Visibility="Visible"  Content="Elegir este Pokemon" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="40" Foreground="White" FontWeight="Bold" Click="clickJugador1"/>

@@ -102,8 +102,8 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
             tbNombrePokedex.Text = "Nombre: " + currentPokemon.Nombre;
             tbCategoriaPokedex.Text = "Categoría: " + currentPokemon.Categoría;
             tbDescripcionPokedex.Text = "Descripción: " + currentPokemon.Descripcion;
-            tbAlturaPokedex.Text = "Altura: " + currentPokemon.Altura;
-            tbPesoPokedex.Text = "Peso: " + currentPokemon.Peso;
+            tbAlturaPokedex.Text = "Altura (m): " + currentPokemon.Altura;
+            tbPesoPokedex.Text = "Peso (kg): " + currentPokemon.Peso;
             tbEvolucionPokedex.Text = "Evolución: " + currentPokemon.Evolucion;
             tbTipoPokedex.ItemsSource = id.Types;
             pokemonImagenPokedex.Source = new BitmapImage(new Uri("ms-appx://" + id.Image));
