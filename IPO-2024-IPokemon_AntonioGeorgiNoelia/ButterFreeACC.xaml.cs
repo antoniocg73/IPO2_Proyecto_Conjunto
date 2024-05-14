@@ -58,6 +58,7 @@ namespace Pokemon_Antonio_Campallo_Gomez
             dtTime.Tick += subeVida;
             dtTime.Start();
             this.pocima_vida.Opacity = 0.5;
+
         }
 
         private void subeVida(object sender, object e)
@@ -160,40 +161,17 @@ namespace Pokemon_Antonio_Campallo_Gomez
             mpMuerte.Play();
         }
 
-        public void verFondo(bool ver, Grid grid)
-        {
-            if (ver == true)
-            {
-                grid.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                grid.Visibility = Visibility.Collapsed;
-            }
-        }
-
-
-        public void VerFilaVida(bool ver)
-        {
-            if (ver == true)
-            {
-                barra_vida.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                barra_vida.Visibility=Visibility.Collapsed;
-            }
-        }
-
         public void verFilaEnergia(bool ver)
         {
             if(ver == true)
             {
-                barra_energia.Visibility = Visibility.Visible;
+                this.barra_energia.Visibility = Visibility.Visible;
+                this.energia.Visibility = Visibility.Visible;
             }
             else
             {
-                barra_energia.Visibility= Visibility.Collapsed;
+                this.barra_energia.Visibility= Visibility.Collapsed;
+                this.energia.Visibility = Visibility.Collapsed;
             }
         }
 
@@ -201,11 +179,11 @@ namespace Pokemon_Antonio_Campallo_Gomez
         {
             if(ver== true)
             {
-                pocima_vida.Visibility = Visibility.Visible;
+                this.pocima_vida.Visibility = Visibility.Visible;
             }
             else
             {
-                pocima_vida.Visibility=Visibility.Collapsed;
+                this.pocima_vida.Visibility=Visibility.Collapsed;
             }
         }
 
@@ -213,11 +191,11 @@ namespace Pokemon_Antonio_Campallo_Gomez
         {
             if( ver == true)
             {
-                pocima_energia.Visibility = Visibility.Visible;
+                this.pocima_energia.Visibility = Visibility.Visible;
             }
             else
             {
-                pocima_energia.Visibility=Visibility.Collapsed;
+                this.pocima_energia.Visibility=Visibility.Collapsed;
             }
         }
 
@@ -226,22 +204,38 @@ namespace Pokemon_Antonio_Campallo_Gomez
         {
             if (ver == true)
             {
-                NombrePokemon.Visibility = Visibility.Visible;
+                this.NombrePokemon.Visibility = Visibility.Visible;
             }
             else
             {
-                NombrePokemon.Visibility=Visibility.Collapsed;
+                this.NombrePokemon.Visibility=Visibility.Collapsed;
             }
         }
 
         public void verFondo(bool ver)
         {
-            throw new NotImplementedException();
+            if (ver == true)
+            {
+                this.gridButterfree.Background.Opacity = 100;
+            }
+            else
+            {
+                this.gridButterfree.Background.Opacity = 0;
+            }
         }
 
         public void verFilaVida(bool ver)
         {
-            throw new NotImplementedException();
+            if (ver == true)
+            {
+                this.barra_vida.Visibility = Visibility.Visible;
+                this.vida.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                this.barra_vida.Visibility = Visibility.Collapsed;
+                this.vida.Visibility = Visibility.Collapsed;
+            }
         }
     }
 }

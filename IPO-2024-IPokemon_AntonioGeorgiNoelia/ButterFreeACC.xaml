@@ -1681,9 +1681,9 @@
 
     </UserControl.Resources>
 
-    <Viewbox Margin="0,0,2,8">
+    <Viewbox >
 
-        <Grid Height="1000" Width="1500">
+        <Grid x:Name="gridButterfree" Height="1000" Width="1500">
 
             <Grid.Background>
                 <ImageBrush ImageSource="/AssetsButterFreeACC/fondo.jpg" Stretch="UniformToFill"/>
@@ -1732,7 +1732,7 @@
          Margin="0,0,0,10"
          Source="/AssetsButterFreeACC/pocima_energia.png" Grid.Column="2" Grid.Row="1" Height="80" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="130" PointerReleased="pocima_energia_PointerReleased"/>
 
-            <Canvas x:Name="pokemon_completo" Margin="-9,-1,9,1">
+            <Canvas x:Name="pokemon_completo" Width="400" Height="400">
                 <Grid x:Name="pokemon" HorizontalAlignment="Left" Height="434" VerticalAlignment="Top" Width="800" Canvas.Left="478" Canvas.Top="264" RenderTransformOrigin="0.5,0.5">
                     <Grid.RenderTransform>
                         <CompositeTransform ScaleX="0.786" ScaleY="0.766" TranslateX="-10" TranslateY="-13"/>
