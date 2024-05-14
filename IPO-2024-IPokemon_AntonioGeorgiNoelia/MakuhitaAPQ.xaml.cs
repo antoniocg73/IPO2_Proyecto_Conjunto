@@ -1,5 +1,6 @@
 ﻿using Pokemon_Antonio_Campallo_Gomez;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -45,7 +46,7 @@ namespace Pokemon_Antonio_Campallo_Gomez
 
         public string Categoría
         {
-            get { return "Pokemon Valiente"; }
+            get { return "Valiente"; }
             set { throw new NotImplementedException(); }
         }
 
@@ -74,7 +75,7 @@ namespace Pokemon_Antonio_Campallo_Gomez
         }
         public string Descripcion
         {
-            get { return this.Nombre + " tiene un espíritu inagotable, por muchas peleas que realice nunca se cansa ni se da por vencido. Por lo general, los Makuhita son muy activos ya que llevan una dieta sana y se mantienen en forma con distintos ejercicios que llevan a cabo. Cada vez que caen o son atacados se levantan con mas fuerza que la que tenían antes además que nunca se rinden hasta que ya están muy debilitados."; }
+            get { return "A base de duro entrenamiento se hace cada vez más fuerte.Es tan resistente que puede soportar cualquier ataque."; }
             set { throw new NotImplementedException(); }
         }
         Storyboard sbaux;
@@ -189,24 +190,39 @@ namespace Pokemon_Antonio_Campallo_Gomez
         public void verFondo(bool ver)
         {
             if (ver)
-                this.gridPrincipal.Background = null;
+                this.gridPrincipal.Background.Opacity = 100;
+            else
+                this.gridPrincipal.Background.Opacity = 0;
+
 
         }
 
         public void verFilaVida(bool ver)
         {
             if (ver)
+            {
                 this.pbVida.Visibility = Visibility.Visible;
+                this.imagenVida.Visibility = Visibility.Visible;
+            }
             else
+            {
                 this.pbVida.Visibility = Visibility.Collapsed;
+                this.imagenVida.Visibility = Visibility.Collapsed;
+            }
         }
 
         public void verFilaEnergia(bool ver)
         {
             if (ver)
+            {
                 this.pbEnergia.Visibility = Visibility.Visible;
+                this.imagenEnergia.Visibility = Visibility.Visible;
+            }
             else
+            {
                 this.pbEnergia.Visibility = Visibility.Collapsed;
+                this.imagenEnergia.Visibility = Visibility.Collapsed;
+            }
         }
 
         public void verPocionVida(bool ver)
