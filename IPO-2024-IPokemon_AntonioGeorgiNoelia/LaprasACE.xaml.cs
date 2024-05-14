@@ -15,7 +15,7 @@ namespace Pokemon_Antonio_Campallo_Gomez
         double Lapras_Altura = 2.5;
         double Lapras_Peso = 220.0;
         string Lapras_Evolucion = "Ninguna";
-        string Lapras_Descripcion = "Lapras es un Pokémon que vive en los mares. Le encanta surcar los mares con gente y Pokémon en su lomo, el cual resulta muy cómodo.";
+        string Lapras_Descripcion = "Surca los mares transportando gente sobre el lomo. Al parecer, a veces entona un melodioso canto si está de buen humor.";
 
         Storyboard iddleStoryboard;
         Storyboard debilStoryboard;

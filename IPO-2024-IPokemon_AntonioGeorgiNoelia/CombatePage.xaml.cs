@@ -72,6 +72,13 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
             gengarCombate1.Energia = 100; gengarCombate2.Energia = 100;
             gengarCombate1.verPocionEnergia(false); gengarCombate2.verPocionEnergia(false);
             gengarCombate1.verPocionVida(false); gengarCombate2.verPocionVida(false);
+
+            laprasCombate1.verFondo(false); laprasCombate2.verFondo(false);
+            laprasCombate1.verFilaVida(false); laprasCombate2.verFilaVida(false);
+            laprasCombate1.verFilaEnergia(false); laprasCombate2.verFilaEnergia(false);
+            laprasCombate1.verNombre(false); laprasCombate2.verNombre(false);
+            laprasCombate1.Vida = 100; laprasCombate2.Vida = 100;
+            laprasCombate1.Energia = 100; laprasCombate2.Energia = 100;
         }
 
         public void jugador2NoJuega()
