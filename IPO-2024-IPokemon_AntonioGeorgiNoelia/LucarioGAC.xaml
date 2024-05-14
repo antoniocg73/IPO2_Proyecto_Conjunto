@@ -3106,7 +3106,7 @@
         <ProgressBar x:Name="pbEnergy" VerticalAlignment="Stretch" Height="50"
                      Background="#33FFA600" BorderBrush="Black"
                      Value="30" Maximum="100" Foreground="#FFFFCB00" Grid.Column="1" Grid.Row="1" Margin="0,5,5,0"/>
-        <Viewbox Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="160,0,0,0">
+        <Viewbox Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="1319">
 
             <Canvas x:Name="CanvasLucario" Height="371" Width="480" HorizontalAlignment="Center">
                 <Canvas x:Name="OrejaDerecha" Height="320" Width="470" RenderTransformOrigin="0.5,0.5">
