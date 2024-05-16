@@ -33,8 +33,8 @@ namespace Pokemon_Antonio_Campallo_Gomez
             Interval = TimeSpan.FromMilliseconds(100)
         };
 
-        public double Vida { get; set; }
-        public double Energia { get; set; }
+        public double Vida { get => this.pbSalud.Value; set => this.pbSalud.Value = value; }
+        public double Energia { get => this.pbEnergia.Value; set => this.pbEnergia.Value = value; }
         public string Nombre { get; set; }
         public string Categoría { get; set; }
         public string Tipo { get; set; }
@@ -46,16 +46,14 @@ namespace Pokemon_Antonio_Campallo_Gomez
         public ScizorAPJ()
         {
             this.InitializeComponent();
-            stckOpcionesDesplegables.Visibility = Visibility.Collapsed;
+            /*stckOpcionesDesplegables.Visibility = Visibility.Collapsed;
             tgFondo.IsOn = true;
             tgFilaVida.IsOn = true;
             tgFilaEnergia.IsOn = true;
             tgPocionVida.IsOn = true;
             tgPocionEnergia.IsOn = true;
-            tgNombre.IsOn = true;
+            tgNombre.IsOn = true;*/
             activarAniIdle(true);
-            Vida = 100;
-            Energia = 100;
             Nombre = "Scizor";
             Categoría = "Tenaza";
             Tipo = "Bicho/Acero";
@@ -117,7 +115,7 @@ namespace Pokemon_Antonio_Campallo_Gomez
             Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows.UI.Core.CoreCursorType.Arrow, 1);
         }
 
-        private void BtnAtqDebil_click(object sender, RoutedEventArgs e)
+       /* private void BtnAtqDebil_click(object sender, RoutedEventArgs e)
         {
             animacionAtaqueFlojo();
         }
@@ -135,7 +133,7 @@ namespace Pokemon_Antonio_Campallo_Gomez
         private void BtnDescansar_click(object sender, RoutedEventArgs e)
         {
             animacionDescasar();
-        }
+        }*/
 
         public void verFondo(bool ver)
         {
@@ -258,7 +256,7 @@ namespace Pokemon_Antonio_Campallo_Gomez
             VisualStateManager.GoToState(this, "Derrotado", false);
         }
 
-        private void TgMenu_Toggled(object sender, RoutedEventArgs e)
+       /* private void TgMenu_Toggled(object sender, RoutedEventArgs e)
         {
             stckOpcionesDesplegables.Visibility = tgMenu.IsOn ? Visibility.Visible : Visibility.Collapsed;
         }
@@ -306,6 +304,6 @@ namespace Pokemon_Antonio_Campallo_Gomez
         private void BtnCansado_click(object sender, RoutedEventArgs e)
         {
             animacionCansado();
-        }
+        }*/
     }
 }

@@ -2253,13 +2253,6 @@
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
         <Image x:Name="imFondo" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="7" Grid.ColumnSpan="3" Source="/AssetsScizorAPJ/paisajePokemon.png" Stretch="UniformToFill" RenderTransformOrigin="0.695,0.715"/>
-        <Button x:Name="btnAtqDebil" Grid.Row="4" Background="White" Click="BtnAtqDebil_click" Content="Ataque Debil" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Button x:Name="btnAtqFuerte" Grid.Row="4" Background="White" Click="BtnAtqFuerte_click" Content="Ataque Fuerte" HorizontalAlignment="Center" Margin="0,120,0,0"/>
-        <Button x:Name="btnEscudo" Grid.Row="4" Background="White" Click="BtnEscudo_click" Content="Escudo" HorizontalAlignment="Center" Margin="0,0,0,120"/>
-        <Button x:Name="btnDescansar" Grid.Row="4" Background="White" Click="BtnDescansar_click" Content="Descansar" HorizontalAlignment="Center" Margin="0,0,0,240"/>
-        <Button x:Name="btnDerrotado" Grid.Row="4" Background="White" Click="BtnDerrotado_click" Content="Derrotado" HorizontalAlignment="Center" Margin="0,300,0,0" VerticalAlignment="Center"/>
-        <Button x:Name="btnHerido" Grid.Row="4" Background="White" Click="BtnHerido_click" Content="Herido" HorizontalAlignment="Center" Margin="0,400,0,0" VerticalAlignment="Center"/>
-        <Button x:Name="btnCansado" Grid.Row="4" Background="White" Click="BtnCansado_click" Content="Cansado" HorizontalAlignment="Center" Margin="0,500,0,0" VerticalAlignment="Center"/>
 
         <Image x:Name="icoSalud" Source="AssetsScizorAPJ/icoSalud.png" Grid.Row="1" Stretch="Uniform"/>
         <Image x:Name="icoEnergia" Source="AssetsScizorAPJ/icoEnergia.png" Stretch="Uniform" Grid.Row="3"/>
@@ -2269,23 +2262,10 @@
         <Border x:Name="brdPocionEnergia" Grid.Column="2" Margin="5" PointerEntered="SetHand" PointerExited="SetArrow" Grid.Row="3" PointerReleased="UsarPocionEnergia">
             <Image x:Name="pocionEnergia" Source="AssetsScizorAPJ/PocionEnergia.png" Stretch="Uniform" Grid.Row="1" Grid.Column="2"/>
         </Border>
-        <ProgressBar x:Name="pbSalud" Grid.Column="1" Grid.Row="1" VerticalAlignment="Stretch" Background="#FFFF9C9C" Foreground="Red"/>
-        <ProgressBar x:Name="pbEnergia" Grid.Column="1" Grid.Row="3" VerticalAlignment="Stretch" Background="#FFFFDD76" Foreground="#FFFFC107"/>
+        <ProgressBar x:Name="pbSalud" Grid.Column="1" Grid.Row="1" VerticalAlignment="Stretch" Background="#FFFF9C9C" Foreground="Red" Value="100"/>
+        <ProgressBar x:Name="pbEnergia" Grid.Column="1" Grid.Row="3" VerticalAlignment="Stretch" Background="#FFFFDD76" Foreground="#FFFFC107" Value="100"/>
         <Border x:Name="brdNombre" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Background="DimGray" BorderThickness="2" BorderBrush="Black" Padding="10,0,10,3">
             <TextBlock x:Name="txtNombre"  Text="Scizor" Foreground="White" TextWrapping="Wrap" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-        </Border>
-        <Border x:Name="brdOpciones" BorderThickness="2" BorderBrush="Black" VerticalAlignment="Top"  HorizontalAlignment="Right" Grid.Row="4" Grid.Column="2">
-            <StackPanel x:Name="stckOpcionesInterfaz" Background="GhostWhite" Padding="5">
-                <ToggleSwitch x:Name="tgMenu" Header="Opciones Interfaz" Toggled="TgMenu_Toggled"/>
-                <StackPanel x:Name="stckOpcionesDesplegables" Background="GhostWhite" Padding="5" Grid.Row="4" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Right">
-                    <ToggleSwitch x:Name="tgFondo" Header="Ver fondo" Toggled="TgFondo_Toggled"/>
-                    <ToggleSwitch x:Name="tgFilaVida" Header="Ver fila de vida" Toggled="TgFilaVida_Toggled"/>
-                    <ToggleSwitch x:Name="tgFilaEnergia" Header="Ver fila de energía" Toggled="TgFilaEnergia_Toggled"/>
-                    <ToggleSwitch x:Name="tgPocionVida" Header="Ver pocion de vida" Toggled="TgPocionVida_Toggled"/>
-                    <ToggleSwitch x:Name="tgPocionEnergia" Header="Ver pocion de energía" Toggled="TgPocionEnergia_Toggled"/>
-                    <ToggleSwitch x:Name="tgNombre" Header="Ver nombre" Toggled="TgNombre_Toggled"/>
-                </StackPanel>
-            </StackPanel>
         </Border>
         <Viewbox x:Name="vbScizor" Grid.Column="1" Grid.Row="4" RenderTransformOrigin="0.5,0.5">
             <Viewbox.RenderTransform>
