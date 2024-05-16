@@ -163,6 +163,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScizorAPJ.xaml.cs" />
     <Compile Include="SnorlaxROC.xaml.cs" />
+    <Compile Include="ToxicroackJPG.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -351,6 +352,32 @@
     <Content Include="AssetsSnorlaxROC\z.png" />
     <Content Include="AssetsSnorlaxROC\z2b.png" />
     <Content Include="AssetsSnorlaxROC\zb.png" />
+    <Content Include="AssetsToxicroackJPG\Agujero.png" />
+    <Content Include="AssetsToxicroackJPG\AtaqueDebil2.mp3" />
+    <Content Include="AssetsToxicroackJPG\AtaqueFuerte.mp3" />
+    <Content Include="AssetsToxicroackJPG\Bostezo.mp3" />
+    <Content Include="AssetsToxicroackJPG\Bostezo.png" />
+    <Content Include="AssetsToxicroackJPG\Burbujas.png" />
+    <Content Include="AssetsToxicroackJPG\Calavera.png" />
+    <Content Include="AssetsToxicroackJPG\Corazon.png" />
+    <Content Include="AssetsToxicroackJPG\Dormir.png" />
+    <Content Include="AssetsToxicroackJPG\Energi.png" />
+    <Content Include="AssetsToxicroackJPG\Escudo.png" />
+    <Content Include="AssetsToxicroackJPG\Fondo.jpg" />
+    <Content Include="AssetsToxicroackJPG\herida_1.png" />
+    <Content Include="AssetsToxicroackJPG\Herida_2.png" />
+    <Content Include="AssetsToxicroackJPG\Herida_3.png" />
+    <Content Include="AssetsToxicroackJPG\Herido.mp3" />
+    <Content Include="AssetsToxicroackJPG\Muerte.mp3" />
+    <Content Include="AssetsToxicroackJPG\muerto.png" />
+    <Content Include="AssetsToxicroackJPG\nubes moradas.png" />
+    <Content Include="AssetsToxicroackJPG\NubesOscuras.png" />
+    <Content Include="AssetsToxicroackJPG\Planta.png" />
+    <Content Include="AssetsToxicroackJPG\Planta_2.png" />
+    <Content Include="AssetsToxicroackJPG\Pocima_Energia-removebg-preview.png" />
+    <Content Include="AssetsToxicroackJPG\Pocima_Vida-removebg-preview.png" />
+    <Content Include="AssetsToxicroackJPG\Ronquido.mp3" />
+    <Content Include="AssetsToxicroackJPG\Venom.png" />
     <Content Include="Assets\1jugadorCombate.png" />
     <Content Include="Assets\2JugadoresCombate.png" />
     <Content Include="Assets\acercade.jpg" />
@@ -410,6 +437,7 @@
     <Content Include="Assets\Square44x44Logo.targetsize-32.png" />
     <Content Include="Assets\Square44x44Logo.targetsize-48.png" />
     <Content Include="Assets\textConteto.png" />
+    <Content Include="Assets\toxicroakPokedex.png" />
     <Content Include="Assets\victoria.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
@@ -506,6 +534,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="SnorlaxROC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ToxicroackJPG.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

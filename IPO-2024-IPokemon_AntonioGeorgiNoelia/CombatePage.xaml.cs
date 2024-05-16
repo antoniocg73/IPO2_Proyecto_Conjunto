@@ -116,6 +116,15 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
             grookeyCombate1.verPocionEnergia(false); grookeyCombate2.verPocionEnergia(false);
             grookeyCombate1.verPocionVida(false); grookeyCombate2.verPocionVida(false);
 
+            toxicroackCombate1.verFondo(false); toxicroackCombate2.verFondo(false);
+            toxicroackCombate1.verFilaVida(false); toxicroackCombate2.verFilaVida(false);
+            toxicroackCombate1.verFilaEnergia(false); toxicroackCombate2.verFilaEnergia(false);
+            toxicroackCombate1.verNombre(false); toxicroackCombate2.verNombre(false);
+            toxicroackCombate1.Vida = 100; toxicroackCombate2.Vida = 100;
+            toxicroackCombate1.Energia = 100; toxicroackCombate2.Energia = 100;
+            toxicroackCombate1.verPocionEnergia(false); toxicroackCombate2.verPocionEnergia(false);
+            toxicroackCombate1.verPocionVida(false); toxicroackCombate2.verPocionVida(false);
+
 
         }
 

@@ -93,6 +93,10 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
                     snorlax.Visibility = Visibility.Visible;
                     currentPokemon = snorlax;
                     break;
+                case "Toxicroak":
+                    toxicroak.Visibility = Visibility.Visible;
+                    currentPokemon = toxicroak;
+                    break;
                 default:
                     currentPokemon = articuno;
                     break;

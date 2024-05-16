@@ -77,6 +77,7 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
             new PokemonPokedex { Name = "Makuhita", Image = "/Assets/MakuhitaPokedex.png", Types = new List<PokemonType> { new PokemonType { TypeName = "Lucha", Color = "#C03028" } } },
             new PokemonPokedex { Name = "Scizor", Image = "/Assets/ScizorPokedex.png", Types = new List<PokemonType> { new PokemonType { TypeName = "Bicho", Color = "#A8B820" }, new PokemonType { TypeName = "Acero", Color = "#B8B8D0" } } },
             new PokemonPokedex { Name = "Snorlax", Image = "/Assets/SnorlaxPokedex.png", Types = new List<PokemonType> { new PokemonType { TypeName = "Normal", Color = "#A8A878" } } },
+            new PokemonPokedex { Name = "Toxicroak", Image="/Assets/ToxicroakPokedex.png", Types = new List<PokemonType> { new PokemonType { TypeName = "Veneno", Color = "#A040A0" }, new PokemonType { TypeName = "Lucha", Color = "#C03028" } } },
         };
 
         public ObservableCollection<GroupInfoCollection<PokemonPokedex>> PokemonsGrouped { get; set; }
