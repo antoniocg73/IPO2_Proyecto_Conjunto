@@ -29,13 +29,13 @@ namespace Pokemon_Antonio_Campallo_Gomez
 
         public double Vida { get { return this.pb_heal.Value; } set { this.pb_heal.Value = value; } }
         public double Energia { get { return this.pb_energy.Value; } set { this.pb_energy.Value = value; } }
-        public string Nombre { get { return Nombre; } set { Nombre = value; } }
-        public string Categoría { get { return Categoría; } set { Categoría = value; } }
-        public string Tipo { get { return Tipo; } set { Tipo = value; } }
-        public double Altura { get { return Altura; } set { Altura = value; } }
-        public double Peso { get { return Peso; } set { Peso = value; } }
-        public string Evolucion { get { return Evolucion; } set { Evolucion = value; } }
-        public string Descripcion { get { return Descripcion; } set { Descripcion = value; } }
+        public string Nombre { get { return "Charizard"; } set { throw new NotImplementedException(); } }
+        public string Categoría { get { return "Llama"; } set { throw new NotImplementedException(); } }
+        public string Tipo { get { return "Fuego/Volador"; } set { throw new NotImplementedException(); } }
+        public double Altura { get { return Convert.ToDouble(1.7); } set { throw new NotImplementedException(); } }
+        public double Peso { get { return Convert.ToDouble(90.5); } set { throw new NotImplementedException(); } }
+        public string Evolucion { get { return "No tiene."; } set { throw new NotImplementedException(); } }
+        public string Descripcion { get { return "Cuando se enfurece de verdad, la llama de la punta de su cola se vuelve de color azul claro."; } set { throw new NotImplementedException(); } }
 
 
         private MediaPlayer mediaPlayer = new MediaPlayer();
@@ -54,7 +54,7 @@ namespace Pokemon_Antonio_Campallo_Gomez
             this.sb_normal.Begin();
         }
 
-        private void clickNumber(object sender, KeyRoutedEventArgs e)
+        /*private void clickNumber(object sender, KeyRoutedEventArgs e)
         {
 
             this.sb_normal.Stop();
@@ -100,7 +100,7 @@ namespace Pokemon_Antonio_Campallo_Gomez
                     break;
             }
         }
-
+        */
 
         private void StartAnimation(string storyboardName)
         {
@@ -173,7 +173,7 @@ namespace Pokemon_Antonio_Campallo_Gomez
             }
         }
 
-        private void matar(object sender, PointerRoutedEventArgs e)
+        /*private void matar(object sender, PointerRoutedEventArgs e)
         {
             if (this.derrotado)
             {
@@ -184,7 +184,7 @@ namespace Pokemon_Antonio_Campallo_Gomez
                 Image green_potion = this.FindName("green_potion") as Image;
                 green_potion.Opacity = 0.5;
             }
-        }
+        }*/
 
         private void decreaseHealth(object sender, object e)
         {
@@ -199,14 +199,13 @@ namespace Pokemon_Antonio_Campallo_Gomez
 
         public void verFondo(bool ver)
         {
-            Image background = this.FindName("background") as Image;
             if (ver)
             {
-                background.Visibility = Visibility.Visible;
+                this.gridPrincipal.Background.Opacity = 100;
             }
             else
             {
-                background.Visibility = Visibility.Collapsed;
+                this.gridPrincipal.Background.Opacity = 0;
             }
         }
 
@@ -216,10 +215,12 @@ namespace Pokemon_Antonio_Campallo_Gomez
             if (ver)
             {
                 pb_heal.Visibility = Visibility.Visible;
+                this.heart.Visibility = Visibility.Visible;
             }
             else
             {
                 pb_heal.Visibility = Visibility.Collapsed;
+                this.heart.Visibility = Visibility.Collapsed;
             }
         }
 
@@ -229,10 +230,12 @@ namespace Pokemon_Antonio_Campallo_Gomez
             if (ver)
             {
                 pb_energy.Visibility = Visibility.Visible;
+                this.energy.Visibility = Visibility.Visible;
             }
             else
             {
                 pb_energy.Visibility = Visibility.Collapsed;
+                this.energy.Visibility = Visibility.Collapsed;
             }
         }
 
@@ -337,13 +340,13 @@ namespace Pokemon_Antonio_Campallo_Gomez
             this.PlayAudio("ms-appx:///AssetsCharizardASM/recuperado.mp3");
             this.StartAnimation("sb_levantar");
             derrotado = false;
-            green_potion_PointerReleased(null, null);
+            //green_potion_PointerReleased(null, null);
         }
 
         public void animacionDerrota()
         {
             this.derrotado = true;
-            this.matar(null, null);
+            //this.matar(null, null);
             this.StartAnimation("sb_derrotado");
         }
     }

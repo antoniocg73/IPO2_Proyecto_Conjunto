@@ -107,15 +107,6 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
             snorlaxCombate1.verPocionEnergia(false); snorlaxCombate2.verPocionEnergia(false);
             snorlaxCombate1.verPocionVida(false); snorlaxCombate2.verPocionVida(false);
 
-            grookeyCombate1.verFondo(false); grookeyCombate2.verFondo(false);
-            grookeyCombate1.verFilaVida(false); grookeyCombate2.verFilaVida(false);
-            grookeyCombate1.verFilaEnergia(false); grookeyCombate2.verFilaEnergia(false);
-            grookeyCombate1.verNombre(false); grookeyCombate2.verNombre(false);
-            grookeyCombate1.Vida = 100; grookeyCombate2.Vida = 100;
-            grookeyCombate1.Energia = 100; grookeyCombate2.Energia = 100;
-            grookeyCombate1.verPocionEnergia(false); grookeyCombate2.verPocionEnergia(false);
-            grookeyCombate1.verPocionVida(false); grookeyCombate2.verPocionVida(false);
-
             toxicroackCombate1.verFondo(false); toxicroackCombate2.verFondo(false);
             toxicroackCombate1.verFilaVida(false); toxicroackCombate2.verFilaVida(false);
             toxicroackCombate1.verFilaEnergia(false); toxicroackCombate2.verFilaEnergia(false);
@@ -124,6 +115,17 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
             toxicroackCombate1.Energia = 100; toxicroackCombate2.Energia = 100;
             toxicroackCombate1.verPocionEnergia(false); toxicroackCombate2.verPocionEnergia(false);
             toxicroackCombate1.verPocionVida(false); toxicroackCombate2.verPocionVida(false);
+
+            charizardCombate1.verFondo(false); charizardCombate2.verFondo(false);
+            charizardCombate1.verFilaVida(false); charizardCombate2.verFilaVida(false);
+            charizardCombate1.verFilaEnergia(false); charizardCombate2.verFilaEnergia(false);
+            charizardCombate1.verNombre(false); charizardCombate2.verNombre(false);
+            charizardCombate1.Vida = 100; charizardCombate2.Vida = 100;
+            charizardCombate1.Energia = 100; charizardCombate2.Energia = 100;
+            charizardCombate1.verPocionEnergia(false); charizardCombate2.verPocionEnergia(false);
+            charizardCombate1.verPocionVida(false); charizardCombate2.verPocionVida(false);
+
+
 
 
         }

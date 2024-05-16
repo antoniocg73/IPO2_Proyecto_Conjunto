@@ -113,6 +113,24 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
             snorlaxCombate1.Energia = 100; snorlaxCombate2.Energia = 100;
             snorlaxCombate1.verPocionEnergia(false); snorlaxCombate2.verPocionEnergia(false);
             snorlaxCombate1.verPocionVida(false); snorlaxCombate2.verPocionVida(false);
+
+            toxicroackCombate1.verFondo(false); toxicroackCombate2.verFondo(false);
+            toxicroackCombate1.verFilaVida(false); toxicroackCombate2.verFilaVida(false);
+            toxicroackCombate1.verFilaEnergia(false); toxicroackCombate2.verFilaEnergia(false);
+            toxicroackCombate1.verNombre(false); toxicroackCombate2.verNombre(false);
+            toxicroackCombate1.Vida = 100; toxicroackCombate2.Vida = 100;
+            toxicroackCombate1.Energia = 100; toxicroackCombate2.Energia = 100;
+            toxicroackCombate1.verPocionEnergia(false); toxicroackCombate2.verPocionEnergia(false);
+            toxicroackCombate1.verPocionVida(false); toxicroackCombate2.verPocionVida(false);
+
+            charizardCombate1.verFondo(false); charizardCombate2.verFondo(false);
+            charizardCombate1.verFilaVida(false); charizardCombate2.verFilaVida(false);
+            charizardCombate1.verFilaEnergia(false); charizardCombate2.verFilaEnergia(false);
+            charizardCombate1.verNombre(false); charizardCombate2.verNombre(false);
+            charizardCombate1.Vida = 100; charizardCombate2.Vida = 100;
+            charizardCombate1.Energia = 100; charizardCombate2.Energia = 100;
+            charizardCombate1.verPocionEnergia(false); charizardCombate2.verPocionEnergia(false);
+            charizardCombate1.verPocionVida(false); charizardCombate2.verPocionVida(false);
         }
 
         /*private void flipMaquina_SelectionChanged(object sender, SelectionChangedEventArgs e)

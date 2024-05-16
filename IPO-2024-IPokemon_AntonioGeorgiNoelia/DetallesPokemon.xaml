@@ -18,28 +18,79 @@
                 <ColumnDefinition Width="50*"/>
                 <ColumnDefinition Width="50* "/>
             </Grid.ColumnDefinitions>
-            <my:ArticunoACG x:Name="articuno" Grid.Column="1" Margin="60" Visibility="Collapsed"/>
-            <my:ButterFreeACC x:Name="butterfree" Grid.Column="1" Margin="60" Visibility="Collapsed"/>
-            <my:ChandelureNDAA x:Name="chandelure" Grid.Column="1" Margin="60" Visibility="Collapsed"/>
-            <my:CharizardASM x:Name="charizard" Grid.Column="1" Margin="60" Visibility="Collapsed"/>
-            <my:GarchompVFJD x:Name="garchomp" Grid.Column="1" Margin="60" Visibility="Collapsed"/>
-            <my:GengarJCC x:Name="gengar" Grid.Column="1" Margin="60" Visibility="Collapsed"/>
-            <my:GrookeyJGPMP x:Name="grookey" Grid.Column="1" Margin="60" Visibility="Collapsed"/>
-            <my:Lapras x:Name="lapras" Grid.Column="1" Margin="60" Visibility="Collapsed"/>
-            <my:MyUCLucario x:Name="lucario" Grid.Column="1" Margin="60" Visibility="Collapsed"/>
-            <my:MakuhitaAPQ2 x:Name="makuhita" Grid.Column="1" Margin="60" Visibility="Collapsed"/>
-            <my:ScizorAPJ x:Name="scizor" Grid.Column="1" Margin="60" Visibility="Collapsed"/>
-            <my:SnorlaxROC x:Name="snorlax" Grid.Column="1" Margin="60" Visibility="Collapsed"/>
-            <my:ToxicroackJPG x:Name="toxicroak" Grid.Column="1" Margin="60" Visibility="Collapsed"/>
+
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50*"/>
+                    <RowDefinition Height="20* "/>
+                </Grid.RowDefinitions>
+
+                <my:ArticunoACG x:Name="articuno" Margin="0,40,20,0" Visibility="Collapsed"/>
+                <my:ButterFreeACC x:Name="butterfree" Margin="0,40,20,0" Visibility="Collapsed"/>
+                <my:ChandelureNDAA x:Name="chandelure" Margin="0,40,20,0" Visibility="Collapsed"/>
+                <my:CharizardASM x:Name="charizard" Margin="0,40,20,0" Visibility="Collapsed"/>
+                <my:GarchompVFJD x:Name="garchomp" Margin="0,40,20,0" Visibility="Collapsed"/>
+                <my:GengarJCC x:Name="gengar" Margin="0,40,20,0" Visibility="Collapsed"/>
+                <my:Lapras x:Name="lapras" Margin="0,40,20,0" Visibility="Collapsed"/>
+                <my:MyUCLucario x:Name="lucario" Margin="0,40,20,0" Visibility="Collapsed"/>
+                <my:MakuhitaAPQ2 x:Name="makuhita" Margin="0,40,20,0" Visibility="Collapsed"/>
+                <my:ScizorAPJ x:Name="scizor" Margin="0,40,20,0" Visibility="Collapsed"/>
+                <my:SnorlaxROC x:Name="snorlax" Margin="0,40,20,0" Visibility="Collapsed"/>
+                <my:ToxicroackJPG x:Name="toxicroak" Margin="0,40,20,0" Visibility="Collapsed"/>
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button x:Name="btnDefensa" Content="Defensa" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="25" Foreground="Black" FontWeight="Bold" Click="btnDefensa_Click" Grid.Row="0" Grid.Column="0" Margin="0,40,0,0" Opacity="0.9">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/Assets/boton1.jpg" Stretch="Fill"/>
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="btnDescasar" Content="Descansar" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="25" Foreground="Black" FontWeight="Bold"  Click="btnDescansar_Click" Grid.Row="0" Grid.Column="1" Margin="0,40,0,0" Opacity="0.9">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/Assets/boton2.jpg" Stretch="UniformToFill"/>
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="btnAtaqueDebil" Content="Ataque Débil" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="25" Foreground="Black" FontWeight="Bold"  Click="btnAtaqueDebil_Click" Grid.Row="0" Grid.Column="2" Margin="0,40,20,0" Opacity="0.9" >
+                        <Button.Background>
+                            <ImageBrush ImageSource="/Assets/boton3.jpg"/>
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="btnAtaqueFuerte" Content="Ataque Fuerte" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="25" Foreground="Black" FontWeight="Bold"   Click="btnAtaqueFuerte_Click" Grid.Row="1" Grid.Column="0" Margin="0,0,0,40" Opacity="0.9" >
+                        <Button.Background>
+                            <ImageBrush ImageSource="/Assets/boton4.jpg" Stretch="UniformToFill"/>
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="btnHerido" Content="Herido" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="25" Foreground="Black" FontWeight="Bold"  Click="btnHerido_Click" Grid.Row="1" Grid.Column="1" Margin="0,0,0,40" Opacity="0.9">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/Assets/boton5.jpg" Stretch="UniformToFill"/>
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="btnCansado" Content="Cansado" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="25" Foreground="Black" FontWeight="Bold"  Click="btnCansado_Click" Grid.Row="1" Grid.Column="2" Margin="0,0,20,40" Opacity="0.9" >
+                        <Button.Background>
+                            <ImageBrush ImageSource="/Assets/boton6.jpg"/>
+                        </Button.Background>
+                    </Button>
+                </Grid>
+            </Grid>
+
+
 
             <RelativePanel Margin="40" Opacity="0.9" Background="Black">
                 <Image x:Name="pokemonImagenPokedex" Source="{Binding Image}" Width="280" Height="380" Margin="20,20,0,0"/>
-                <TextBlock x:Name="tbNombrePokedex" TextWrapping="Wrap" Foreground="White" FontSize="18" Margin="15,50,30,0" RelativePanel.RightOf="pokemonImagenPokedex"/>
-                <TextBlock x:Name="tbCategoriaPokedex" TextWrapping="Wrap" Foreground="White" FontSize="18" Margin="15,40,30,0" RelativePanel.RightOf="pokemonImagenPokedex" RelativePanel.Below="tbNombrePokedex"/>
-                <TextBlock x:Name="tbAlturaPokedex" TextWrapping="Wrap" Foreground="White" FontSize="18" Margin="15,40,30,0" RelativePanel.RightOf="pokemonImagenPokedex" RelativePanel.Below="tbCategoriaPokedex"/>
+                <TextBlock x:Name="tbNombrePokedex" TextWrapping="Wrap" Foreground="White"  FontSize="18" Margin="15,50,30,0" RelativePanel.RightOf="pokemonImagenPokedex"/>
+                <TextBlock x:Name="tbCategoriaPokedex" TextWrapping="Wrap" Foreground="White"  FontSize="18" Margin="15,40,30,0" RelativePanel.RightOf="pokemonImagenPokedex" RelativePanel.Below="tbNombrePokedex"/>
+                <TextBlock x:Name="tbAlturaPokedex" TextWrapping="Wrap" Foreground="White"  FontSize="18" Margin="15,40,30,0" RelativePanel.RightOf="pokemonImagenPokedex" RelativePanel.Below="tbCategoriaPokedex"/>
                 <TextBlock x:Name="tbPesoPokedex" TextWrapping="Wrap" Foreground="White" FontSize="18" Margin="15,40,30,0" RelativePanel.RightOf="pokemonImagenPokedex" RelativePanel.Below="tbAlturaPokedex"/>
-                <TextBlock x:Name="tbEvolucionPokedex" TextWrapping="Wrap" Foreground="White" FontSize="18" Margin="15,40,30,0" RelativePanel.RightOf="pokemonImagenPokedex" RelativePanel.Below="tbPesoPokedex"/>
-                <TextBlock x:Name="tbDescripcionPokedex" TextWrapping="Wrap" Foreground="White" FontSize="18" Margin="30,0,30,0" RelativePanel.Below="pokemonImagenPokedex" />
+                <TextBlock x:Name="tbEvolucionPokedex" TextWrapping="Wrap" Foreground="White"  FontSize="18" Margin="15,40,30,0" RelativePanel.RightOf="pokemonImagenPokedex" RelativePanel.Below="tbPesoPokedex"/>
+                <TextBlock x:Name="tbDescripcionPokedex" TextWrapping="Wrap" Foreground="White"  FontSize="18" Margin="30,0,30,0" RelativePanel.Below="pokemonImagenPokedex" />
                 <ItemsControl x:Name="tbTipoPokedex" ItemsSource="{Binding Types}" RelativePanel.Below="tbDescripcionPokedex" Margin="15,0,40,0" >
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
@@ -57,6 +108,5 @@
             </RelativePanel>
 
         </Grid>
-
     </Grid>
 </Page>

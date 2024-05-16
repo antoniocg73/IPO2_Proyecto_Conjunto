@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -24,6 +25,8 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
     /// </summary>
     public sealed partial class DetallesPokemon : Page
     {
+        private iPokemon currentPokemon;
+
         public DetallesPokemon()
         {
             this.InitializeComponent();
@@ -33,7 +36,6 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
         {
             base.OnNavigatedTo(e);
             PokemonPokedex id = e.Parameter as PokemonPokedex;
-            iPokemon currentPokemon;
 
             switch (id.Name)
             {
@@ -64,10 +66,6 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
                 case "Gengar":
                     gengar.Visibility = Visibility.Visible;
                     currentPokemon = gengar;
-                    break;
-                case "Grookey":
-                    grookey.Visibility = Visibility.Visible;
-                    currentPokemon = grookey;
                     break;
                 case "Lapras":
                     lapras.Visibility = Visibility.Visible;
@@ -111,8 +109,45 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
             tbEvolucionPokedex.Text = "Evolución: " + currentPokemon.Evolucion;
             tbTipoPokedex.ItemsSource = id.Types;
             pokemonImagenPokedex.Source = new BitmapImage(new Uri("ms-appx://" + id.Image));
-
         }
+
+        private void btnAtaqueFuerte_Click(object sender, RoutedEventArgs e)
+        {
+            currentPokemon.animacionAtaqueFuerte();
+        }
+
+        private void btnAtaqueDebil_Click(object sender, RoutedEventArgs e)
+        {
+            currentPokemon.animacionAtaqueFlojo();
+        }
+
+        private async void btnHerido_Click(object sender, RoutedEventArgs e)
+        {
+            currentPokemon.animacionHerido();
+            await Task.Delay(5000);
+            currentPokemon.animacionNoHerido();
+        }
+
+        private async void btnCansado_Click(object sender, RoutedEventArgs e)
+        {
+            currentPokemon.animacionCansado();
+            await Task.Delay(5000);
+            currentPokemon.animacionNoCansado();
+        }
+
+        private void btnDefensa_Click(object sender, RoutedEventArgs e)
+        {
+            currentPokemon.animacionDefensa();
+        }
+
+
+
+        private void btnDescansar_Click(object sender, RoutedEventArgs e)
+        {
+            currentPokemon.animacionDescasar();
+        }
+
+
 
 
     }
