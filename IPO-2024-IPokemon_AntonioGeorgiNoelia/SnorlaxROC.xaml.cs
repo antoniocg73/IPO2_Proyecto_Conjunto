@@ -3,7 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Resources;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Security.Cryptography;
 using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -37,46 +39,56 @@ namespace Pokemon_Antonio_Campallo_Gomez
         private double altura = 2.1;
         private double peso = 460.0;
         private string evolucion = "Ninguna";
-        private string descripcion = "Snorlax es un pokemon perezoso. Come y duerme todo el día. Sus mayores habilidades son tirar las uñas y provocar terremotos, sus babas funcionan de escudo, cuando se cansa se duerme y recupera energía y vida.";
+        private string descripcion = "Este Pokémon es un glotón que lo único que hace aparte de comer es dormir.Puede ingerir hasta 400 kg de comida en un solo día.";
 
 
         public double Vida { get { return this.vida.Value; } set { this.vida.Value = value; } }
-        public double Energia { get { return this.energia.Value; } set { this.Energia = value; } }
-        string iPokemon.Nombre { get { return this.Nombre.Text; } set { this.Nombre.Text = value; } }
-        public string Categoría { get { return this.categoria; } set { this.categoria = value; } }
-        public string Tipo { get { return this.tipo; } set { this.tipo = value; } }
-        public double Altura { get { return this.altura; } set { this.altura = value; } }
-        public double Peso { get { return this.peso; } set { this.peso = value; } }
-        public string Evolucion { get { return this.evolucion; } set { this.evolucion = value; } }
-        public string Descripcion { get { return this.descripcion; } set { this.descripcion = value; } }
+        public double Energia { get { return this.energia.Value; } set { this.energia.Value = value; } }
+        string iPokemon.Nombre { get { return this.Nombre.Text; } set { throw new NotImplementedException(); } }
+        public string Categoría { get { return this.categoria; } set { throw new NotImplementedException(); } }
+        public string Tipo { get { return this.tipo; } set { throw new NotImplementedException(); } }
+        public double Altura { get { return this.altura; } set { throw new NotImplementedException(); } }
+        public double Peso { get { return this.peso; } set { throw new NotImplementedException(); } }
+        public string Evolucion { get { return this.evolucion; } set { throw new NotImplementedException(); } }
+        public string Descripcion { get { return this.descripcion; } set { throw new NotImplementedException(); } }
 
 
         public void verFondo(bool ver)
         {
-            if (!ver) { this.GridPrincipal.Background = null; }
+            if (!ver) { this.GridPrincipal.Background.Opacity = 0; }
             else
             {
-                //TODO Poner fondo de nuevo
+                this.GridPrincipal.Background.Opacity = 100;
             }
 
         }
 
         public void verFilaVida(bool ver)
         {
-            if (!ver) { this.vida.Visibility = Visibility.Collapsed; }
+            if (!ver) 
+            {
+                this.vida.Visibility = Visibility.Collapsed; 
+                this.corazon.Visibility = Visibility.Collapsed;
+            }
             else
             {
-                //TODO Poner fondo de nuevo
+                this.vida.Visibility = Visibility.Visible;
+                this.corazon.Visibility = Visibility.Visible;   
             }
 
         }
 
         public void verFilaEnergia(bool ver)
         {
-            if (!ver) { this.energia.Visibility = Visibility.Collapsed; }
+            if (!ver) 
+            { 
+                this.energia.Visibility = Visibility.Collapsed; 
+                this.energia1.Visibility = Visibility.Collapsed;
+            }
             else
             {
-                //TODO Poner fondo de nuevo
+                this.energia.Visibility = Visibility.Visible;
+                this.energia1.Visibility = Visibility.Visible;
             }
         }
 
@@ -85,7 +97,7 @@ namespace Pokemon_Antonio_Campallo_Gomez
             if (!ver) { this.pocionR.Visibility = Visibility.Collapsed; }
             else
             {
-                //TODO Poner fondo de nuevo
+                this.pocionR.Visibility = Visibility.Visible;
             }
         }
 
@@ -94,7 +106,7 @@ namespace Pokemon_Antonio_Campallo_Gomez
             if (!ver) { this.pocionA.Visibility = Visibility.Collapsed; }
             else
             {
-                //TODO Poner fondo de nuevo
+                this.pocionR.Visibility = Visibility.Visible;
             }
         }
 
@@ -103,17 +115,13 @@ namespace Pokemon_Antonio_Campallo_Gomez
             if (!ver) { this.Nombre.Visibility = Visibility.Collapsed; }
             else
             {
-                //TODO Poner fondo de nuevo
+                this.Nombre.Visibility = Visibility.Visible;
             }
         }
 
         public void activarAniIdle(bool activar)
         {
-            if (!activar) { this.VSnorlax.Visibility = Visibility.Collapsed; }
-            else
-            {
-                //TODO Poner fondo de nuevo
-            }
+            //No tiene animación inicial.
         }
 
         public void animacionAtaqueFlojo()

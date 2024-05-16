@@ -98,6 +98,16 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
             scizorCombate1.verPocionEnergia(false); scizorCombate2.verPocionEnergia(false);
             scizorCombate1.verPocionVida(false); scizorCombate2.verPocionVida(false);
 
+            snorlaxCombate1.verFondo(false); snorlaxCombate2.verFondo(false);
+            snorlaxCombate1.verFilaVida(false); snorlaxCombate2.verFilaVida(false);
+            snorlaxCombate1.verFilaEnergia(false); snorlaxCombate2.verFilaEnergia(false);
+            snorlaxCombate1.verNombre(false); snorlaxCombate2.verNombre(false);
+            snorlaxCombate1.Vida = 100; snorlaxCombate2.Vida = 100;
+            snorlaxCombate1.Energia = 100; snorlaxCombate2.Energia = 100;
+            snorlaxCombate1.verPocionEnergia(false); snorlaxCombate2.verPocionEnergia(false);
+            snorlaxCombate1.verPocionVida(false); snorlaxCombate2.verPocionVida(false);
+
+
         }
 
         public void jugador2NoJuega()

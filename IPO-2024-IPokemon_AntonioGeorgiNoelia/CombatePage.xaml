@@ -45,6 +45,7 @@
             <my:Lapras x:Name="laprasCombate1"/>
             <my:MakuhitaAPQ2 x:Name="makuhitaCombate1"/>
             <my:ScizorAPJ x:Name="scizorCombate1"/>
+            <my:SnorlaxROC x:Name="snorlaxCombate1"/>
         </FlipView>
         <FlipView x:Name="flipJugador2" Grid.Row="3" Grid.Column="3" Background="Transparent">
             <my:ArticunoACG x:Name="articunoCombate2"/>
@@ -55,6 +56,7 @@
             <my:Lapras x:Name="laprasCombate2"/>
             <my:MakuhitaAPQ2 x:Name="makuhitaCombate2"/>
             <my:ScizorAPJ x:Name="scizorCombate2"/>
+            <my:SnorlaxROC x:Name="snorlaxCombate2"/>
         </FlipView>
         <Viewbox Grid.Row="4" Grid.Column="1">
             <Button x:Name="btnElegirPokemon1" Visibility="Visible"  Content="Elegir este Pokemon" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="40" Foreground="White" FontWeight="Bold" Click="clickJugador1"/>
