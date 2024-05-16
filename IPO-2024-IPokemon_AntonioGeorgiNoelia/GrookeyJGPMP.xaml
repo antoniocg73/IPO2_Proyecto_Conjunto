@@ -1006,7 +1006,7 @@
         </Storyboard>
     </UserControl.Resources>
 
-    <Grid FocusVisualPrimaryBrush="#00000000">
+    <Grid FocusVisualPrimaryBrush="#00000000" x:Name="gridPrincipal">
         <Grid.Background>
             <ImageBrush ImageSource="/AssetsGrookeyJGPMP/imgFondo.jpg" Stretch="UniformToFill"/>
         </Grid.Background>

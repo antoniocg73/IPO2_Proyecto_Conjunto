@@ -95,6 +95,24 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
             makuhitaCombate1.Energia = 100; makuhitaCombate2.Energia = 100;
             makuhitaCombate1.verPocionEnergia(false); makuhitaCombate2.verPocionEnergia(false);
             makuhitaCombate1.verPocionVida(false); makuhitaCombate2.verPocionVida(false);
+
+            scizorCombate1.verFondo(false); scizorCombate2.verFondo(false);
+            scizorCombate1.verFilaVida(false); scizorCombate2.verFilaVida(false);
+            scizorCombate1.verFilaEnergia(false); scizorCombate2.verFilaEnergia(false);
+            scizorCombate1.verNombre(false); scizorCombate2.verNombre(false);
+            scizorCombate1.Vida = 100; scizorCombate2.Vida = 100;
+            scizorCombate1.Energia = 100; scizorCombate2.Energia = 100;
+            scizorCombate1.verPocionEnergia(false); scizorCombate2.verPocionEnergia(false);
+            scizorCombate1.verPocionVida(false); scizorCombate2.verPocionVida(false);
+
+            snorlaxCombate1.verFondo(false); snorlaxCombate2.verFondo(false);
+            snorlaxCombate1.verFilaVida(false); snorlaxCombate2.verFilaVida(false);
+            snorlaxCombate1.verFilaEnergia(false); snorlaxCombate2.verFilaEnergia(false);
+            snorlaxCombate1.verNombre(false); snorlaxCombate2.verNombre(false);
+            snorlaxCombate1.Vida = 100; snorlaxCombate2.Vida = 100;
+            snorlaxCombate1.Energia = 100; snorlaxCombate2.Energia = 100;
+            snorlaxCombate1.verPocionEnergia(false); snorlaxCombate2.verPocionEnergia(false);
+            snorlaxCombate1.verPocionVida(false); snorlaxCombate2.verPocionVida(false);
         }
 
         /*private void flipMaquina_SelectionChanged(object sender, SelectionChangedEventArgs e)

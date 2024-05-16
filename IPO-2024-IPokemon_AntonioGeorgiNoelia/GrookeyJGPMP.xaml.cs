@@ -35,13 +35,15 @@ namespace Pokemon_Antonio_Campallo_Gomez
 
         public double Vida { get { return this.pbVida.Value; } set { this.pbVida.Value = value; } }
         public double Energia { get { return this.pbEscudo.Value; } set { this.pbEscudo.Value = value; } }
-        public string Nombre { get { return this.txtNombre.Text; } set { this.txtNombre.Text = value; } }
-        public string Categoría { get { return this.NCategoria; } set { this.NCategoria = value; } }
-        public string Tipo { get { return this.NTipo; } set { this.NTipo = value; } }
-        public double Altura { get { return NAltura; } set { this.NAltura = value; } }
-        public double Peso { get { return this.NPeso; } set { this.NPeso = value; } }
-        public string Evolucion { get { return this.NEvolucion; } set { this.NEvolucion = value; } }
-        public string Descripcion { get { return this.NDescripcion; } set { this.NDescripcion = value; } }
+        public string Nombre { get { return this.txtNombre.Text; } set { throw new NotImplementedException(); } }
+        public string Categoría { get { return this.NCategoria; } set { throw new NotImplementedException(); } }
+        public string Tipo { get { return this.NTipo; } set { throw new NotImplementedException(); } }
+        public double Altura { get { return NAltura; } set { throw new NotImplementedException(); } }
+        public double Peso { get { return this.NPeso; } set { throw new NotImplementedException(); } }
+        public string Evolucion { get { return this.NEvolucion; } set { throw new NotImplementedException(); } }
+        public string Descripcion { get { return this.NDescripcion; } set { throw new NotImplementedException(); } }
+
+        Storyboard sbaux; //Para usar los storyBoard
 
         public GrookeyJGPMP()
         {
@@ -170,25 +172,21 @@ namespace Pokemon_Antonio_Campallo_Gomez
         
         public void verFondo(bool ver)
         {
-            throw new NotImplementedException();
+            if(!ver) this.gridPrincipal.Background.Opacity = 0;
+            else this.gridPrincipal.Background.Opacity = 100;
         }
 
         public void verFilaVida(bool ver)
         {
-            if (!ver) { this.pbVida.Opacity = 0; }
-            else
-            {
-                this.pbVida.Opacity = 100;
-            }
+            if (!ver) { this.pbVida.Visibility = Visibility.Collapsed; this.imgVida.Visibility = Visibility.Collapsed; }
+            else { this.pbVida.Visibility = Visibility.Visible; this.imgVida.Visibility = Visibility.Visible; }
+            
         }
 
         public void verFilaEnergia(bool ver)
         {
-            if (!ver) { this.pbEscudo.Opacity = 0; }
-            else
-            {
-                this.pbEscudo.Opacity = 100;
-            }
+            if (!ver) { this.pbEscudo.Visibility = Visibility.Collapsed; this.imgEnergia.Visibility = Visibility.Collapsed; }
+            else { this.pbEscudo.Visibility = Visibility.Visible; this.imgEnergia.Visibility = Visibility.Visible; }
         }
 
         public void verPocionVida(bool ver)
@@ -222,8 +220,6 @@ namespace Pokemon_Antonio_Campallo_Gomez
         {
             throw new NotImplementedException();
         }
-
-        Storyboard sbaux; //Para usar los storyBoard
 
         public void animacionAtaqueFlojo()
         {

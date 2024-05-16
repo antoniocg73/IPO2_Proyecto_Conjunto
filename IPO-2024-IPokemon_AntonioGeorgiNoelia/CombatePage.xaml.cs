@@ -107,6 +107,15 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
             snorlaxCombate1.verPocionEnergia(false); snorlaxCombate2.verPocionEnergia(false);
             snorlaxCombate1.verPocionVida(false); snorlaxCombate2.verPocionVida(false);
 
+            grookeyCombate1.verFondo(false); grookeyCombate2.verFondo(false);
+            grookeyCombate1.verFilaVida(false); grookeyCombate2.verFilaVida(false);
+            grookeyCombate1.verFilaEnergia(false); grookeyCombate2.verFilaEnergia(false);
+            grookeyCombate1.verNombre(false); grookeyCombate2.verNombre(false);
+            grookeyCombate1.Vida = 100; grookeyCombate2.Vida = 100;
+            grookeyCombate1.Energia = 100; grookeyCombate2.Energia = 100;
+            grookeyCombate1.verPocionEnergia(false); grookeyCombate2.verPocionEnergia(false);
+            grookeyCombate1.verPocionVida(false); grookeyCombate2.verPocionVida(false);
+
 
         }
 
