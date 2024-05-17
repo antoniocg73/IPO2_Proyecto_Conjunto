@@ -39,43 +39,32 @@
                 <my:ToxicroackJPG x:Name="toxicroak" Margin="0,40,20,0" Visibility="Collapsed"/>
                 <Grid Grid.Row="1">
                     <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="10*"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="10*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Button x:Name="btnDefensa" Content="Defensa" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="25" Foreground="Black" FontWeight="Bold" Click="btnDefensa_Click" Grid.Row="0" Grid.Column="0" Margin="0,40,0,0" Opacity="0.9">
+                    <Button x:Name="btnDefensa" Content="Defensa" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="25" Foreground="Black" FontWeight="Bold" Click="btnDefensa_Click" Grid.Row="1" Grid.Column="1" Opacity="0.9" Margin="0,0,30,30">
                         <Button.Background>
-                            <ImageBrush ImageSource="/Assets/boton1.jpg" Stretch="Fill"/>
+                            <ImageBrush ImageSource="/Assets/boton1.jpg" Stretch="UniformToFill"/>
                         </Button.Background>
                     </Button>
-                    <Button x:Name="btnDescasar" Content="Descansar" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="25" Foreground="Black" FontWeight="Bold"  Click="btnDescansar_Click" Grid.Row="0" Grid.Column="1" Margin="0,40,0,0" Opacity="0.9">
+                    <Button x:Name="btnDescasar" Content="Descansar" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="25" Foreground="Black" FontWeight="Bold"  Click="btnDescansar_Click" Grid.Row="1" Grid.Column="0" Opacity="0.9" Margin="30,0,0,30">
                         <Button.Background>
                             <ImageBrush ImageSource="/Assets/boton2.jpg" Stretch="UniformToFill"/>
                         </Button.Background>
                     </Button>
-                    <Button x:Name="btnAtaqueDebil" Content="Ataque Débil" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="25" Foreground="Black" FontWeight="Bold"  Click="btnAtaqueDebil_Click" Grid.Row="0" Grid.Column="2" Margin="0,40,20,0" Opacity="0.9" >
+                    <Button x:Name="btnAtaqueDebil" Content="Ataque Débil" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="25" Foreground="Black" FontWeight="Bold"  Click="btnAtaqueDebil_Click" Grid.Row="0" Grid.Column="1" Opacity="0.9" Margin="0,30,30,0" >
                         <Button.Background>
-                            <ImageBrush ImageSource="/Assets/boton3.jpg"/>
+                            <ImageBrush ImageSource="/Assets/boton3.jpg" Stretch="UniformToFill"/>
                         </Button.Background>
                     </Button>
-                    <Button x:Name="btnAtaqueFuerte" Content="Ataque Fuerte" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="25" Foreground="Black" FontWeight="Bold"   Click="btnAtaqueFuerte_Click" Grid.Row="1" Grid.Column="0" Margin="0,0,0,40" Opacity="0.9" >
+                    <Button x:Name="btnAtaqueFuerte" Content="Ataque Fuerte" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="25" Foreground="Black" FontWeight="Bold"   Click="btnAtaqueFuerte_Click" Grid.Row="0" Grid.Column="0" Opacity="0.9" Margin="30,30,0,0" >
                         <Button.Background>
                             <ImageBrush ImageSource="/Assets/boton4.jpg" Stretch="UniformToFill"/>
-                        </Button.Background>
-                    </Button>
-                    <Button x:Name="btnHerido" Content="Herido" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="25" Foreground="Black" FontWeight="Bold"  Click="btnHerido_Click" Grid.Row="1" Grid.Column="1" Margin="0,0,0,40" Opacity="0.9">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/Assets/boton5.jpg" Stretch="UniformToFill"/>
-                        </Button.Background>
-                    </Button>
-                    <Button x:Name="btnCansado" Content="Cansado" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="25" Foreground="Black" FontWeight="Bold"  Click="btnCansado_Click" Grid.Row="1" Grid.Column="2" Margin="0,0,20,40" Opacity="0.9" >
-                        <Button.Background>
-                            <ImageBrush ImageSource="/Assets/boton6.jpg"/>
                         </Button.Background>
                     </Button>
                 </Grid>

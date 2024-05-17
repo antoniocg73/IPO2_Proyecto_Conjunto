@@ -824,7 +824,7 @@
             <DoubleAnimation Duration="00:00:00.9000000" Storyboard.TargetName="cvOrejaIzq" To="0" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.SkewY)"/>
         </Storyboard>
     </UserControl.Resources>
-    <Grid>
+    <Grid x:Name="gridPrincipal">
         <Grid.Background>
             <ImageBrush x:Name="imFondo" Stretch="UniformToFill" ImageSource="/AssetsGarchompVFJD/forest.png"/>
         </Grid.Background>
@@ -840,14 +840,14 @@
             <ColumnDefinition Width="10*"/>
         </Grid.ColumnDefinitions>
 
-        <ProgressBar x:Name="pbVida" Grid.Column="1" HorizontalAlignment="Center" Height="77" Width="1150" ValueChanged="ProgressBar_ValueChanged_3" Background="#FFFE7878" Maximum="100" Value="70" Foreground="#FFD40D00" Margin="1,5,1,5" RequestedTheme="Light"/>
-        <ProgressBar x:Name="pbEnergia" Grid.Column="1" HorizontalAlignment="Center" Height="77" Grid.Row="1" Width="1150" Value="70" Foreground="#FFEFCA10" Background="#FFF1F38D" Margin="1,5,0,5"/>
+        <ProgressBar x:Name="pbVida" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ValueChanged="ProgressBar_ValueChanged_3" Background="#FFFE7878" Value="70" Foreground="#FFD40D00" RequestedTheme="Light"/>
+        <ProgressBar x:Name="pbEnergia" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Value="70" Foreground="#FFEFCA10" Background="#FFF1F38D" />
         <Image x:Name="rayo" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Top" Source="/AssetsGarchompVFJD/raio.png" Margin="1,5,1,7" FlowDirection="RightToLeft"/>
         <Image x:Name="iconoEnergia" Grid.Column="2" HorizontalAlignment="Center" Margin="1,5,1,5" Grid.Row="1" VerticalAlignment="Center" Source="/AssetsGarchompVFJD/pocion_energia.png"/>
         <Image x:Name="iconoVida" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/AssetsGarchompVFJD/pocion_vida.png" Margin="0,5,0,5"/>
         <Image x:Name="corazon" Height="31" Width="30" Source="/AssetsGarchompVFJD/heart-png.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <Viewbox x:Name="Viewbox" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,70,0,0">
-            <Canvas x:Name="cvPokemon"  HorizontalAlignment="Right" VerticalAlignment="Center" Height="400" Width="400">
+            <Canvas x:Name="cvPokemon"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="400" Width="400">
                 <Canvas.RenderTransform>
                     <CompositeTransform/>
                 </Canvas.RenderTransform>
@@ -1358,10 +1358,6 @@
                 </Image>
             </Canvas>
         </Viewbox>
-        <Button x:Name="AtaqueBasico1" Grid.Column="2" Content="Ataque Básico" Height="40" Margin="0,8,0,0" Grid.Row="2" VerticalAlignment="Top" Width="90" Click="AtaqueBasico1_Click" Background="#FF535773" FontSize="14" FontFamily="Microsoft Himalaya" HorizontalAlignment="Center"/>
-        <Button x:Name="Cubrirse" Grid.Column="2" Content="Cubrirse" HorizontalAlignment="Center" Height="40" Margin="0,105,0,0" Grid.Row="2" VerticalAlignment="Top" Width="90" Click="Cubrirse_Click" Background="#FFFAC94A" FontSize="14" FontFamily="Microsoft Himalaya"/>
-        <Button x:Name="Dormir" Grid.Column="2" Content="Dormir" HorizontalAlignment="Center" Height="40" Grid.Row="2" Width="90" Margin="0,160,0,0" VerticalAlignment="Top" Click="Dormir_Click" Background="White" FontSize="14" FontFamily="Microsoft Himalaya"/>
-        <Button x:Name="AtaqueFuerte1" Grid.Column="2" Content="Ataque Fuerte" Height="40" Margin="0,55,0,0" Grid.Row="2" VerticalAlignment="Top" Width="90" Click="AtaqueFuerte1_Click_1" Background="#FFD66149" FontSize="14" FontFamily="Microsoft Himalaya" HorizontalAlignment="Center"/>
         <TextBlock x:Name="tbNombre" Grid.Column="1" HorizontalAlignment="Center" Height="AUTO"  Grid.Row="3" TextWrapping="Wrap" Text="Garchomp" VerticalAlignment="Center" Width="Auto"  FontSize="16" FontWeight="Bold" Foreground="Black"  />
 
     </Grid>

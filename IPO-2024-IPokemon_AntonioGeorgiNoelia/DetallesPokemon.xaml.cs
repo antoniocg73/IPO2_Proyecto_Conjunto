@@ -116,7 +116,7 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
             currentPokemon.animacionAtaqueFuerte();
         }
 
-        private void btnAtaqueDebil_Click(object sender, RoutedEventArgs e)
+        private  void btnAtaqueDebil_Click(object sender, RoutedEventArgs e)
         {
             currentPokemon.animacionAtaqueFlojo();
         }

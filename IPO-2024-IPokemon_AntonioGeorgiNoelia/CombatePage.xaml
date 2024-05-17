@@ -48,6 +48,7 @@
             <my:SnorlaxROC x:Name="snorlaxCombate1"/>
             <my:ToxicroackJPG x:Name="toxicroackCombate1"/>
             <my:CharizardASM x:Name="charizardCombate1"/>
+            <my:GarchompVFJD x:Name="garchompCombate1"/>
         </FlipView>
         <FlipView x:Name="flipJugador2" Grid.Row="3" Grid.Column="3" Background="Transparent">
             <my:ArticunoACG x:Name="articunoCombate2"/>
@@ -61,6 +62,7 @@
             <my:SnorlaxROC x:Name="snorlaxCombate2"/>
             <my:ToxicroackJPG x:Name="toxicroackCombate2"/>
             <my:CharizardASM x:Name="charizardCombate2"/>
+            <my:GarchompVFJD x:Name="garchompCombate2"/>
         </FlipView>
         <Viewbox Grid.Row="4" Grid.Column="1">
             <Button x:Name="btnElegirPokemon1" Visibility="Visible"  Content="Elegir este Pokemon" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="40" Foreground="White" FontWeight="Bold" Click="clickJugador1"/>

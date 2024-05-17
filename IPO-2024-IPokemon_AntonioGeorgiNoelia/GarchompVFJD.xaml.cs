@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -24,7 +25,6 @@ namespace Pokemon_Antonio_Campallo_Gomez
 
         DispatcherTimer dtTime;
         DispatcherTimer dtTime2;
-
         public double Vida { get => this.pbVida.Value; 
             set => this.pbVida.Value = value; }
         public double Energia { get => this.pbEnergia.Value; 
@@ -72,13 +72,13 @@ namespace Pokemon_Antonio_Campallo_Gomez
             }
         }
 
-        private void imgPocionVida_PointerReleased(object sender, PointerRoutedEventArgs e)
+        /*private void imgPocionVida_PointerReleased(object sender, PointerRoutedEventArgs e)
         {
             Storyboard CurarVida = (Storyboard)this.Resources["AumentoVida"];
             CurarVida.Begin();
 
             this.aumentoVida(sender, e);
-        }
+        }*/
 
 
         private void aumentarEnergia(object sender, PointerRoutedEventArgs e)
@@ -99,7 +99,7 @@ namespace Pokemon_Antonio_Campallo_Gomez
                 this.iconoEnergia.Opacity = 1;
             }
         }
-        private void imgPocionEnergia_PointerReleased(object sender, PointerRoutedEventArgs e)
+      /* private void imgPocionEnergia_PointerReleased(object sender, PointerRoutedEventArgs e)
         {
             Storyboard energia = (Storyboard)this.Resources["Energia"];
             energia.Begin();
@@ -123,7 +123,7 @@ namespace Pokemon_Antonio_Campallo_Gomez
                 this.AtaqueFuerte1.IsEnabled = false;
             }
         }
-
+      */
         private void ProgressBar_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
         {
 
@@ -166,7 +166,7 @@ namespace Pokemon_Antonio_Campallo_Gomez
             dtTime.Tick += controlDormir;
             dtTime.Start();
         }
-
+        /*
         private void Dormir_Click(object sender, RoutedEventArgs e)
         {
             Storyboard Dormido = (Storyboard)this.Resources["Dormido"];
@@ -196,6 +196,11 @@ namespace Pokemon_Antonio_Campallo_Gomez
                 this.AtaqueFuerte1.IsEnabled = false;
             }
 
+        }*/
+
+        private async void espera(object sender, object e)
+        {
+            await Task.Delay(3000); //Espera 3 segundos
         }
 
         private void TextBlock_SelectionChanged(object sender, RoutedEventArgs e)
@@ -203,39 +208,42 @@ namespace Pokemon_Antonio_Campallo_Gomez
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        /*private void Button_Click(object sender, RoutedEventArgs e)
         {
             Storyboard EstadoBase = (Storyboard)this.Resources["EstadoBase"];
             EstadoBase.Begin();
 
-        }
+        }*/
 
         public void verFilaVida(bool ver)
         {
-            throw new NotImplementedException();
+            if(!ver) this.gridPrincipal.RowDefinitions[0].Height = new GridLength(0);
+            else this.gridPrincipal.RowDefinitions[0].Height = new GridLength(10, GridUnitType.Star);
         }
 
         public void verFilaEnergia(bool ver)
         {
-            throw new NotImplementedException();
+            if (!ver) this.gridPrincipal.RowDefinitions[1].Height = new GridLength(0);
+            else this.gridPrincipal.RowDefinitions[1].Height = new GridLength(10, GridUnitType.Star);
         }
 
         public void verPocionVida(bool ver)
         {
-            Storyboard CurarVida = (Storyboard)this.Resources["AumentoVida"];
-            CurarVida.Begin();
+            if (!ver) this.iconoVida.Visibility = Visibility.Collapsed;
+            else this.iconoVida.Visibility = Visibility.Visible;
 
         }
 
         public void verPocionEnergia(bool ver)
         {
-            Storyboard energia = (Storyboard)this.Resources["Energia"];
-            energia.Begin();
+            if (!ver) this.iconoEnergia.Visibility = Visibility.Collapsed;
+            else this.iconoEnergia.Visibility = Visibility.Visible;
         }
 
         public void verNombre(bool ver)
         {
-            throw new NotImplementedException();
+            if (!ver) this.gridPrincipal.RowDefinitions[3].Height = new GridLength(0);
+            else this.gridPrincipal.RowDefinitions[3].Height = new GridLength(10, GridUnitType.Star);
         }
 
         public void activarAniIdle(bool activar)
@@ -272,22 +280,22 @@ namespace Pokemon_Antonio_Campallo_Gomez
         {
             Storyboard Cansado = (Storyboard)this.Resources["Cansado"];
             Cansado.Begin();
-            throw new NotImplementedException();
         }
 
         public void animacionNoCansado()
         {
-            throw new NotImplementedException();
+            //NO TIENE
         }
 
         public void animacionHerido()
         {
             Storyboard Herido = (Storyboard)this.Resources["Herido"];
+            Herido.Begin();
         }
 
         public void animacionNoHerido()
         {
-            throw new NotImplementedException();
+            //NO TIENE
         }
 
         public void animacionDerrota()
@@ -298,9 +306,8 @@ namespace Pokemon_Antonio_Campallo_Gomez
 
         public void verFondo(bool verfondo)
         {
-            if(!verfondo) { this.imFondo.ImageSource = null; }
-            else
-            throw new NotImplementedException();
+            if (!verfondo) { this.gridPrincipal.Background.Opacity = 0; }
+            else { this.gridPrincipal.Background.Opacity = 100; }
         }
     }
 }
