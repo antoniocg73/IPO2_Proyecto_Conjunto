@@ -29,8 +29,10 @@
                 <RowDefinition Height="650"/>
                 <RowDefinition Height="50"/>
             </Grid.RowDefinitions>
-
-            <GridView Grid.Row="1" x:Name="GridViewMisPokemons" ItemTemplate="{StaticResource myTaskTemplate}"/>
+            <Viewbox Grid.Row="1">
+                <GridView x:Name="GridViewMisPokemons" ItemTemplate="{StaticResource myTaskTemplate}"/>
+            </Viewbox>
+            
 
         </Grid>
     </Frame>

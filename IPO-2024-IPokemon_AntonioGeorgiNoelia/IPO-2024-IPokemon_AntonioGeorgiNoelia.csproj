@@ -403,6 +403,8 @@
     <Content Include="Assets\boton2.jpg" />
     <Content Include="Assets\boton3.jpg" />
     <Content Include="Assets\boton4.jpg" />
+    <Content Include="Assets\boton5.jpg" />
+    <Content Include="Assets\boton6.jpg" />
     <Content Include="Assets\butterfreePokedex.png" />
     <Content Include="Assets\Chandelure.png" />
     <Content Include="Assets\ChandelurePokedex.png" />

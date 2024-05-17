@@ -111,40 +111,79 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
             pokemonImagenPokedex.Source = new BitmapImage(new Uri("ms-appx://" + id.Image));
         }
 
-        private void btnAtaqueFuerte_Click(object sender, RoutedEventArgs e)
+        private void todosFalse()
         {
-            currentPokemon.animacionAtaqueFuerte();
+            this.btnAtaqueDebil.IsEnabled = false;
+            this.btnAtaqueFuerte.IsEnabled = false;
+            this.btnDefensa.IsEnabled = false;
+            this.btnHerido.IsEnabled = false;
+            this.btnCansado.IsEnabled = false;
+            this.btnDescasar.IsEnabled = false;
         }
 
-        private  void btnAtaqueDebil_Click(object sender, RoutedEventArgs e)
+        private void todosTrue()
         {
+            this.btnAtaqueDebil.IsEnabled = true;
+            this.btnAtaqueFuerte.IsEnabled = true;
+            this.btnDefensa.IsEnabled = true;
+            this.btnHerido.IsEnabled = true;
+            this.btnCansado.IsEnabled = true;
+            this.btnDescasar.IsEnabled = true;
+        }
+
+        private async void btnAtaqueFuerte_Click(object sender, RoutedEventArgs e)
+        {
+            todosFalse();
+            currentPokemon.animacionAtaqueFuerte();
+            await Task.Delay(8000);
+            todosTrue();
+          
+        }
+
+        private  async void btnAtaqueDebil_Click(object sender, RoutedEventArgs e)
+        {
+            todosFalse();
             currentPokemon.animacionAtaqueFlojo();
+            await Task.Delay(8000);
+            todosTrue();
         }
 
         private async void btnHerido_Click(object sender, RoutedEventArgs e)
         {
+            todosFalse();
             currentPokemon.animacionHerido();
-            await Task.Delay(5000);
+            await Task.Delay(3000);
             currentPokemon.animacionNoHerido();
+            await Task.Delay(5000);
+            todosTrue();
         }
 
         private async void btnCansado_Click(object sender, RoutedEventArgs e)
         {
+            todosFalse();
             currentPokemon.animacionCansado();
-            await Task.Delay(5000);
+            await Task.Delay(3000);
             currentPokemon.animacionNoCansado();
+            await Task.Delay(5000);
+            todosTrue();
         }
 
-        private void btnDefensa_Click(object sender, RoutedEventArgs e)
+        private async void btnDefensa_Click(object sender, RoutedEventArgs e)
         {
+            todosFalse();
             currentPokemon.animacionDefensa();
+            await Task.Delay(8000);
+            todosTrue();
         }
 
 
 
-        private void btnDescansar_Click(object sender, RoutedEventArgs e)
+        private async void btnDescansar_Click(object sender, RoutedEventArgs e)
         {
+            todosFalse();
             currentPokemon.animacionDescasar();
+            await Task.Delay(8000);
+            todosTrue();
         }
 
 
