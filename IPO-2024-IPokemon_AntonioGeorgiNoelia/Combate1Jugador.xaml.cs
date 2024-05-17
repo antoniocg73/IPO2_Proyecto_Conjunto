@@ -131,6 +131,13 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
             charizardCombate1.Energia = 100; charizardCombate2.Energia = 100;
             charizardCombate1.verPocionEnergia(false); charizardCombate2.verPocionEnergia(false);
             charizardCombate1.verPocionVida(false); charizardCombate2.verPocionVida(false);
+
+            garchompCombate1.verFondo(false); garchompCombate2.verFondo(false);
+            garchompCombate1.verFilaVida(false); garchompCombate2.verFilaVida(false);
+            garchompCombate1.verFilaEnergia(false); garchompCombate2.verFilaEnergia(false);
+            garchompCombate1.verNombre(false); garchompCombate2.verNombre(false);
+            garchompCombate1.Vida = 100; garchompCombate2.Vida = 100;
+            garchompCombate1.Energia = 100; garchompCombate2.Energia = 100;
         }
 
         /*private void flipMaquina_SelectionChanged(object sender, SelectionChangedEventArgs e)
