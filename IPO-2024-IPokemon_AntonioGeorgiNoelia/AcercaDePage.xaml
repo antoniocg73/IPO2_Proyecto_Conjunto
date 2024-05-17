@@ -16,7 +16,9 @@
             <RowDefinition Height="90*"/>
             <RowDefinition Height="50*"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="Creadores" FontSize="72" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Foreground="White"/>
+        <Viewbox Grid.Row="0">
+            <TextBlock Text="Creadores" FontSize="60" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Foreground="White" Margin="5,5,5,5"/>
+        </Viewbox>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="50*"/>
@@ -27,13 +29,24 @@
                 <RowDefinition Height="50*"/>
                 <RowDefinition Height="15*"/>
             </Grid.RowDefinitions>
-
-            <PersonPicture ProfilePicture="/Assets/Noelia.jpeg" VerticalAlignment="Center" Height="250" Width="250"/>
-            <PersonPicture Grid.Column="1" Grid.Row="0" ProfilePicture="/Assets/Antonio.jpeg" VerticalAlignment="Center" Height="250" Width="250"/>
-            <PersonPicture Grid.Column="2" Grid.Row="0" ProfilePicture="/Assets/Georgi.jpeg" VerticalAlignment="Center" Height="250" Width="250"/>
-            <TextBlock Grid.Row="1" Text="Noelia Díaz Alejo Alejo" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="30" Foreground="White" TextWrapping="Wrap"/>
-            <TextBlock Grid.Row="1" Grid.Column="1" Text="Antonio Campallo Gómez" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"  FontSize="30" Foreground="White" TextWrapping="Wrap"/>
-            <TextBlock Grid.Row="1" Grid.Column="2" Text="Georgi Angelov Chervenyashki" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="30" Foreground="White" TextWrapping="Wrap"/>
+            <Viewbox Grid.Row="0" Grid.Column="0">
+                <PersonPicture ProfilePicture="/Assets/Noelia.jpeg" VerticalAlignment="Center" Margin="5,0,5,0"/>
+            </Viewbox>
+            <Viewbox Grid.Row="0" Grid.Column="1">
+                <PersonPicture Grid.Column="1" Grid.Row="0" ProfilePicture="/Assets/Antonio.jpeg" VerticalAlignment="Center" Margin="5,0,5,0"/>
+            </Viewbox>
+            <Viewbox Grid.Row="0" Grid.Column="2">
+                <PersonPicture Grid.Column="2" Grid.Row="0" ProfilePicture="/Assets/Georgi.jpeg" VerticalAlignment="Center" Margin="5,0,5,0"/>
+            </Viewbox>
+            <Viewbox Grid.Row="1" Grid.Column="0">
+                <TextBlock Grid.Row="1" Text="Noelia Díaz Alejo Alejo" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Foreground="White" TextWrapping="Wrap" Margin="20,0,20,0"/>
+            </Viewbox>
+            <Viewbox Grid.Row="1" Grid.Column="1">
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="Antonio Campallo Gómez" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"  Foreground="White" TextWrapping="Wrap" Margin="20,0,20,0"/>
+            </Viewbox>
+            <Viewbox Grid.Row="1" Grid.Column="2">
+                <TextBlock Grid.Row="1" Grid.Column="2" Text="Georgi Angelov Chervenyashki" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Foreground="White" TextWrapping="Wrap" Margin="20,0,20,0"/>
+            </Viewbox>
 
         </Grid>
         <Grid Grid.Row="2">
@@ -41,9 +54,12 @@
                 <RowDefinition Height="30*"/>
                 <RowDefinition Height="30*"/>
             </Grid.RowDefinitions>
-            <TextBlock Text="Valoración" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold" Foreground="White"/>
-            <RatingControl Grid.Row="1" AutomationProperties.Name="RatingControl with placeholder" PlaceholderValue="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
-
+            <Viewbox Grid.Row="0">
+                <TextBlock Text="Valoración" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold" Foreground="White"/>
+            </Viewbox>
+            <Viewbox Grid.Row="1">
+                <RatingControl  AutomationProperties.Name="RatingControl with placeholder" PlaceholderValue="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+            </Viewbox>
         </Grid>
     </Grid>
 </Page>

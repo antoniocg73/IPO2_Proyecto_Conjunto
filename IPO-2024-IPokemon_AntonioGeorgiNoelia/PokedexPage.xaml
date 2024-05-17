@@ -19,7 +19,6 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="320" />
             </Grid.ColumnDefinitions>
-
             <ListView Grid.Column="0" Margin="10"
        IsItemClickEnabled="True"
        ItemClick="InfoPokemon"

@@ -59,6 +59,17 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
                 Window.Current.Content = rootFrame;
             }
 
+            // Establecer el tamaño mínimo de la ventana
+            var applicationView = Windows.UI.ViewManagement.ApplicationView.GetForCurrentView();
+            var displayInfo = Windows.Graphics.Display.DisplayInformation.GetForCurrentView();
+            double screenWidth = displayInfo.ScreenWidthInRawPixels;
+            double screenHeight = displayInfo.ScreenHeightInRawPixels;
+            double minWindowWidth = screenWidth / 4; // 1/4 del ancho de la pantalla
+            double minWindowHeight = screenHeight / 2; // 1/2 del alto de la pantalla
+            applicationView.SetPreferredMinSize(new Windows.Foundation.Size(minWindowWidth, minWindowHeight));
+            // Manejar el evento SizeChanged para asegurarse de que el tamaño mínimo se respete
+            Window.Current.SizeChanged += CurrentWindow_SizeChanged;
+
             if (e.PrelaunchActivated == false)
             {
                 if (rootFrame.Content == null)
@@ -70,6 +81,23 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
                 }
                 // Asegurarse de que la ventana actual está activa.
                 Window.Current.Activate();
+            }
+        }
+
+        private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSizeChangedEventArgs e)
+        {
+            var applicationView = Windows.UI.ViewManagement.ApplicationView.GetForCurrentView();
+            var displayInfo = Windows.Graphics.Display.DisplayInformation.GetForCurrentView();
+            double screenWidth = displayInfo.ScreenWidthInRawPixels;
+            double screenHeight = displayInfo.ScreenHeightInRawPixels;
+            double minWindowWidth = screenWidth / 4; // 1/4 del ancho de la pantalla
+            double minWindowHeight = screenHeight / 2; // 1/2 del alto de la pantalla
+
+            // Verificar si el tamaño actual de la ventana es menor que el tamaño mínimo
+            if (Window.Current.Bounds.Width < minWindowWidth || Window.Current.Bounds.Height < minWindowHeight)
+            {
+                // Ajustar el tamaño de la ventana al tamaño mínimo
+                applicationView.TryResizeView(new Size(minWindowWidth, minWindowHeight));
             }
         }
 
