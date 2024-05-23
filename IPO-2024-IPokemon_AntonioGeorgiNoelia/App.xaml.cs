@@ -1,12 +1,18 @@
-﻿using System;
+﻿using Microsoft.Toolkit.Uwp.Notifications;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
+using System.Xml.Linq;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
+using Windows.UI.Notifications;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -124,5 +130,63 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
             //TODO: Guardar el estado de la aplicación y detener toda actividad en segundo plano
             deferral.Complete();
         }
+
+        protected override void OnActivated(IActivatedEventArgs e)
+        {
+            if (e is ToastNotificationActivatedEventArgs toastActivationArgs)
+            {
+                ToastArguments args = ToastArguments.Parse(toastActivationArgs.Argument);
+                // Obtain any user input (text boxes, menu selections) from the notification
+                ValueSet userInput = toastActivationArgs.UserInput;
+                // TODO: Show the corresponding content 
+                HandleToastActivation(toastActivationArgs);
+            }
+        }
+
+        private void HandleToastActivation(ToastNotificationActivatedEventArgs toastActivationArgs)
+        {
+            ToastArguments toastArgs = ToastArguments.Parse(toastActivationArgs.Argument);
+            ValueSet userInput = toastActivationArgs.UserInput;
+
+            if (toastArgs.TryGetValue("action", out string action))
+            {
+                if (action == "submitOpinion")
+                {
+                    if (userInput.TryGetValue("opinionInput", out object opinion))
+                    {
+                        string userOpinion = opinion.ToString();
+
+                        // Mostrar la segunda notificación
+                        ShowThankYouNotification();
+
+                        // Mostrar la opinión del usuario en una notificación
+                        ShowOpinionReceivedNotification(userOpinion);
+                    }
+                }
+            }
+        }
+
+        private void ShowThankYouNotification()
+        {
+            new ToastContentBuilder()
+                .AddText("Gracias por su colaboración.")
+                .Show();
+        }
+
+        private void ShowOpinionReceivedNotification(string userOpinion)
+        {
+            // Crear el contenido de la notificación
+            ToastContentBuilder builder = new ToastContentBuilder();
+            builder.AddText("Opinión recibida");
+            builder.AddText($"Opinión del usuario: {userOpinion}");
+
+            // Crear la notificación de toast
+            ToastNotification toast = new ToastNotification(builder.GetXml());
+            toast.SuppressPopup = false; // Asegura que la notificación se muestra incluso si la aplicación está en primer plano
+
+            // Mostrar la notificación
+            ToastNotificationManager.CreateToastNotifier().Show(toast);
+        }
+
     }
 }

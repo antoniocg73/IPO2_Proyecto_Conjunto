@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Toolkit.Uwp.Notifications;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,6 +26,12 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
         public AcercaDePage()
         {
             this.InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            new ToastContentBuilder().AddArgument("action", "recibirInformacion").AddArgument("ConversationId", 9813).AddText("Muchas gracias por utilizar nuestra aplicación. Opina sobre nuestro proyecto :D", hintMaxLines: 2).AddInlineImage(new Uri("ms-appx:///Assets/flecha.png")).AddInputTextBox("opinionInput", "Escribe tu opinión").AddButton(new ToastButton().SetContent("Enviar").AddArgument("action", "submitOpinion")).Show();
+
         }
     }
 }

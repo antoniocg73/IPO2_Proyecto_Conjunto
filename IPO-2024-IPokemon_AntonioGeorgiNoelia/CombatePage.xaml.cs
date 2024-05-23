@@ -1,4 +1,5 @@
 ﻿using Pokemon_Antonio_Campallo_Gomez;
+using Microsoft.Toolkit.Uwp.Notifications;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -255,7 +256,9 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
                     imageFinalCombate.Visibility = Visibility.Visible;
                     txtMensajeVictoria.Text = "¡Ha ganado el jugador 1!";
                     txtMensajeVictoria.Visibility = Visibility.Visible;
-                    //METER NOTIFICACION
+
+                    //NOTIFICACION
+                    new ToastContentBuilder().AddArgument("action","victoriaJugador1").AddArgument("ConversationId", 9813).AddText("¡El jugador 1 ha ganado el combate!").AddAppLogoOverride(new Uri("ms-appx:///Assets/victoria.jpg"),ToastGenericAppLogoCrop.Circle).Show();
                 }
                 else if (defensor.Vida > 0 && defensor.Vida <= 30 && vidaActual > 30)
                 {
@@ -409,7 +412,8 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
                     imageFinalCombate.Visibility = Visibility.Visible;
                     txtMensajeVictoria.Text = "¡Ha ganado el jugador 2!";
                     txtMensajeVictoria.Visibility = Visibility.Visible;
-                    //METER NOTIFICACION
+                    //NOTIFICACION
+                    new ToastContentBuilder().AddArgument("action", "victoriaJugador2").AddArgument("ConversationId", 9813).AddText("¡El jugador 2 ha ganado el combate!").AddAppLogoOverride(new Uri("ms-appx:///Assets/victoria.jpg"), ToastGenericAppLogoCrop.Circle).Show();
                 }
                 else if (defensor.Vida > 0 && defensor.Vida <= 30 && vidaActual > 30)
                 {

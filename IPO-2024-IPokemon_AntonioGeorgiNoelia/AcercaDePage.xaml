@@ -53,12 +53,16 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="30*"/>
                 <RowDefinition Height="30*"/>
+                <RowDefinition Height="20*"/>
             </Grid.RowDefinitions>
             <Viewbox Grid.Row="0">
                 <TextBlock Text="Valoración" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold" Foreground="White"/>
             </Viewbox>
             <Viewbox Grid.Row="1">
                 <RatingControl  AutomationProperties.Name="RatingControl with placeholder" PlaceholderValue="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+            </Viewbox>
+            <Viewbox Grid.Row="2">
+                <Button Content="Opinar" Foreground="White" Background="DarkOrange" BorderBrush="DarkOrange" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,5,5,5" Click="Button_Click"/>
             </Viewbox>
         </Grid>
     </Grid>

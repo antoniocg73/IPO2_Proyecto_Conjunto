@@ -17,6 +17,7 @@ using Windows.UI.Xaml.Navigation;
 using Windows.UI.Notifications;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.Devices.PointOfService;
+using Microsoft.Toolkit.Uwp.Notifications;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -297,6 +298,9 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
                     imageFinalCombate.Visibility = Visibility.Visible;
                     txtMensajeVictoria.Text = "¡Ha ganado la máquina!";
                     txtMensajeVictoria.Visibility = Visibility.Visible;
+                    //Notificación
+                    new ToastContentBuilder().AddArgument("action", "victoriaJugador2").AddArgument("ConversationId", 9813).AddText("¡El jugador 2 ha ganado el combate!").AddAppLogoOverride(new Uri("ms-appx:///Assets/derrota.jpg"), ToastGenericAppLogoCrop.Circle).Show();
+
                     //METER NOTIFICACION
                 }
                 else if (defensor.Vida > 0 && defensor.Vida <= 30 && vidaActual > 30)
@@ -427,7 +431,8 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
                     imageFinalCombate.Visibility = Visibility.Visible;
                     txtMensajeVictoria.Text = "¡Ha ganado el jugador 1!";
                     txtMensajeVictoria.Visibility = Visibility.Visible;
-                    //METER NOTIFICACION
+                    //Notificación
+                    new ToastContentBuilder().AddArgument("action", "victoriaJugador2").AddArgument("ConversationId", 9813).AddText("¡El jugador 2 ha ganado el combate!").AddAppLogoOverride(new Uri("ms-appx:///Assets/victoria.jpg"), ToastGenericAppLogoCrop.Circle).Show();
                 }
                 else if (defensor.Vida > 0 && defensor.Vida <= 30 && vidaActual >30)
                 {
