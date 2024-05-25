@@ -47,6 +47,10 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
                     break;
                 case "Butterfree":
                     butterfree.Visibility = Visibility.Visible;
+                    butterfree.verFilaEnergia(false);
+                    butterfree.verFilaVida(false);
+                    butterfree.verPocionEnergia(false);
+                    butterfree.verPocionVida(false);
                     currentPokemon = butterfree;
                     break;
                 case "Chandelure":
@@ -57,18 +61,34 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
                     break;
                 case "Charizard":
                     charizard.Visibility = Visibility.Visible;
+                    charizard.verFilaEnergia(false);
+                    charizard.verFilaVida(false);
+                    charizard.verPocionEnergia(false);
+                    charizard.verPocionVida(false);
                     currentPokemon = charizard;
                     break;
                 case "Garchomp":
                     garchomp.Visibility = Visibility.Visible;
+                    garchomp.verFilaEnergia(false);
+                    garchomp.verFilaVida(false);
+                    garchomp.verPocionEnergia(false);
+                    garchomp.verPocionVida(false);
                     currentPokemon = garchomp;
                     break;
                 case "Gengar":
                     gengar.Visibility = Visibility.Visible;
+                    gengar.verFilaEnergia(false);
+                    gengar.verFilaVida(false);
+                    gengar.verPocionEnergia(false);
+                    gengar.verPocionVida(false);
                     currentPokemon = gengar;
                     break;
                 case "Lapras":
                     lapras.Visibility = Visibility.Visible;
+                    lapras.verFilaEnergia(false);
+                    lapras.verFilaVida(false);
+                    lapras.verPocionEnergia(false);
+                    lapras.verPocionVida(false);
                     currentPokemon = lapras;
                     break;
                 case "Lucario":
@@ -81,18 +101,34 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
                     break;
                 case "Makuhita":
                     makuhita.Visibility = Visibility.Visible;
+                    makuhita.verFilaEnergia(false);
+                    makuhita.verFilaVida(false);
+                    makuhita.verPocionEnergia(false);
+                    makuhita.verPocionVida(false);
                     currentPokemon = makuhita;
                     break;
                 case "Scizor":
                     scizor.Visibility = Visibility.Visible;
+                    scizor.verFilaEnergia(false);
+                    scizor.verFilaVida(false);
+                    scizor.verPocionEnergia(false);
+                    scizor.verPocionVida(false);
                     currentPokemon = scizor;
                     break;
                 case "Snorlax":
                     snorlax.Visibility = Visibility.Visible;
+                    snorlax.verFilaEnergia(false);
+                    snorlax.verFilaVida(false);
+                    snorlax.verPocionEnergia(false);
+                    snorlax.verPocionVida(false);
                     currentPokemon = snorlax;
                     break;
                 case "Toxicroak":
                     toxicroak.Visibility = Visibility.Visible;
+                    toxicroak.verFilaEnergia(false);
+                    toxicroak.verFilaVida(false);
+                    toxicroak.verPocionEnergia(false);
+                    toxicroak.verPocionVida(false);
                     currentPokemon = toxicroak;
                     break;
                 default:
