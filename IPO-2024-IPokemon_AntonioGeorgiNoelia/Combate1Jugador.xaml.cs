@@ -299,7 +299,7 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
                     txtMensajeVictoria.Text = "¡Ha ganado la máquina!";
                     txtMensajeVictoria.Visibility = Visibility.Visible;
                     //Notificación
-                    new ToastContentBuilder().AddArgument("action", "victoriaJugador2").AddArgument("ConversationId", 9813).AddText("¡El jugador 2 ha ganado el combate!").AddAppLogoOverride(new Uri("ms-appx:///Assets/derrota.jpg"), ToastGenericAppLogoCrop.Circle).Show();
+                    new ToastContentBuilder().AddArgument("action", "victoriaJugador2").AddArgument("ConversationId", 9813).AddText("¡La máquina ha ganado el combate!").AddAppLogoOverride(new Uri("ms-appx:///Assets/derrota.jpg"), ToastGenericAppLogoCrop.Circle).Show();
 
                 }
                 else if (defensor.Vida > 0 && defensor.Vida <= 30 && vidaActual > 30)
@@ -431,7 +431,7 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
                     txtMensajeVictoria.Text = "¡Ha ganado el jugador 1!";
                     txtMensajeVictoria.Visibility = Visibility.Visible;
                     //Notificación
-                    new ToastContentBuilder().AddArgument("action", "victoriaJugador2").AddArgument("ConversationId", 9813).AddText("¡El jugador 2 ha ganado el combate!").AddAppLogoOverride(new Uri("ms-appx:///Assets/victoria.jpg"), ToastGenericAppLogoCrop.Circle).Show();
+                    new ToastContentBuilder().AddArgument("action", "victoriaJugador1").AddArgument("ConversationId", 9813).AddText("¡El jugador 1 ha ganado el combate!").AddAppLogoOverride(new Uri("ms-appx:///Assets/victoria.jpg"), ToastGenericAppLogoCrop.Circle).Show();
                 }
                 else if (defensor.Vida > 0 && defensor.Vida <= 30 && vidaActual >30)
                 {
@@ -466,7 +466,7 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
             txtMensajeVictoria.Text = "¡Ha ganado la máquina!";
             txtMensajeVictoria.Visibility = Visibility.Visible;
             //Notificación
-            new ToastContentBuilder().AddArgument("action", "victoriaJugador2").AddArgument("ConversationId", 9813).AddText("¡El jugador 2 ha ganado el combate!").AddAppLogoOverride(new Uri("ms-appx:///Assets/derrota.jpg"), ToastGenericAppLogoCrop.Circle).Show();
+            new ToastContentBuilder().AddArgument("action", "victoriaJugador2").AddArgument("ConversationId", 9813).AddText("¡La máquina ha ganado el combate!").AddAppLogoOverride(new Uri("ms-appx:///Assets/derrota.jpg"), ToastGenericAppLogoCrop.Circle).Show();
         }
 
         private async void btnCurarse1_Click(object sender, RoutedEventArgs e)
