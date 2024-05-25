@@ -301,7 +301,6 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
                     //Notificación
                     new ToastContentBuilder().AddArgument("action", "victoriaJugador2").AddArgument("ConversationId", 9813).AddText("¡El jugador 2 ha ganado el combate!").AddAppLogoOverride(new Uri("ms-appx:///Assets/derrota.jpg"), ToastGenericAppLogoCrop.Circle).Show();
 
-                    //METER NOTIFICACION
                 }
                 else if (defensor.Vida > 0 && defensor.Vida <= 30 && vidaActual > 30)
                 {
@@ -466,7 +465,8 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
             imageFinalCombate.Visibility = Visibility.Visible;
             txtMensajeVictoria.Text = "¡Ha ganado la máquina!";
             txtMensajeVictoria.Visibility = Visibility.Visible;
-            //METER NOTIFICACION
+            //Notificación
+            new ToastContentBuilder().AddArgument("action", "victoriaJugador2").AddArgument("ConversationId", 9813).AddText("¡El jugador 2 ha ganado el combate!").AddAppLogoOverride(new Uri("ms-appx:///Assets/derrota.jpg"), ToastGenericAppLogoCrop.Circle).Show();
         }
 
         private async void btnCurarse1_Click(object sender, RoutedEventArgs e)

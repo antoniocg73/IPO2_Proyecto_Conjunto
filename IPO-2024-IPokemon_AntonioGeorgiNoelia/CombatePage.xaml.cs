@@ -288,7 +288,9 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
             imageFinalCombate.Visibility = Visibility.Visible;
             txtMensajeVictoria.Text = "¡Ha ganado el jugador 2!";
             txtMensajeVictoria.Visibility = Visibility.Visible;
-            //METER NOTIFICACION
+            //Notificación
+            new ToastContentBuilder().AddArgument("action", "victoriaJugador2").AddArgument("ConversationId", 9813).AddText("¡El jugador 2 ha ganado el combate!").AddAppLogoOverride(new Uri("ms-appx:///Assets/victoria.jpg"), ToastGenericAppLogoCrop.Circle).Show();
+
         }
 
         private async void btnCurarse1_Click(object sender, RoutedEventArgs e)
@@ -443,7 +445,9 @@ namespace IPO_2024_IPokemon_AntonioGeorgiNoelia
             imageFinalCombate.Visibility = Visibility.Visible;
             txtMensajeVictoria.Text = "¡Ha ganado el jugador 1!";
             txtMensajeVictoria.Visibility = Visibility.Visible;
-            //METER NOTIFICACION
+            //Notificación
+            //NOTIFICACION
+            new ToastContentBuilder().AddArgument("action", "victoriaJugador1").AddArgument("ConversationId", 9813).AddText("¡El jugador 1 ha ganado el combate!").AddAppLogoOverride(new Uri("ms-appx:///Assets/victoria.jpg"), ToastGenericAppLogoCrop.Circle).Show();
         }
 
         private async void btnCurarse2_Click(object sender, RoutedEventArgs e)
